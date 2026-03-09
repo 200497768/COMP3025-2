@@ -1,4 +1,4 @@
-package com.example.comp30252;
+package comp3025.assignment2;
 
 import android.os.Bundle;
 
@@ -9,7 +9,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.comp30252.databinding.ActivityMainBinding;
+import comp3025.assignment2.databinding.ActivityMainBinding;
+
 
 /**
  * This is the code for assignment 2.
