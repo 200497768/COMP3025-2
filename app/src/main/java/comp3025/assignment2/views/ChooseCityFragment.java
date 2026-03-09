@@ -1,4 +1,4 @@
-package comp3025.assignment2;
+package comp3025.assignment2.views;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+
+import comp3025.assignment2.R;
 
 /**
  * This fragment allows a city to be chosen.

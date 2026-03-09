@@ -1,4 +1,4 @@
-package comp3025.assignment2;
+package comp3025.assignment2.models;
 
 /**
  * This class is weather information that has been retrieved.
