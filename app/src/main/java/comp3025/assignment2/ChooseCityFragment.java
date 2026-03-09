@@ -9,9 +9,8 @@ import androidx.fragment.app.Fragment;
 
 /**
  * This fragment allows a city to be chosen.
- *
- * @author Hao Tian
  * @author Yatri Devangbhai Padhiyar
+ * @author Hao Tian
  */
 public class ChooseCityFragment extends Fragment {
 

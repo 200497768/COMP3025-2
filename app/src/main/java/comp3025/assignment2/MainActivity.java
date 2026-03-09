@@ -18,8 +18,8 @@ import comp3025.assignment2.databinding.ActivityMainBinding;
  * Any fields will not be maintained when the MainActivity class is created again.
  * We need to use the ViewModel in order to maintain fields, and avoid needing to retrieve information again.
  *
- * @author Hao Tian
  * @author Yatri Devangbhai Padhiyar
+ * @author Hao Tian
  */
 public class MainActivity extends AppCompatActivity {
 

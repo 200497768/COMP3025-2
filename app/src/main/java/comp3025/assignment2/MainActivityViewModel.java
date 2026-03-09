@@ -4,9 +4,8 @@ import androidx.lifecycle.ViewModel;
 
 /**
  * This class is the ViewModel for MainActivity.
- *
- * @author Hao Tian
  * @author Yatri Devangbhai Padhiyar
+ * @author Hao Tian
  */
 public class MainActivityViewModel extends ViewModel {
 }

@@ -9,9 +9,8 @@ import androidx.fragment.app.Fragment;
 
 /**
  * This fragment shows weather information for a city.
- *
- * @author Hao Tian
  * @author Yatri Devangbhai Padhiyar
+ * @author Hao Tian
  */
 public class ShowWeatherFragment extends Fragment {
 
