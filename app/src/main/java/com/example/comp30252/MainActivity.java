@@ -8,6 +8,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.comp30252.databinding.ActivityMainBinding;
+
 /**
  * This is the code for assignment 2.
  * The MainActivity class can be repeatedly created in order to create views.
@@ -18,6 +20,12 @@ import androidx.core.view.WindowInsetsCompat;
  * @author Yatri Devangbhai Padhiyar
  */
 public class MainActivity extends AppCompatActivity {
+
+    /**
+     * This is the view binding class for this activity.
+     * The view binding class allows us to refer to views as fields, instead of using the findViewById method.
+     */
+    private ActivityMainBinding binding;
 
     /**
      * The onCreate method adds views to show retrieved information.
