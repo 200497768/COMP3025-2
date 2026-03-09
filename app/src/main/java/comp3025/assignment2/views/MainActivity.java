@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 
+import comp3025.assignment2.ExampleCode;
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
 
@@ -62,5 +63,12 @@ public class MainActivity extends AppCompatActivity {
 
         //Create the ViewModel for this activity.
         this.viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+
+        //Use the example code to retrieve some information.
+        //We'll ensure that we've brought the example code to this assignment correctly.
+        //If it's able to retrieve, we'll know that we've added it correctly.
+        ExampleCode exampleCode = new ExampleCode();
+        exampleCode.retrieve();
+        //Permission denied (missing INTERNET permission?)
     }
 }
