@@ -8,6 +8,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+/**
+ * This is the code for assignment 2.
+ *
+ * @author Hao Tian
+ * @author Yatri Devangbhai Padhiyar
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
