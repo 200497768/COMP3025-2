@@ -7,4 +7,6 @@ package com.example.comp30252;
  * @author Yatri Devangbhai Padhiyar
  */
 public class WeatherInformation {
+    private String city;
+
 }
