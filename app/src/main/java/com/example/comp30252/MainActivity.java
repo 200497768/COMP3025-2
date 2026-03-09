@@ -42,15 +42,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+
+        //Prepare the view binding class.
+        this.binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        //Change the view for this activity.
+        //We'll access the view through the view binding class, instead of the R.layout.activity_main.
+        setContentView(this.binding.getRoot());
+
+        //Order is important, and the setOnApplyWindowInsetsListener method must be after the setContentView method.
+        //If the setContentView method hasn't completed, the view will be null.
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        //Access the view binding class.
-        this.binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         //Create the ViewModel for this activity.
         this.viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
