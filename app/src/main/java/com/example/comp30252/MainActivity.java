@@ -10,12 +10,24 @@ import androidx.core.view.WindowInsetsCompat;
 
 /**
  * This is the code for assignment 2.
+ * The MainActivity class can be repeatedly created in order to create views.
+ * Any fields will not be maintained when the MainActivity class is created again.
+ * We need to use the ViewModel in order to maintain fields, and avoid needing to retrieve information again.
  *
  * @author Hao Tian
  * @author Yatri Devangbhai Padhiyar
  */
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * The onCreate method adds views to show retrieved information.
+     * This method might happen repeatedly.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after
+     *                           previously being shut down then this Bundle contains the data it most
+     *                           recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
