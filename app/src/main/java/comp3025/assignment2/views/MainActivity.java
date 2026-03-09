@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 
+import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
 
 
