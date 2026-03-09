@@ -13,16 +13,12 @@ import androidx.fragment.app.Fragment;
  * @author Hao Tian
  * @author Yatri Devangbhai Padhiyar
  */
-public class CityFragment extends Fragment {
-
-    public CityFragment() {
-        // Required empty public constructor
-    }
+public class ChooseCityFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_city, container, false);
+        return inflater.inflate(R.layout.fragment_choose_city, container, false);
     }
 }
