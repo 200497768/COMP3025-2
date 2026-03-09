@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.comp30252.databinding.ActivityMainBinding;
 
@@ -29,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     /**
+     * This is the ViewModel for this activity.
+     * The ViewModel allows us to access fields, even if the activity needs to be created again.
+     */
+    private MainActivityViewModel viewModel;
+    /**
      * The onCreate method adds views to show retrieved information.
      * This method might happen repeatedly.
      */
@@ -43,7 +49,10 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        //Access the view binding class, and change the field.
+        //Access the view binding class.
         this.binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        //Create the ViewModel for this activity.
+        this.viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
     }
 }
