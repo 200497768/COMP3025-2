@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import comp3025.assignment2.R;
+
 /**
  * This fragment shows weather information for a city.
  * @author Yatri Devangbhai Padhiyar
