@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This is the view binding class for this activity.
      * The view binding class allows us to refer to views as fields, instead of using the findViewById method.
+     * This field will be changed during the onCreate method.
      */
     private ActivityMainBinding binding;
 
@@ -41,5 +42,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //Access the view binding class, and change the field.
+        this.binding = ActivityMainBinding.inflate(getLayoutInflater());
     }
 }
