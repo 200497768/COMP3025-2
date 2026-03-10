@@ -6,6 +6,23 @@ package comp3025.assignment2.models;
  * @author Hao Tian
  */
 public class WeatherInformation {
-    private String city;
+    private String cityName;
+
+    private String countryName;
+
+    private double currentTemperatureC;
+
+    private double currentTemperatureF;
+
+    private String weatherCondition;
+
+    private double feelsLike;
+
+    private int humidityPercentage;
+
+    private int windSpeed;
+
+    private String windDirection;
+
 
 }
