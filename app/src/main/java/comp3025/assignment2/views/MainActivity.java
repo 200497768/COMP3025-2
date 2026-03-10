@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.ExampleCode;
@@ -84,7 +87,13 @@ public class MainActivity extends AppCompatActivity {
         this.binding.changeCityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
+                Fragment firstFragment = new ShowWeatherFragment();
+
+                fragmentTransaction.replace(R.id.fragment_container, firstFragment);
+                fragmentTransaction.commit();
 
             }
         });
