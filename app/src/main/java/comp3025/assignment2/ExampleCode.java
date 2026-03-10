@@ -4,6 +4,9 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.Objects;
 
@@ -42,6 +45,16 @@ public class ExampleCode {
 
                 String responseData = response.body().string();
                 Log.i("tag", responseData);
+
+                try {
+                    JSONObject json = new JSONObject(responseData);
+                    String firstNumber = json.getString("USD");
+                    Log.i("tag", "The first number retrieved is " + firstNumber);
+
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+
             }
 
             @Override
