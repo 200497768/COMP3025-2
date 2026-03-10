@@ -1,6 +1,7 @@
 package comp3025.assignment2.views;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -78,6 +79,15 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.fragment_container, new ChooseCityFragment())
                     .commit();
         }
+
+        MainActivity mainActivity = this;
+        this.binding.changeCityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
     }
 }
 

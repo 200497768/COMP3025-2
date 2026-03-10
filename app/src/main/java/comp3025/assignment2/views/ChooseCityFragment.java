@@ -32,14 +32,7 @@ public class ChooseCityFragment extends Fragment {
         //Prepare the view binding class.
         this.binding = FragmentChooseCityBinding.bind(view);
 
-        ChooseCityFragment chooseCityFragment = this;
-        this.binding.changeCityButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-
-            }
-        });
 
     }
 }
