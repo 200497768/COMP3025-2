@@ -50,9 +50,6 @@ public class RetrievalCode {
                 try {
                     JSONObject json = new JSONObject(responseData);
 
-                    String firstNumber = json.getString("USD");
-                    Log.i("tag", "The first number retrieved is " + firstNumber);
-
                     //Retrieve the location part.
                     JSONObject location = json.getJSONObject("location");
 
