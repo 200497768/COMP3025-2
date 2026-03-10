@@ -14,7 +14,25 @@ public class WeatherInformation {
 
     private double currentTemperatureF;
 
-    private String weatherCondition;
+    private String weatherConditionText;
+
+    public String getWeatherConditionPicture() {
+        return weatherConditionPicture;
+    }
+
+    public void setWeatherConditionPicture(String weatherConditionPicture) {
+        this.weatherConditionPicture = weatherConditionPicture;
+    }
+
+    public String getWeatherConditionText() {
+        return weatherConditionText;
+    }
+
+    public void setWeatherConditionText(String weatherConditionText) {
+        this.weatherConditionText = weatherConditionText;
+    }
+
+    private String weatherConditionPicture;
 
     private double feelsLike;
 
@@ -56,13 +74,6 @@ public class WeatherInformation {
         this.feelsLike = feelsLike;
     }
 
-    public String getWeatherCondition() {
-        return weatherCondition;
-    }
-
-    public void setWeatherCondition(String weatherCondition) {
-        this.weatherCondition = weatherCondition;
-    }
 
     public double getCurrentTemperatureF() {
         return currentTemperatureF;
