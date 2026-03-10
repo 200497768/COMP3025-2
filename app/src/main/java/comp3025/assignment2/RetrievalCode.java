@@ -26,12 +26,17 @@ import okhttp3.Response;
  * @author Hao Tian
  */
 public class RetrievalCode {
-    public WeatherInformation getWeatherInformation() {
+
+    private WeatherInformation weatherInformation;
+
+    public RetrievalCode() {
         String urlString = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR";
 
         Request request = new Request.Builder().url(urlString).build();
 
         OkHttpClient client = new OkHttpClient();
+
+        RetrievalCode retrievalCode = this;
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
@@ -40,15 +45,36 @@ public class RetrievalCode {
                 String responseData = response.body().string();
                 Log.i("tag", responseData);
 
+                WeatherInformation weatherInformation = new WeatherInformation();
+
                 try {
                     JSONObject json = new JSONObject(responseData);
+
                     String firstNumber = json.getString("USD");
                     Log.i("tag", "The first number retrieved is " + firstNumber);
+
+                    //Retrieve the location part.
+                    JSONObject location = json.getJSONObject("location");
+
+                    //Retrieve name of the city.
+                    String cityName = location.getString("name");
+                    weatherInformation.setCityName(cityName);
+
+                    //Retrieve name of the country.
+                    String countryName = location.getString("country");
+                    weatherInformation.setCountryName(countryName);
+
+                    //Retrieve the current part.
+                    JSONObject current = json.getJSONObject("current");
+
+                    //Retrieve current temperature C.
+                    double currentTemperatureC = current.getDouble("temp_c");
 
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
                 }
 
+                retrievalCode.weatherInformation = weatherInformation;
             }
 
             @Override
