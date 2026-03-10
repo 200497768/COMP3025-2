@@ -66,6 +66,18 @@ public class RetrievalCode {
 
                     //Retrieve current temperature C.
                     double currentTemperatureC = current.getDouble("temp_c");
+                    weatherInformation.setCurrentTemperatureC(currentTemperatureC);
+
+                    //Retrieve current temperature F.
+                    double currentTemperatureF = current.getDouble("temp_f");
+                    weatherInformation.setCurrentTemperatureF(currentTemperatureF);
+
+                    //Retrieve condition.
+                    JSONObject condition = json.getJSONObject("condition");
+
+                    //Retrieve text.
+                    String text = condition.getString("text");
+                    weatherInformation.setWeatherConditionText(text);
 
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
