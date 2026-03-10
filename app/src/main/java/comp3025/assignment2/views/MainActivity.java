@@ -80,3 +80,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
+//In order to fix Permission denied (missing INTERNET permission?), we used example code from this book.
+//Elenkov, N. (2016). Android security internals: An in-depth guide to android’s security architecture (1st edition). No Starch Press.
+//pp. 33 34
