@@ -70,5 +70,13 @@ public class MainActivity extends AppCompatActivity {
         ExampleCode exampleCode = new ExampleCode();
         exampleCode.retrieve();
         //Permission denied (missing INTERNET permission?)
+
+        // code to load fragment
+        if (savedInstanceState == null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, new ShowWeatherFragment())
+                    .commit();
+        }
     }
 }
