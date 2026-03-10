@@ -24,5 +24,75 @@ public class WeatherInformation {
 
     private String windDirection;
 
+    public String getWindDirection() {
+        return windDirection;
+    }
 
+    public void setWindDirection(String windDirection) {
+        this.windDirection = windDirection;
+    }
+
+    public int getWindSpeed() {
+        return windSpeed;
+    }
+
+    public void setWindSpeed(int windSpeed) {
+        this.windSpeed = windSpeed;
+    }
+
+    public int getHumidityPercentage() {
+        return humidityPercentage;
+    }
+
+    public void setHumidityPercentage(int humidityPercentage) {
+        this.humidityPercentage = humidityPercentage;
+    }
+
+    public double getFeelsLike() {
+        return feelsLike;
+    }
+
+    public void setFeelsLike(double feelsLike) {
+        this.feelsLike = feelsLike;
+    }
+
+    public String getWeatherCondition() {
+        return weatherCondition;
+    }
+
+    public void setWeatherCondition(String weatherCondition) {
+        this.weatherCondition = weatherCondition;
+    }
+
+    public double getCurrentTemperatureF() {
+        return currentTemperatureF;
+    }
+
+    public void setCurrentTemperatureF(double currentTemperatureF) {
+        this.currentTemperatureF = currentTemperatureF;
+    }
+
+    public double getCurrentTemperatureC() {
+        return currentTemperatureC;
+    }
+
+    public void setCurrentTemperatureC(double currentTemperatureC) {
+        this.currentTemperatureC = currentTemperatureC;
+    }
+
+    public String getCountryName() {
+        return countryName;
+    }
+
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
 }
