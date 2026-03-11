@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.fragment_container, firstFragment);
                 fragmentTransaction.commit();
 
-                WeatherInformation exampleWeatherInformation = this.retrieveExampleWeatherInformation();
+                WeatherInformation exampleWeatherInformation = mainActivity.retrieveExampleWeatherInformation();
 
                 Intent intent = new Intent(WelcomeActivity.this, GameActivity.class);
                 intent.putExtra("USERNAME", username);
