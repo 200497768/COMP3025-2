@@ -1,5 +1,6 @@
 package comp3025.assignment2.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,6 +18,7 @@ import comp3025.assignment2.ExampleCode;
 import comp3025.assignment2.R;
 import comp3025.assignment2.RetrievalCode;
 import comp3025.assignment2.databinding.ActivityMainBinding;
+import comp3025.assignment2.models.WeatherInformation;
 
 
 /**
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
      * The ViewModel allows us to access fields, even if the activity needs to be created again.
      */
     private MainActivityViewModel viewModel;
+
     /**
      * The onCreate method adds views to show retrieved information.
      * This method might happen repeatedly.
@@ -88,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         this.binding.changeCityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Change fragment to ShowWeatherFragment.
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -96,10 +100,23 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.fragment_container, firstFragment);
                 fragmentTransaction.commit();
 
+                WeatherInformation exampleWeatherInformation = this.retrieveExampleWeatherInformation();
+
+                Intent intent = new Intent(WelcomeActivity.this, GameActivity.class);
+                intent.putExtra("USERNAME", username);
+                startActivity(intent);
+
+                String username = getIntent().getStringExtra("USERNAME");
             }
         });
+    }
 
-        RetrievalCode retrievalCode = new RetrievalCode();
+    /**
+     * This method produces an example WeatherInformation model.
+     * We can use this method to determine whether we've written the retrieval code correctly.
+     * We can also use this method to retrieve a WeatherInformation model with fields.
+     */
+    private WeatherInformation retrieveExampleWeatherInformation() {
         String exampleResponseData = "{\n" +
                 "  \"location\": {\n" +
                 "    \"name\": \"London\",\n" +
@@ -151,7 +168,12 @@ public class MainActivity extends AppCompatActivity {
                 "    }\n" +
                 "  }\n" +
                 "}";
-        retrievalCode.getModelFromResponseData(exampleResponseData);
+
+        //Provide this to the retrieval code, and use the retrieval code to produce the WeatherInformation model.
+        RetrievalCode retrievalCode = new RetrievalCode();
+        WeatherInformation weatherInformation = retrievalCode.getModelFromResponseData(exampleResponseData);
+
+        return weatherInformation;
     }
 }
 
