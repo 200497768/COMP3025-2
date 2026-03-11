@@ -72,12 +72,16 @@ public class RetrievalCode {
                     double currentTemperatureF = current.getDouble("temp_f");
                     weatherInformation.setCurrentTemperatureF(currentTemperatureF);
 
-                    //Retrieve condition.
+                    //Retrieve condition part.
                     JSONObject condition = json.getJSONObject("condition");
 
-                    //Retrieve text.
+                    //Retrieve condition text.
                     String text = condition.getString("text");
                     weatherInformation.setWeatherConditionText(text);
+
+                    //Retrieve condition picture.
+                    String picture=condition.getString("icon");
+                    weatherInformation.setWeatherConditionPicture(picture);
 
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
