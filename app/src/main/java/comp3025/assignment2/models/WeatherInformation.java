@@ -44,6 +44,16 @@ public class WeatherInformation {
 
     private String windDirection;
 
+    private int windAngle;
+
+    public int getWindAngle() {
+        return windAngle;
+    }
+
+    public void setWindAngle(int windAngle) {
+        this.windAngle = windAngle;
+    }
+
     public String getWindDirection() {
         return windDirection;
     }
