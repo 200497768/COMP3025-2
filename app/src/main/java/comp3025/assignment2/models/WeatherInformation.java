@@ -34,7 +34,9 @@ public class WeatherInformation {
 
     private String weatherConditionPicture;
 
-    private double feelsLike;
+    private double feelsLikeC;
+
+    private double feelsLikeF;
 
     private int humidityPercentage;
 
@@ -66,14 +68,21 @@ public class WeatherInformation {
         this.humidityPercentage = humidityPercentage;
     }
 
-    public double getFeelsLike() {
-        return feelsLike;
+    public double getFeelsLikeF() {
+        return feelsLikeF;
     }
 
-    public void setFeelsLike(double feelsLike) {
-        this.feelsLike = feelsLike;
+    public void setFeelsLikeF(double feelsLikeF) {
+        this.feelsLikeF = feelsLikeF;
     }
 
+    public double getFeelsLikeC() {
+        return feelsLikeC;
+    }
+
+    public void setFeelsLikeC(double feelsLikeC) {
+        this.feelsLikeC = feelsLikeC;
+    }
 
     public double getCurrentTemperatureF() {
         return currentTemperatureF;
