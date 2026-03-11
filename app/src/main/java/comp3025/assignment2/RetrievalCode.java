@@ -83,9 +83,13 @@ public class RetrievalCode {
                     String picture=condition.getString("icon");
                     weatherInformation.setWeatherConditionPicture(picture);
 
-                    //Retrieve feels like.
+                    //Retrieve the feels like C field.
                     double feelsLikeC = json.getDouble("feelslike_c");
                     weatherInformation.setFeelsLikeC(feelsLikeC);
+
+                    //Retrieve the feels like F field.
+                    double feelsLikeF = json.getDouble("feelslike_f");
+                    weatherInformation.setFeelsLikeC(feelsLikeF);
 
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
