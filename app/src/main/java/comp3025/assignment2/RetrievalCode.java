@@ -91,6 +91,14 @@ public class RetrievalCode {
                     double feelsLikeF = json.getDouble("feelslike_f");
                     weatherInformation.setFeelsLikeC(feelsLikeF);
 
+                    //Retrieve the humidity field.
+                    int humidity = json.getInt("humidity");
+                    weatherInformation.setHumidityPercentage(humidity);
+
+                    //Retrieve the wind speed field.
+                    double windSpeed = json.getDouble("wind_kph");
+                    weatherInformation.setWindSpeed(windSpeed);
+
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
                 }

@@ -40,7 +40,7 @@ public class WeatherInformation {
 
     private int humidityPercentage;
 
-    private int windSpeed;
+    private double windSpeed;
 
     private String windDirection;
 
@@ -52,11 +52,11 @@ public class WeatherInformation {
         this.windDirection = windDirection;
     }
 
-    public int getWindSpeed() {
+    public double getWindSpeed() {
         return windSpeed;
     }
 
-    public void setWindSpeed(int windSpeed) {
+    public void setWindSpeed(double windSpeed) {
         this.windSpeed = windSpeed;
     }
 
