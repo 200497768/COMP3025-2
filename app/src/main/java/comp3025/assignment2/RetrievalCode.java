@@ -29,7 +29,7 @@ public class RetrievalCode {
 
     private WeatherInformation weatherInformation;
 
-    public RetrievalCode() {
+    public void retrieve() {
         String urlString = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR";
 
         Request request = new Request.Builder().url(urlString).build();
