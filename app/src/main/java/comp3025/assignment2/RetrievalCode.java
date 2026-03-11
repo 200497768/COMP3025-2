@@ -99,6 +99,14 @@ public class RetrievalCode {
                     double windSpeed = json.getDouble("wind_kph");
                     weatherInformation.setWindSpeed(windSpeed);
 
+                    //Retrieve the wind direction text.
+                    String windDirectionText = json.getString("wind_dir");
+                    weatherInformation.setWindDirectionText(windDirectionText);
+
+                    //Retrieve the wind direction angle.
+                    int windDirectionAngle = json.getInt("wind_degree");
+                    weatherInformation.setWindDirectionAngle(windDirectionAngle);
+
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
                 }

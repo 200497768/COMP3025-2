@@ -42,24 +42,24 @@ public class WeatherInformation {
 
     private double windSpeed;
 
-    private String windDirection;
+    private String windDirectionText;
 
-    private int windAngle;
+    private int windDirectionAngle;
 
-    public int getWindAngle() {
-        return windAngle;
+    public int getWindDirectionAngle() {
+        return windDirectionAngle;
     }
 
-    public void setWindAngle(int windAngle) {
-        this.windAngle = windAngle;
+    public void setWindDirectionAngle(int windDirectionAngle) {
+        this.windDirectionAngle = windDirectionAngle;
     }
 
-    public String getWindDirection() {
-        return windDirection;
+    public String getWindDirectionText() {
+        return windDirectionText;
     }
 
-    public void setWindDirection(String windDirection) {
-        this.windDirection = windDirection;
+    public void setWindDirectionText(String windDirectionText) {
+        this.windDirectionText = windDirectionText;
     }
 
     public double getWindSpeed() {
