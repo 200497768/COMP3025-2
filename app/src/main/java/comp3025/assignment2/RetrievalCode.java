@@ -91,7 +91,7 @@ public class RetrievalCode {
             weatherInformation.setCurrentTemperatureF(currentTemperatureF);
 
             //Retrieve condition part.
-            JSONObject condition = json.getJSONObject("condition");
+            JSONObject condition = current.getJSONObject("condition");
 
             //Retrieve condition text.
             String text = condition.getString("text");
@@ -102,27 +102,27 @@ public class RetrievalCode {
             weatherInformation.setWeatherConditionPicture(picture);
 
             //Retrieve the feels like C field.
-            double feelsLikeC = json.getDouble("feelslike_c");
+            double feelsLikeC = current.getDouble("feelslike_c");
             weatherInformation.setFeelsLikeC(feelsLikeC);
 
             //Retrieve the feels like F field.
-            double feelsLikeF = json.getDouble("feelslike_f");
-            weatherInformation.setFeelsLikeC(feelsLikeF);
+            double feelsLikeF = current.getDouble("feelslike_f");
+            weatherInformation.setFeelsLikeF(feelsLikeF);
 
             //Retrieve the humidity field.
-            int humidity = json.getInt("humidity");
+            int humidity = current.getInt("humidity");
             weatherInformation.setHumidityPercentage(humidity);
 
             //Retrieve the wind speed field.
-            double windSpeed = json.getDouble("wind_kph");
+            double windSpeed = current.getDouble("wind_kph");
             weatherInformation.setWindSpeed(windSpeed);
 
             //Retrieve the wind direction text.
-            String windDirectionText = json.getString("wind_dir");
+            String windDirectionText = current.getString("wind_dir");
             weatherInformation.setWindDirectionText(windDirectionText);
 
             //Retrieve the wind direction angle.
-            int windDirectionAngle = json.getInt("wind_degree");
+            int windDirectionAngle = current.getInt("wind_degree");
             weatherInformation.setWindDirectionAngle(windDirectionAngle);
 
             return weatherInformation;
