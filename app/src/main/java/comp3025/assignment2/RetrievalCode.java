@@ -59,7 +59,7 @@ public class RetrievalCode {
         });
     }
 
-    private WeatherInformation getModelFromResponseData(String responseData) {
+    public WeatherInformation getModelFromResponseData(String responseData) {
         try {
             //Create the WeatherInformation model.
             //At this time, no fields have been changed.
