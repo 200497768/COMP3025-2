@@ -1,6 +1,5 @@
 package comp3025.assignment2.views;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -91,22 +90,18 @@ public class MainActivity extends AppCompatActivity {
         this.binding.changeCityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Change fragment to ShowWeatherFragment.
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-                Fragment firstFragment = new ShowWeatherFragment();
-
-                fragmentTransaction.replace(R.id.fragment_container, firstFragment);
-                fragmentTransaction.commit();
-
+                //Create the WeatherInformation model with example information.
+                //This model will be provided to ShowWeatherFragment.
                 WeatherInformation exampleWeatherInformation = mainActivity.retrieveExampleWeatherInformation();
 
-                Intent intent = new Intent(WelcomeActivity.this, GameActivity.class);
-                intent.putExtra("USERNAME", username);
-                startActivity(intent);
+                //Create ShowWeatherFragment, and provide the model.
+                Fragment firstFragment = new ShowWeatherFragment(exampleWeatherInformation);
 
-                String username = getIntent().getStringExtra("USERNAME");
+                //Change the fragment area to show ShowWeatherFragment.
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, firstFragment);
+                fragmentTransaction.commit();
             }
         });
     }

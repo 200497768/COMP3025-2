@@ -1,6 +1,7 @@
 package comp3025.assignment2.views;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import comp3025.assignment2.R;
+import comp3025.assignment2.models.WeatherInformation;
 
 /**
  * This fragment shows weather information for a city.
@@ -16,33 +18,14 @@ import comp3025.assignment2.R;
  */
 public class ShowWeatherFragment extends Fragment {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private WeatherInformation weatherInformation;
 
-    private String mParam1;
-    private String mParam2;
+    public ShowWeatherFragment(WeatherInformation weatherInformation) {
+        this.weatherInformation = weatherInformation;
 
-    public ShowWeatherFragment() {
-        // Required empty public constructor
+        Log.i("200497768", "ShowWeatherFragment has received a model with " + this.weatherInformation.getCityName() + " as the city name.");
     }
 
-    public static ShowWeatherFragment newInstance(String param1, String param2) {
-        ShowWeatherFragment fragment = new ShowWeatherFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
