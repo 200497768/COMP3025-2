@@ -35,5 +35,13 @@
         app:layout_constraintStart_toStartOf="@id/temperatureCTextView"
         app:layout_constraintTop_toBottomOf="@id/temperatureCTextView" />
 
+    <TextView
+        android:id="@+id/conditionTextTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Condition text"
+        app:layout_constraintStart_toStartOf="@id/temperatureFTextView"
+        app:layout_constraintTop_toBottomOf="@id/temperatureFTextView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
