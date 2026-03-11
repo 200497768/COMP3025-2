@@ -45,72 +45,10 @@ public class RetrievalCode {
                 String responseData = response.body().string();
                 Log.i("tag", responseData);
 
-                WeatherInformation weatherInformation = new WeatherInformation();
+                //Use the method to change responseData to the WeatherInformation model.
+                WeatherInformation weatherInformation = retrievalCode.getModelFromResponseData(responseData);
 
-                try {
-                    JSONObject json = new JSONObject(responseData);
-
-                    //Retrieve the location part.
-                    JSONObject location = json.getJSONObject("location");
-
-                    //Retrieve name of the city.
-                    String cityName = location.getString("name");
-                    weatherInformation.setCityName(cityName);
-
-                    //Retrieve name of the country.
-                    String countryName = location.getString("country");
-                    weatherInformation.setCountryName(countryName);
-
-                    //Retrieve the current part.
-                    JSONObject current = json.getJSONObject("current");
-
-                    //Retrieve current temperature C.
-                    double currentTemperatureC = current.getDouble("temp_c");
-                    weatherInformation.setCurrentTemperatureC(currentTemperatureC);
-
-                    //Retrieve current temperature F.
-                    double currentTemperatureF = current.getDouble("temp_f");
-                    weatherInformation.setCurrentTemperatureF(currentTemperatureF);
-
-                    //Retrieve condition part.
-                    JSONObject condition = json.getJSONObject("condition");
-
-                    //Retrieve condition text.
-                    String text = condition.getString("text");
-                    weatherInformation.setWeatherConditionText(text);
-
-                    //Retrieve condition picture.
-                    String picture=condition.getString("icon");
-                    weatherInformation.setWeatherConditionPicture(picture);
-
-                    //Retrieve the feels like C field.
-                    double feelsLikeC = json.getDouble("feelslike_c");
-                    weatherInformation.setFeelsLikeC(feelsLikeC);
-
-                    //Retrieve the feels like F field.
-                    double feelsLikeF = json.getDouble("feelslike_f");
-                    weatherInformation.setFeelsLikeC(feelsLikeF);
-
-                    //Retrieve the humidity field.
-                    int humidity = json.getInt("humidity");
-                    weatherInformation.setHumidityPercentage(humidity);
-
-                    //Retrieve the wind speed field.
-                    double windSpeed = json.getDouble("wind_kph");
-                    weatherInformation.setWindSpeed(windSpeed);
-
-                    //Retrieve the wind direction text.
-                    String windDirectionText = json.getString("wind_dir");
-                    weatherInformation.setWindDirectionText(windDirectionText);
-
-                    //Retrieve the wind direction angle.
-                    int windDirectionAngle = json.getInt("wind_degree");
-                    weatherInformation.setWindDirectionAngle(windDirectionAngle);
-
-                } catch (JSONException e) {
-                    throw new RuntimeException(e);
-                }
-
+                //Change the field.
                 retrievalCode.weatherInformation = weatherInformation;
             }
 
@@ -119,5 +57,77 @@ public class RetrievalCode {
 
             }
         });
+    }
+
+    private WeatherInformation getModelFromResponseData(String responseData) {
+        try {
+            //Create the WeatherInformation model.
+            //At this time, no fields have been changed.
+            //This method is responsible for changing the fields to match responseData.
+            WeatherInformation weatherInformation = new WeatherInformation();
+
+            JSONObject json = new JSONObject(responseData);
+
+            //Retrieve the location part.
+            JSONObject location = json.getJSONObject("location");
+
+            //Retrieve name of the city.
+            String cityName = location.getString("name");
+            weatherInformation.setCityName(cityName);
+
+            //Retrieve name of the country.
+            String countryName = location.getString("country");
+            weatherInformation.setCountryName(countryName);
+
+            //Retrieve the current part.
+            JSONObject current = json.getJSONObject("current");
+
+            //Retrieve current temperature C.
+            double currentTemperatureC = current.getDouble("temp_c");
+            weatherInformation.setCurrentTemperatureC(currentTemperatureC);
+
+            //Retrieve current temperature F.
+            double currentTemperatureF = current.getDouble("temp_f");
+            weatherInformation.setCurrentTemperatureF(currentTemperatureF);
+
+            //Retrieve condition part.
+            JSONObject condition = json.getJSONObject("condition");
+
+            //Retrieve condition text.
+            String text = condition.getString("text");
+            weatherInformation.setWeatherConditionText(text);
+
+            //Retrieve condition picture.
+            String picture = condition.getString("icon");
+            weatherInformation.setWeatherConditionPicture(picture);
+
+            //Retrieve the feels like C field.
+            double feelsLikeC = json.getDouble("feelslike_c");
+            weatherInformation.setFeelsLikeC(feelsLikeC);
+
+            //Retrieve the feels like F field.
+            double feelsLikeF = json.getDouble("feelslike_f");
+            weatherInformation.setFeelsLikeC(feelsLikeF);
+
+            //Retrieve the humidity field.
+            int humidity = json.getInt("humidity");
+            weatherInformation.setHumidityPercentage(humidity);
+
+            //Retrieve the wind speed field.
+            double windSpeed = json.getDouble("wind_kph");
+            weatherInformation.setWindSpeed(windSpeed);
+
+            //Retrieve the wind direction text.
+            String windDirectionText = json.getString("wind_dir");
+            weatherInformation.setWindDirectionText(windDirectionText);
+
+            //Retrieve the wind direction angle.
+            int windDirectionAngle = json.getInt("wind_degree");
+            weatherInformation.setWindDirectionAngle(windDirectionAngle);
+
+            return weatherInformation;
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
