@@ -3,7 +3,14 @@ package comp3025.assignment2.views;
 import comp3025.assignment2.models.WeatherInformation;
 import comp3025.assignment2.retrieval.RetrievalCode;
 
-public class ExampleRetrievalCode extends RetrievalCode {
+/**
+ * This retrieval code produces the example WeatherInformation model.
+ * The same example model will be produced if this code is used to retrieve it repeatedly.
+ *
+ * @author Yatri Devangbhai Padhiyar
+ * @author Hao Tian
+ */
+public class ExampleModelRetrievalCode extends RetrievalCode {
     /**
      * This method will change the field to an example WeatherInformation model.
      */
