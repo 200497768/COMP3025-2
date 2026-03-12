@@ -14,27 +14,27 @@ public class WeatherInformation {
     /**
      * This field is the name of the city that this weather information model is for.
      */
-    private String cityName;
+    private String cityName = "No city name";
 
     /**
      * This field is the name of the country that this weather information model is for.
      */
-    private String countryName;
+    private String countryName = "No country name";
 
     /**
      * This field is current temperature C.
      */
-    private double currentTemperatureC;
+    private double currentTemperatureC = 1;
 
     /**
      * This field is current temperature F.
      */
-    private double currentTemperatureF;
+    private double currentTemperatureF = 1;
 
     /**
      * This field is condition as text.
      */
-    private String weatherConditionText;
+    private String weatherConditionText = "No condition text";
 
     public String getWeatherConditionPicture() {
         return weatherConditionPicture;
@@ -55,37 +55,37 @@ public class WeatherInformation {
     /**
      * This field is condition as picture.
      */
-    private String weatherConditionPicture;
+    private String weatherConditionPicture = "";
 
     /**
      * This field is feels like C.
      */
-    private double feelsLikeC;
+    private double feelsLikeC = 1;
 
     /**
      * This field is feels like F.
      */
-    private double feelsLikeF;
+    private double feelsLikeF = 1;
 
     /**
      * This field is humidity.
      */
-    private int humidityPercentage;
+    private int humidityPercentage = 1;
 
     /**
      * This field is wind speed.
      */
-    private double windSpeed;
+    private double windSpeed = 1;
 
     /**
      * This field is wind direction written as letters, like SW.
      */
-    private String windDirectionText;
+    private String windDirectionText = "No wind direction text";
 
     /**
      * This field is wind direction as an angle.
      */
-    private int windDirectionAngle;
+    private int windDirectionAngle = 1;
 
     public int getWindDirectionAngle() {
         return windDirectionAngle;
