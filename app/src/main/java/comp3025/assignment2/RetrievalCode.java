@@ -20,6 +20,9 @@ import okhttp3.Response;
 /**
  * This class is code that's used to retrieve weather information.
  * In order to write this code, we've started with the example code from the week 8 class (A. Perdikoulias, personal communication, March 6, 2026).
+ * The retrieval code includes the retrieve method, and the retrieved method.
+ * The retrieve method is responsible for retrieving weather information, and creating the model.
+ * The retrieved method is responsible for using the WeatherInformation model that has been created by the retrieve method.
  *
  * @author Yatri Devangbhai Padhiyar
  * @author Anastasios Perdikoulias
@@ -27,6 +30,13 @@ import okhttp3.Response;
  */
 public class RetrievalCode {
 
+    /**
+     * This field is the WeatherInformation model, with information about the chosen city.
+     * This field will only be available after the retrieve method has finished.
+     * Accessing this field using the retrieved method is recommended.
+     * The retrieve method will cause the retrieved method to happen after the model has been created, and this field has been changed.
+     * If this field is accessed another way, the retrieve method might not have changed it to the model.
+     */
     private WeatherInformation weatherInformation;
 
     /**
