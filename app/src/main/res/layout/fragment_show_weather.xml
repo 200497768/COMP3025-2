@@ -31,7 +31,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Temperature F"
-        app:layout_constraintEnd_toEndOf="@id/temperatureCTextView"
         app:layout_constraintStart_toStartOf="@id/temperatureCTextView"
         app:layout_constraintTop_toBottomOf="@id/temperatureCTextView" />
 
@@ -39,6 +38,7 @@
         android:id="@+id/conditionTextTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="21dp"
         android:text="Condition"
         app:layout_constraintEnd_toEndOf="@id/temperatureFTextView"
@@ -49,17 +49,18 @@
         android:id="@+id/humidityTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
         android:text="Humidity"
         app:layout_constraintBottom_toBottomOf="@+id/conditionTextTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/conditionTextTextView" />
 
     <TextView
         android:id="@+id/windSpeedTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="Wind speed"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/conditionTextTextView"
         app:layout_constraintTop_toBottomOf="@+id/conditionTextTextView" />
 
 
