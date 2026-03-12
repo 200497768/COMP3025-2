@@ -13,11 +13,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
-import comp3025.assignment2.ExampleCode;
 import comp3025.assignment2.R;
-import comp3025.assignment2.RetrievalCode;
 import comp3025.assignment2.databinding.ActivityMainBinding;
 import comp3025.assignment2.models.WeatherInformation;
+import comp3025.assignment2.retrieval.ExampleCode;
+import comp3025.assignment2.retrieval.RetrievalCode;
 
 
 /**
