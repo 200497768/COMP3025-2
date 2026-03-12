@@ -11,9 +11,7 @@
         android:id="@+id/showWeatherFragmentTextView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/show_weather_fragment"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="41dp" />
+        android:text="@string/show_weather_fragment" />
 
     <TextView
         android:id="@+id/temperatureCTextView"
