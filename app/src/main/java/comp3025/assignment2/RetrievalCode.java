@@ -48,7 +48,7 @@ public class RetrievalCode {
                 String responseData = response.body().string();
                 Log.i("tag", responseData);
 
-                //Use the method to change responseData to the WeatherInformation model.
+                //Change responseData to the WeatherInformation model.
                 WeatherInformation weatherInformation = retrievalCode.getModelFromResponseData(responseData);
 
                 //Change the field.
@@ -73,6 +73,9 @@ public class RetrievalCode {
         Log.i("tag", "Retrieval has completed.");
     }
 
+    /**
+     * This method changes responseData to the WeatherInformation model.
+     */
     public WeatherInformation getModelFromResponseData(String responseData) {
         try {
             //Create the WeatherInformation model.
