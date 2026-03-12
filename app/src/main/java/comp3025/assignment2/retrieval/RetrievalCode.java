@@ -159,7 +159,7 @@ public class RetrievalCode {
             double currentTemperatureF = current.getDouble("temp_f");
 
             //Change the field for the model.
-            weatherInformation.setCurrentTemperatureC(currentTemperatureF);
+            weatherInformation.setCurrentTemperatureF(currentTemperatureF);
             Log.i("tag", "The current temperature F field has been retrieved as " + weatherInformation.getCurrentTemperatureF());
         } catch (JSONException e) {
             Log.i("tag", "JSONException when retrieving the current temperature F field.");
@@ -222,10 +222,10 @@ public class RetrievalCode {
             JSONObject current = json.getJSONObject("current");
 
             //Retrieve the feels like F field.
-            double feelsLikeF = current.getDouble("feelslike_c");
+            double feelsLikeF = current.getDouble("feelslike_f");
 
             //Change the field for the model.
-            weatherInformation.setFeelsLikeC(feelsLikeF);
+            weatherInformation.setFeelsLikeF(feelsLikeF);
             Log.i("tag", "The feels like F field has been retrieved as " + weatherInformation.getFeelsLikeF());
         } catch (JSONException e) {
             Log.i("tag", "JSONException when retrieving the feels like F field.");
