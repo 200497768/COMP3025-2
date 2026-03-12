@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import comp3025.assignment2.R;
+import comp3025.assignment2.databinding.FragmentShowWeatherBinding;
 import comp3025.assignment2.models.WeatherInformation;
 
 /**
@@ -18,7 +19,16 @@ import comp3025.assignment2.models.WeatherInformation;
  */
 public class ShowWeatherFragment extends Fragment {
 
+    /**
+     * This field is the WeatherInformation model that ShowWeatherFragment has received.
+     * ShowWeatherFragment is responsible for showing the fields from this model.
+     */
     private WeatherInformation weatherInformation;
+
+    /**
+     * This field is the view binding class.
+     */
+    private FragmentShowWeatherBinding binding;
 
     public ShowWeatherFragment(WeatherInformation weatherInformation) {
         this.weatherInformation = weatherInformation;
