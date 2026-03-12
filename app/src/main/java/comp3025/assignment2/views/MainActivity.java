@@ -100,14 +100,25 @@ public class MainActivity extends AppCompatActivity {
                 //This model will be provided to ShowWeatherFragment.
                 WeatherInformation exampleWeatherInformation = mainActivity.retrieveExampleWeatherInformation();
 
-                //Create ShowWeatherFragment, and provide the model.
-                Fragment showWeatherFragment = new ShowWeatherFragment(exampleWeatherInformation);
+                //Use the retrieval code to create the WeatherInformation model.
+                //Show ShowWeatherFragment after the model has been retrieved.
+                RetrievalCode retrievalCode = new RetrievalCode() {
+                    @Override
+                    public void retrieved() {
+                        //Create ShowWeatherFragment, and provide the model.
+                        Fragment showWeatherFragment = new ShowWeatherFragment(exampleWeatherInformation);
 
-                //Change the fragment area to show ShowWeatherFragment.
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, showWeatherFragment);
-                fragmentTransaction.commit();
+                        //Change the fragment area to show ShowWeatherFragment.
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.fragment_container, showWeatherFragment);
+                        fragmentTransaction.commit();
+                    }
+                };
+
+                //Use the retrieval code to retrieve the model.
+                //When the retrieval code has completed, the retrieved method will happen.
+                retrievalCode.retrieve();
             }
         });
     }

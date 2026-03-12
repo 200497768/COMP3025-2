@@ -29,6 +29,9 @@ public class RetrievalCode {
 
     private WeatherInformation weatherInformation;
 
+    /**
+     * This method retrieves the model, and changes the field.
+     */
     public void retrieve() {
         String urlString = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR";
 
@@ -50,6 +53,9 @@ public class RetrievalCode {
 
                 //Change the field.
                 retrievalCode.weatherInformation = weatherInformation;
+
+                //The retrieved method needs to happen after the model has been created.
+                retrievalCode.retrieved();
             }
 
             @Override
@@ -57,6 +63,14 @@ public class RetrievalCode {
 
             }
         });
+    }
+
+    /**
+     * The retrieve method causes this method to happen after the model has been retrieved and created.
+     * During this method, the weatherInformation field will be the model.
+     */
+    public void retrieved() {
+        Log.i("tag", "Retrieval has completed.");
     }
 
     public WeatherInformation getModelFromResponseData(String responseData) {
