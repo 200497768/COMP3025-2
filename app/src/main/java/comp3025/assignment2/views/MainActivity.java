@@ -21,10 +21,6 @@ import comp3025.assignment2.retrieval.RetrievalCode;
 
 /**
  * This is the code for assignment 2.
- * The MainActivity class can be repeatedly created in order to create views.
- * Any fields will not be maintained when the MainActivity class is created again.
- * We need to use the ViewModel in order to maintain fields, and avoid needing to retrieve information again.
- *
  * @author Yatri Devangbhai Padhiyar
  * @author Hao Tian
  */
@@ -39,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This is the ViewModel for this activity.
-     * The ViewModel allows us to access fields, even if the activity needs to be created again.
+     * The code that we write will access fields through the ViewModel.
+     * The ViewModel allows us to maintain the fields, even if the activity needs to be created again.
      */
     private MainActivityViewModel viewModel;
 
