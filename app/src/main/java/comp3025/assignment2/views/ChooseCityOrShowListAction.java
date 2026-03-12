@@ -17,7 +17,7 @@ public class ChooseCityOrShowListAction {
     /**
      * This method produces different text, depending on the action.
      */
-    public String getText() {
+    public String getActionText() {
         return "Method isn't written at this time.";
     }
 

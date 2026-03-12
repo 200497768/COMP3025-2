@@ -8,4 +8,10 @@ import androidx.lifecycle.ViewModel;
  * @author Hao Tian
  */
 public class MainActivityViewModel extends ViewModel {
+
+    private ChooseCityOrShowListAction chooseCityOrShowListAction = new ChooseCityOrShowListAction();
+
+    public ChooseCityOrShowListAction getChooseCityOrShowListAction() {
+        return chooseCityOrShowListAction;
+    }
 }

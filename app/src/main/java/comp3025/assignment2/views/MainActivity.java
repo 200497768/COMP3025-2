@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
 
+        MainActivity mainActivity = this;
         this.binding.changeCityButton.setOnClickListener(new View.OnClickListener() {
 
             /**
@@ -108,6 +109,16 @@ public class MainActivity extends AppCompatActivity {
                 //Use the retrieval code to retrieve the model.
                 //When the retrieval code has completed, the retrieved method will happen.
                 retrievalCode.retrieve();
+
+                //Retrieve the actions.
+                ChooseCityOrShowListAction chooseCityOrShowListAction = mainActivity.viewModel.getChooseCityOrShowListAction();
+
+                //Change the action that's available to the other action.
+                chooseCityOrShowListAction.availableActionChosen();
+
+                //Change text for the action that's available.
+                mainActivity.binding.changeCityButton.setText(chooseCityOrShowListAction.getActionText());
+
             }
         });
     }
