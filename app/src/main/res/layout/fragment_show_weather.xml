@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FF9800"
+    android:orientation="vertical"
     tools:context=".ShowWeatherFragment">
 
     <TextView
         android:id="@+id/showWeatherFragmentTextView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/show_weather_fragment" />
 
     <TextView
@@ -19,11 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="160dp"
         android:text="Temperature C"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="34sp" />
 
     <TextView
         android:id="@+id/currentTemperatureFTextView"
@@ -31,9 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Temperature F"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@id/currentTemperatureCTextView"
-        app:layout_constraintTop_toBottomOf="@id/currentTemperatureCTextView" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/conditionTextTextView"
@@ -41,9 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Condition"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@id/currentTemperatureFTextView"
-        app:layout_constraintTop_toBottomOf="@id/currentTemperatureFTextView" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/humidityTextView"
@@ -51,9 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:text="Humidity"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@id/feelsLikeCTextView"
-        app:layout_constraintStart_toEndOf="@id/feelsLikeCTextView" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/windSpeedTextView"
@@ -61,18 +51,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Wind speed"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@id/feelsLikeCTextView"
-        app:layout_constraintTop_toBottomOf="@id/feelsLikeCTextView" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/cityNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name of city"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/countryNameTextView"
-        app:layout_constraintStart_toStartOf="@id/countryNameTextView" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/countryNameTextView"
@@ -80,9 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="Name of country"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/currentTemperatureCTextView"
-        app:layout_constraintStart_toStartOf="@id/currentTemperatureCTextView" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/feelsLikeCTextView"
@@ -90,17 +74,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Feels like C"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@id/conditionTextTextView"
-        app:layout_constraintTop_toBottomOf="@id/conditionTextTextView" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/windDirectionTextTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Wind direction text"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@id/windSpeedTextView"
-        app:layout_constraintTop_toBottomOf="@id/windSpeedTextView" />
+        android:textSize="20sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+</LinearLayout>
