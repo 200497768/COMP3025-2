@@ -175,6 +175,7 @@ public class RetrievalCode {
             Log.i("tag", "JSONException when retrieving the condition text field.");
         }
 
+        //Change the field for condition picture to match responseData.
         try {
             //Retrieve condition part.
             JSONObject json = new JSONObject(responseData);
@@ -190,6 +191,7 @@ public class RetrievalCode {
             Log.i("tag", "JSONException when retrieving the condition picture field.");
         }
 
+        //Change the field for feels like C to match responseData.
         try {
             //Retrieve the current part.
             JSONObject json = new JSONObject(responseData);
@@ -204,6 +206,7 @@ public class RetrievalCode {
             Log.i("tag", "JSONException when retrieving the feels like C field.");
         }
 
+        //Change the field for feels like F to match responseData.
         try {
             //Retrieve the current part.
             JSONObject json = new JSONObject(responseData);
@@ -218,6 +221,7 @@ public class RetrievalCode {
             Log.i("tag", "JSONException when retrieving the feels like F field.");
         }
 
+        //Change the field for humidity to match responseData.
         try {
             //Retrieve the current part.
             JSONObject json = new JSONObject(responseData);
@@ -232,6 +236,7 @@ public class RetrievalCode {
             Log.i("tag", "JSONException when retrieving the humidity field.");
         }
 
+        //Change the field for wind speed to match responseData.
         try {
             //Retrieve the current part.
             JSONObject json = new JSONObject(responseData);
@@ -246,6 +251,7 @@ public class RetrievalCode {
             Log.i("tag", "JSONException when retrieving the wind speed field.");
         }
 
+        //Change the field for wind direction text to match responseData.
         try {
             //Retrieve the current part.
             JSONObject json = new JSONObject(responseData);
@@ -260,6 +266,7 @@ public class RetrievalCode {
             Log.i("tag", "JSONException when retrieving the wind direction text field.");
         }
 
+        //Change the field for wind direction angle to match responseData.
         try {
             //Retrieve the current part.
             JSONObject json = new JSONObject(responseData);
