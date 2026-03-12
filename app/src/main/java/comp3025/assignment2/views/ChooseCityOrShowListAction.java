@@ -25,7 +25,7 @@ public class ChooseCityOrShowListAction {
      * This method changes the action that's available to the other action.
      * This method must be used when the action has happened.
      */
-    public void change() {
+    public void availableActionChosen() {
 
     }
 }
