@@ -37,10 +37,11 @@ public class RetrievalCode {
      * The retrieve method will cause the retrieved method to happen after the model has been created, and this field has been changed.
      * If this field is accessed another way, the retrieve method might not have changed it to the model.
      */
-    private WeatherInformation weatherInformation;
+    public WeatherInformation weatherInformation;
 
     /**
      * This method retrieves the model, and changes the field.
+     * If the retrieval code is extended, when the model is available, this method must change the field and use the retrieved method.
      */
     public void retrieve() {
         String urlString = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR";
@@ -58,7 +59,7 @@ public class RetrievalCode {
                 String responseData = response.body().string();
                 Log.i("tag", responseData);
 
-                //Change responseData to the WeatherInformation model.
+                //Produce the WeatherInformation model by using information from responseData.
                 WeatherInformation weatherInformation = retrievalCode.getModelFromResponseData(responseData);
 
                 //Change the field.
@@ -74,6 +75,7 @@ public class RetrievalCode {
             }
         });
     }
+
 
     /**
      * The retrieve method causes this method to happen after the model has been retrieved and created.
