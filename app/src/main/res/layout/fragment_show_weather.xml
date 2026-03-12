@@ -18,7 +18,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="160dp"
-        android:layout_marginBottom="320dp"
         android:text="Temperature C"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,5 +65,23 @@
         app:layout_constraintStart_toStartOf="@id/conditionTextTextView"
         app:layout_constraintTop_toBottomOf="@+id/conditionTextTextView" />
 
+    <TextView
+        android:id="@+id/cityNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name of city"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/countryNameTextView"
+        app:layout_constraintStart_toStartOf="@id/countryNameTextView" />
+
+    <TextView
+        android:id="@+id/countryNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Name of country"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/currentTemperatureCTextView"
+        app:layout_constraintStart_toStartOf="@id/currentTemperatureCTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
