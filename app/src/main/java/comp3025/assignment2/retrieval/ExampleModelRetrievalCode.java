@@ -1,7 +1,6 @@
-package comp3025.assignment2.views;
+package comp3025.assignment2.retrieval;
 
 import comp3025.assignment2.models.WeatherInformation;
-import comp3025.assignment2.retrieval.RetrievalCode;
 
 /**
  * This retrieval code produces the example WeatherInformation model.

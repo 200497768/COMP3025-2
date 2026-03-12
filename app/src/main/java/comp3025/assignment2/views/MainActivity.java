@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
+import comp3025.assignment2.retrieval.ExampleModelRetrievalCode;
 import comp3025.assignment2.retrieval.RetrievalCode;
 
 
