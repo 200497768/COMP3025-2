@@ -11,7 +11,9 @@
         android:id="@+id/showWeatherFragmentTextView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/show_weather_fragment" />
+        android:text="@string/show_weather_fragment"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="41dp" />
 
     <TextView
         android:id="@+id/temperatureCTextView"
@@ -42,6 +44,15 @@
         android:text="Condition text"
         app:layout_constraintStart_toStartOf="@id/temperatureFTextView"
         app:layout_constraintTop_toBottomOf="@id/temperatureFTextView" />
+
+    <TextView
+        android:id="@+id/humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="humidity TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/conditionTextTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
