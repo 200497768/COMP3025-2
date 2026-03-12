@@ -16,7 +16,6 @@ import androidx.lifecycle.ViewModelProvider;
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
 import comp3025.assignment2.models.WeatherInformation;
-import comp3025.assignment2.retrieval.ExampleCode;
 import comp3025.assignment2.retrieval.RetrievalCode;
 
 
@@ -70,13 +69,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Create the ViewModel for this activity.
         this.viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
-
-        //Use the example code to retrieve some information.
-        //We'll ensure that we've brought the example code to this assignment correctly.
-        //If it's able to retrieve, we'll know that we've added it correctly.
-        ExampleCode exampleCode = new ExampleCode();
-        exampleCode.retrieve();
-        //Permission denied (missing INTERNET permission?)
 
         // code to load fragment
         if (savedInstanceState == null) {
@@ -189,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-//In order to fix Permission denied (missing INTERNET permission?), we used example code from this book.
+//In order to fix "Permission denied (missing INTERNET permission?)", we added some code from this book.
+//We've fixed this problem by adding "<uses-permission android:name="android.permission.INTERNET" />".
 //Elenkov, N. (2016). Android security internals: An in-depth guide to android’s security architecture (1st edition). No Starch Press.
 //pp. 33 34
