@@ -9,6 +9,7 @@ package comp3025.assignment2.views;
  * @author Hao Tian
  */
 public class ChooseCityOrShowListAction {
+
     /**
      * This field determines whether the action is to show the chosen city, or to show the list.
      */
