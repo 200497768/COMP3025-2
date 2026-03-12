@@ -34,6 +34,12 @@ public class ShowWeatherFragment extends Fragment {
         this.weatherInformation = weatherInformation;
 
         Log.i("200497768", "ShowWeatherFragment has received a model with " + this.weatherInformation.getCityName() + " as the city name.");
+
+        //Show every field from the model.
+        this.binding.cityNameTextView.setText(this.weatherInformation.getCityName());
+        this.binding.countryNameTextView.setText(this.weatherInformation.getCountryName());
+        this.binding.currentTemperatureCTextView.setText(this.weatherInformation.getCurrentTemperatureC());
+
     }
 
 
