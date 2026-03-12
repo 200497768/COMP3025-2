@@ -12,7 +12,7 @@ import comp3025.assignment2.R;
 import comp3025.assignment2.models.WeatherInformation;
 
 /**
- * This fragment shows weather information for a city.
+ * This fragment shows weather information for the city that has been chosen.
  * @author Yatri Devangbhai Padhiyar
  * @author Hao Tian
  */
