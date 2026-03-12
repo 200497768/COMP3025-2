@@ -101,12 +101,12 @@ public class MainActivity extends AppCompatActivity {
                 WeatherInformation exampleWeatherInformation = mainActivity.retrieveExampleWeatherInformation();
 
                 //Create ShowWeatherFragment, and provide the model.
-                Fragment firstFragment = new ShowWeatherFragment(exampleWeatherInformation);
+                Fragment showWeatherFragment = new ShowWeatherFragment(exampleWeatherInformation);
 
                 //Change the fragment area to show ShowWeatherFragment.
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, firstFragment);
+                fragmentTransaction.replace(R.id.fragment_container, showWeatherFragment);
                 fragmentTransaction.commit();
             }
         });
