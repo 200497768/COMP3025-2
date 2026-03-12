@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import comp3025.assignment2.R;
@@ -39,7 +41,25 @@ public class ShowWeatherFragment extends Fragment {
 
         Log.i("200497768", "ShowWeatherFragment has received a model with " + this.weatherInformation.getCityName() + " as the city name.");
 
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_show_weather, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        //Prepare the view binding class.
+        this.binding = FragmentShowWeatherBinding.bind(view);
+
         //Show every field from the model.
+        //The view binding class can only be accessed after it has been created, like during this method.
+        //we're changing text during this method because the view binding class can't be accessed before this method.
+        Log.i("200497768", "The view binding class is " + this.binding);
         this.binding.cityNameTextView.setText("" + this.weatherInformation.getCityName());
         this.binding.countryNameTextView.setText("" + this.weatherInformation.getCountryName());
         this.binding.currentTemperatureCTextView.setText("" + this.weatherInformation.getCurrentTemperatureC());
@@ -50,13 +70,5 @@ public class ShowWeatherFragment extends Fragment {
         this.binding.windSpeedTextView.setText("" + this.weatherInformation.getWindSpeed());
         this.binding.windDirectionTextTextView.setText("" + this.weatherInformation.getWindDirectionText());
 
-    }
-
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_show_weather, container, false);
     }
 }
