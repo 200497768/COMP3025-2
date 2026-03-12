@@ -1,7 +1,11 @@
 package comp3025.assignment2.models;
 
 /**
- * This class is weather information that has been retrieved.
+ * This is the model that includes weather information that has been retrieved.
+ * The model includes a field for every piece of information that we need to show in ShowWeatherFragment.
+ * When a city has been chosen, the code from MainActivity starts the retrieval code.
+ * The retrieval code creates the model for that city, and changes the fields to match responseData.
+ * The code from MainActivity provides the model to ShowWeatherFragment, and ShowWeatherFragment shows the individual fields.
  * @author Yatri Devangbhai Padhiyar
  * @author Hao Tian
  */
