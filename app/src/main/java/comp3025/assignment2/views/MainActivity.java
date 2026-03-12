@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
 
-        MainActivity mainActivity = this;
         this.binding.changeCityButton.setOnClickListener(new View.OnClickListener() {
 
             /**
@@ -87,6 +86,11 @@ public class MainActivity extends AppCompatActivity {
                 //Use the retrieval code to create the WeatherInformation model.
                 //Show ShowWeatherFragment after the model has been retrieved.
                 RetrievalCode retrievalCode = new ExampleModelRetrievalCode() {
+
+                    /**
+                     * The retrieval code has produced the WeatherInformation model.
+                     * This method provides the model to ShowWeatherFragment.
+                     */
                     @Override
                     public void retrieved() {
                         //Create ShowWeatherFragment, and provide the model.
