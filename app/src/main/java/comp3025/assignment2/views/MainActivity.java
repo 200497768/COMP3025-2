@@ -125,7 +125,8 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
-//In order to fix "Permission denied (missing INTERNET permission?)", we added some code from this book.
-//We've fixed this problem by adding "<uses-permission android:name="android.permission.INTERNET" />".
+//In order to fix "Permission denied (missing INTERNET permission?)", we added some code from a book.
+//We needed to add "<uses-permission android:name="android.permission.INTERNET" />" to the code (Elenkov, 2016, pp. 33–34).
+
+//References
 //Elenkov, N. (2016). Android security internals: An in-depth guide to android’s security architecture (1st edition). No Starch Press.
-//pp. 33 34
