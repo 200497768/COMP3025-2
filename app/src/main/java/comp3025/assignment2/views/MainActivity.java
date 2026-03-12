@@ -88,6 +88,12 @@ public class MainActivity extends AppCompatActivity {
 
         MainActivity mainActivity = this;
         this.binding.changeCityButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * This method needs to show ShowWeatherFragment.
+             * ShowWeatherFragment receives a WeatherInformation model, with information for the chosen city.
+             * This method is responsible for creating that model, including retrieving information, and providing it to ShowWeatherFragment.
+             */
             @Override
             public void onClick(View v) {
                 //Create the WeatherInformation model with example information.
