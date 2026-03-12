@@ -42,11 +42,11 @@ public class ShowWeatherFragment extends Fragment {
         this.binding.currentTemperatureFTextView.setText(this.weatherInformation.getCurrentTemperatureF());
         this.binding.conditionTextTextView.setText(this.weatherInformation.getWeatherConditionText());
         this.binding.feelsLikeCTextView.setText(this.weatherInformation.getFeelsLikeC());
-        this.binding.feelsLikeFTextViwe.setText(this.weatherInformation.getFeelsLikeF());
+        this.binding.feelsLikeFTextView.setText(this.weatherInformation.getFeelsLikeF());
         this.binding.humidityTextView.setText(this.weatherInformation.getHumidityPercentage());
         this.binding.windSpeedTextView.setText(this.weatherInformation.getWindSpeed());
         this.binding.windDirectionTextTextView.setText(this.weatherInformation.getWindDirectionText());
-        this.binding.windDirectionAngle.setText(this.weatherInformation.getWindDirectionAngle());
+        this.binding.windDirectionAngleTextView.setText(this.weatherInformation.getWindDirectionAngle());
 
     }
 
