@@ -9,21 +9,45 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import comp3025.assignment2.R;
+import comp3025.assignment2.databinding.FragmentShowWeatherBinding;
 import comp3025.assignment2.models.WeatherInformation;
 
 /**
- * This fragment shows weather information for a city.
+ * This fragment shows weather information for the city that has been chosen.
  * @author Yatri Devangbhai Padhiyar
  * @author Hao Tian
  */
 public class ShowWeatherFragment extends Fragment {
 
+    /**
+     * This field is the WeatherInformation model that ShowWeatherFragment has received.
+     * ShowWeatherFragment is responsible for showing the fields from this model.
+     */
     private WeatherInformation weatherInformation;
+
+    /**
+     * This field is the view binding class.
+     */
+    private FragmentShowWeatherBinding binding;
 
     public ShowWeatherFragment(WeatherInformation weatherInformation) {
         this.weatherInformation = weatherInformation;
 
         Log.i("200497768", "ShowWeatherFragment has received a model with " + this.weatherInformation.getCityName() + " as the city name.");
+
+        //Show every field from the model.
+        this.binding.cityNameTextView.setText(this.weatherInformation.getCityName());
+        this.binding.countryNameTextView.setText(this.weatherInformation.getCountryName());
+        this.binding.currentTemperatureCTextView.setText(this.weatherInformation.getCurrentTemperatureC());
+        this.binding.currentTemperatureFTextView.setText(this.weatherInformation.getCurrentTemperatureF());
+        this.binding.conditionTextTextView.setText(this.weatherInformation.getWeatherConditionText());
+        this.binding.feelsLikeCTextView.setText(this.weatherInformation.getFeelsLikeC());
+        this.binding.feelsLikeFTextView.setText(this.weatherInformation.getFeelsLikeF());
+        this.binding.humidityTextView.setText(this.weatherInformation.getHumidityPercentage());
+        this.binding.windSpeedTextView.setText(this.weatherInformation.getWindSpeed());
+        this.binding.windDirectionTextTextView.setText(this.weatherInformation.getWindDirectionText());
+        this.binding.windDirectionAngleTextView.setText(this.weatherInformation.getWindDirectionAngle());
+
     }
 
 

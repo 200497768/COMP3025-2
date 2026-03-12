@@ -1,20 +1,40 @@
 package comp3025.assignment2.models;
 
 /**
- * This class is weather information that has been retrieved.
+ * This is the model that includes weather information that has been retrieved.
+ * The model includes a field for every piece of information that we need to show in ShowWeatherFragment.
+ * When a city has been chosen, the code from MainActivity starts the retrieval code.
+ * The retrieval code creates the model for that city, and changes the fields to match responseData.
+ * The code from MainActivity provides the model to ShowWeatherFragment, and ShowWeatherFragment shows the individual fields.
  * @author Yatri Devangbhai Padhiyar
  * @author Hao Tian
  */
 public class WeatherInformation {
-    private String cityName;
 
-    private String countryName;
+    /**
+     * This field is the name of the city that this weather information model is for.
+     */
+    private String cityName = "No city name";
 
-    private double currentTemperatureC;
+    /**
+     * This field is the name of the country that this weather information model is for.
+     */
+    private String countryName = "No country name";
 
-    private double currentTemperatureF;
+    /**
+     * This field is current temperature C.
+     */
+    private double currentTemperatureC = 1;
 
-    private String weatherConditionText;
+    /**
+     * This field is current temperature F.
+     */
+    private double currentTemperatureF = 1;
+
+    /**
+     * This field is condition as text.
+     */
+    private String weatherConditionText = "No condition text";
 
     public String getWeatherConditionPicture() {
         return weatherConditionPicture;
@@ -32,19 +52,40 @@ public class WeatherInformation {
         this.weatherConditionText = weatherConditionText;
     }
 
-    private String weatherConditionPicture;
+    /**
+     * This field is condition as picture.
+     */
+    private String weatherConditionPicture = "";
 
-    private double feelsLikeC;
+    /**
+     * This field is feels like C.
+     */
+    private double feelsLikeC = 1;
 
-    private double feelsLikeF;
+    /**
+     * This field is feels like F.
+     */
+    private double feelsLikeF = 1;
 
-    private int humidityPercentage;
+    /**
+     * This field is humidity.
+     */
+    private int humidityPercentage = 1;
 
-    private double windSpeed;
+    /**
+     * This field is wind speed.
+     */
+    private double windSpeed = 1;
 
-    private String windDirectionText;
+    /**
+     * This field is wind direction written as letters, like SW.
+     */
+    private String windDirectionText = "No wind direction text";
 
-    private int windDirectionAngle;
+    /**
+     * This field is wind direction as an angle.
+     */
+    private int windDirectionAngle = 1;
 
     public int getWindDirectionAngle() {
         return windDirectionAngle;
