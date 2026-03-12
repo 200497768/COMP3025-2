@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                //Use the retrieval code to create the WeatherInformation model.
-                //Show ShowWeatherFragment after the model has been retrieved.
+                //Create the WeatherInformation model, and show ShowWeatherFragment.
+                //We can write RetrievalCode, or ExampleModelRetrievalCode.
                 RetrievalCode retrievalCode = new ExampleModelRetrievalCode() {
 
                     /**
