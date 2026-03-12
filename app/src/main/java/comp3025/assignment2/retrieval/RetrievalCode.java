@@ -112,6 +112,7 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setCityName(cityName);
+            Log.i("tag", "The name of the city field has been retrieved as " + weatherInformation.getCityName());
         } catch (JSONException e) {
             Log.i("tag", "JSONException when retrieving the name of the city field.");
         }
@@ -127,6 +128,7 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setCountryName(countryName);
+            Log.i("tag", "The name of the country field has been retrieved as " + weatherInformation.getCountryName());
         } catch (JSONException e) {
             Log.i("tag", "JSONException when retrieving the name of the country field.");
         }
@@ -142,6 +144,7 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setCurrentTemperatureC(currentTemperatureC);
+            Log.i("tag", "The current temperature C field has been retrieved as " + weatherInformation.getCurrentTemperatureC());
         } catch (JSONException e) {
             Log.i("tag", "JSONException when retrieving the current temperature C field.");
         }
@@ -157,6 +160,7 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setCurrentTemperatureC(currentTemperatureF);
+            Log.i("tag", "The current temperature F field has been retrieved as " + weatherInformation.getCurrentTemperatureF());
         } catch (JSONException e) {
             Log.i("tag", "JSONException when retrieving the current temperature F field.");
         }
@@ -173,6 +177,7 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setWeatherConditionText(text);
+            Log.i("tag", "The condition text field has been retrieved as " + weatherInformation.getWeatherConditionText());
         } catch (JSONException e) {
             Log.i("tag", "JSONException when retrieving the condition text field.");
         }
@@ -189,6 +194,7 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setWeatherConditionPicture(picture);
+            Log.i("tag", "The condition picture field has been retrieved as " + weatherInformation.getWeatherConditionPicture());
         } catch (JSONException e) {
             Log.i("tag", "JSONException when retrieving the condition picture field.");
         }
@@ -201,6 +207,7 @@ public class RetrievalCode {
 
             //Retrieve the feels like C field.
             double feelsLikeC = current.getDouble("feelslike_c");
+            Log.i("tag", "The feels like C field has been retrieved as " + weatherInformation.getFeelsLikeC());
 
             //Change the field for the model.
             weatherInformation.setFeelsLikeC(feelsLikeC);
@@ -219,6 +226,7 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setFeelsLikeC(feelsLikeF);
+            Log.i("tag", "The feels like F field has been retrieved as " + weatherInformation.getFeelsLikeF());
         } catch (JSONException e) {
             Log.i("tag", "JSONException when retrieving the feels like F field.");
         }
@@ -234,6 +242,7 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setHumidityPercentage(humidity);
+            Log.i("tag", "The humidity field has been retrieved as " + weatherInformation.getHumidityPercentage());
         } catch (JSONException e) {
             Log.i("tag", "JSONException when retrieving the humidity field.");
         }
@@ -249,6 +258,7 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setWindSpeed(windSpeed);
+            Log.i("tag", "The wind speed field has been retrieved as " + weatherInformation.getWindSpeed());
         } catch (JSONException e) {
             Log.i("tag", "JSONException when retrieving the wind speed field.");
         }
@@ -264,6 +274,7 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setWindDirectionText(windDirectionText);
+            Log.i("tag", "The wind direction text field has been retrieved as " + weatherInformation.getWindDirectionText());
         } catch (JSONException e) {
             Log.i("tag", "JSONException when retrieving the wind direction text field.");
         }
@@ -279,6 +290,7 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setWindDirectionAngle(windDirectionAngle);
+            Log.i("tag", "The wind direction angle field has been retrieved as " + weatherInformation.getWindDirectionAngle());
         } catch (JSONException e) {
             Log.i("tag", "JSONException when retrieving the wind direction angle field.");
         }
