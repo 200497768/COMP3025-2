@@ -49,7 +49,6 @@ public class ShowWeatherFragment extends Fragment {
         this.binding.humidityTextView.setText(this.weatherInformation.getHumidityPercentage());
         this.binding.windSpeedTextView.setText(this.weatherInformation.getWindSpeed());
         this.binding.windDirectionTextTextView.setText(this.weatherInformation.getWindDirectionText());
-        this.binding.windDirectionAngleTextView.setText(this.weatherInformation.getWindDirectionAngle());
 
     }
 
