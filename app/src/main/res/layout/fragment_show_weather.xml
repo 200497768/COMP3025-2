@@ -52,8 +52,8 @@
         android:layout_marginStart="80dp"
         android:text="Humidity"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/conditionTextTextView"
-        app:layout_constraintStart_toEndOf="@id/conditionTextTextView" />
+        app:layout_constraintBottom_toBottomOf="@id/feelsLikeCTextView"
+        app:layout_constraintStart_toEndOf="@id/feelsLikeCTextView" />
 
     <TextView
         android:id="@+id/windSpeedTextView"
@@ -62,8 +62,8 @@
         android:layout_marginTop="32dp"
         android:text="Wind speed"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@id/conditionTextTextView"
-        app:layout_constraintTop_toBottomOf="@+id/conditionTextTextView" />
+        app:layout_constraintStart_toStartOf="@id/feelsLikeCTextView"
+        app:layout_constraintTop_toBottomOf="@id/feelsLikeCTextView" />
 
     <TextView
         android:id="@+id/cityNameTextView"
@@ -83,5 +83,24 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/currentTemperatureCTextView"
         app:layout_constraintStart_toStartOf="@id/currentTemperatureCTextView" />
+
+    <TextView
+        android:id="@+id/feelsLikeCTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Feels like C"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/conditionTextTextView"
+        app:layout_constraintTop_toBottomOf="@id/conditionTextTextView" />
+
+    <TextView
+        android:id="@+id/windDirectionTextTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wind direction text"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/windSpeedTextView"
+        app:layout_constraintTop_toBottomOf="@id/windSpeedTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
