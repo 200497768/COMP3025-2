@@ -6,14 +6,30 @@ package comp3025.assignment2.models;
  * @author Hao Tian
  */
 public class WeatherInformation {
+
+    /**
+     * This field is the name of the city that this weather information model is for.
+     */
     private String cityName;
 
+    /**
+     * This field is the name of the country that this weather information model is for.
+     */
     private String countryName;
 
+    /**
+     * This field is current temperature C.
+     */
     private double currentTemperatureC;
 
+    /**
+     * This field is current temperature F.
+     */
     private double currentTemperatureF;
 
+    /**
+     * This field is condition as text.
+     */
     private String weatherConditionText;
 
     public String getWeatherConditionPicture() {
@@ -32,18 +48,39 @@ public class WeatherInformation {
         this.weatherConditionText = weatherConditionText;
     }
 
+    /**
+     * This field is condition as picture.
+     */
     private String weatherConditionPicture;
 
+    /**
+     * This field is feels like C.
+     */
     private double feelsLikeC;
 
+    /**
+     * This field is feels like F.
+     */
     private double feelsLikeF;
 
+    /**
+     * This field is humidity.
+     */
     private int humidityPercentage;
 
+    /**
+     * This field is wind speed.
+     */
     private double windSpeed;
 
+    /**
+     * This field is wind direction written as letters, like SW.
+     */
     private String windDirectionText;
 
+    /**
+     * This field is wind direction as an angle.
+     */
     private int windDirectionAngle;
 
     public int getWindDirectionAngle() {
