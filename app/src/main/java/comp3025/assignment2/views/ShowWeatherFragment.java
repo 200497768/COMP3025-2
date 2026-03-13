@@ -51,6 +51,9 @@ public class ShowWeatherFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_show_weather, container, false);
     }
 
+    /**
+     * This method prepares the view binding class, and shows every field from the model.
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         //The view binding class can only be accessed after it has been created, like during this method.
