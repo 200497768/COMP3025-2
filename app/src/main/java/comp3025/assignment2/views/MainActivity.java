@@ -89,10 +89,7 @@ public class MainActivity extends AppCompatActivity {
                      */
                     @Override
                     public void retrieved() {
-                        //Show the action to choose another city.
-                        mainActivity.binding.chooseAnotherCityButton.setVisibility(View.VISIBLE);
-
-                        //Show the fields from this WeatherInformation model.
+                        //Change the fragment area to show ShowWeatherFragment.
                         mainActivity.changeFragmentAreaShowWeatherFragment(this.weatherInformation);
                     }
                 };
@@ -105,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 mainActivity.binding.chooseAnotherCityButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //Show the list in order to allow choosing another city.
+                        //Change the fragment area to show ChooseCityFragment.
                         mainActivity.changeFragmentAreaChooseCityFragment();
                     }
                 });
@@ -132,6 +129,9 @@ public class MainActivity extends AppCompatActivity {
      * The WeatherInformation model for the city that has been chosen needs to be provided to this method.
      */
     public void changeFragmentAreaShowWeatherFragment(WeatherInformation weatherInformation) {
+        //Show the action to choose another city.
+        this.binding.chooseAnotherCityButton.setVisibility(View.VISIBLE);
+
         //Create ShowWeatherFragment, and provide the model.
         Fragment showWeatherFragment = new ShowWeatherFragment(weatherInformation);
 
