@@ -69,14 +69,6 @@ public class MainActivity extends AppCompatActivity {
         //Create the ViewModel for this activity.
         this.viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
-        // code to load fragment
-        if (savedInstanceState == null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, new ChooseCityFragment())
-                    .commit();
-        }
-
         MainActivity mainActivity = this;
         this.binding.chooseCityButton.setOnClickListener(new View.OnClickListener() {
 
@@ -123,6 +115,15 @@ public class MainActivity extends AppCompatActivity {
 
         //Show ChooseCityFragment when starting.
         this.changeFragmentAreaChooseCityFragment();
+
+        // code to load fragment
+        if (savedInstanceState == null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, new ChooseCityFragment())
+                    .commit();
+        }
+
     }
 
     /**
