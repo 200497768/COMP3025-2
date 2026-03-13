@@ -62,42 +62,53 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width=""
-        android:layout_height=""
-
-    <TextView
-        android:id="@+id/humidityTextView"
+        android:id="@+id/feelsLikeArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:text="Humidity"
-        android:textSize="20sp" />
+        android:background="#8BC34A"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/windSpeedTextView"
+        <TextView
+            android:id="@+id/feelsLikeCTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Feels like C"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/humidityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:text="Humidity"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/windSpeedArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Wind speed"
-        android:textSize="20sp" />
-</LinearLayout>
+        android:background="#FF5722"
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/windSpeedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Wind speed"
+            android:textSize="20sp" />
 
+        <TextView
+            android:id="@+id/windDirectionTextTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wind direction text"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/feelsLikeCTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Feels like C"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/windDirectionTextTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wind direction text"
-        android:textSize="20sp" />
-
+    </LinearLayout>
 
 </LinearLayout>
