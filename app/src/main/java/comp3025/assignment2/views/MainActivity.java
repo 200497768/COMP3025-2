@@ -24,6 +24,7 @@ import comp3025.assignment2.retrieval.RetrievalCode;
 
 /**
  * This is the code for assignment 2.
+ *
  * @author Yatri Devangbhai Padhiyar
  * @author Hao Tian
  */
@@ -128,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 });
                 LinearLayout actionsArea = mainActivity.binding.actionsArea;
                 actionsArea.addView(chooseAnotherCityButton);
+                chooseAnotherCityButton.setVisibility(View.INVISIBLE);
             }
         });
     }
