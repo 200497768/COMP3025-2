@@ -65,12 +65,12 @@ public class ShowWeatherFragment extends Fragment {
         //Show every field from the model.
         this.binding.cityNameTextView.setText("" + this.weatherInformation.getCityName());
         this.binding.countryNameTextView.setText("" + this.weatherInformation.getCountryName());
-        this.binding.currentTemperatureCTextView.setText("" + this.weatherInformation.getCurrentTemperatureC());
-        this.binding.currentTemperatureFTextView.setText("" + this.weatherInformation.getCurrentTemperatureF());
+        this.binding.currentTemperatureCTextView.setText("" + this.weatherInformation.getCurrentTemperatureC() + "°C");
+        this.binding.currentTemperatureFTextView.setText("" + this.weatherInformation.getCurrentTemperatureF() + "°F");
         this.binding.conditionTextTextView.setText("" + this.weatherInformation.getWeatherConditionText());
-        this.binding.feelsLikeCTextView.setText("" + this.weatherInformation.getFeelsLikeC());
-        this.binding.humidityTextView.setText("" + this.weatherInformation.getHumidityPercentage());
-        this.binding.windSpeedTextView.setText("" + this.weatherInformation.getWindSpeed());
+        this.binding.feelsLikeCTextView.setText("Feels like " + this.weatherInformation.getFeelsLikeC() + "°C");
+        this.binding.humidityTextView.setText("Humidity " + this.weatherInformation.getHumidityPercentage() + "%");
+        this.binding.windSpeedTextView.setText("Wind speed " + this.weatherInformation.getWindSpeed() + " km/h");
         this.binding.windDirectionTextTextView.setText("" + this.weatherInformation.getWindDirectionText());
 
     }
