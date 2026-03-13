@@ -2,8 +2,6 @@ package comp3025.assignment2.views;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         MainActivity mainActivity = this;
-        this.binding.changeCityButton.setOnClickListener(new View.OnClickListener() {
+        this.binding.chooseCityButton.setOnClickListener(new View.OnClickListener() {
 
             /**
              * This method needs to show ShowWeatherFragment.
@@ -99,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
                      */
                     @Override
                     public void retrieved() {
+                        //Show the action to choose another city.
+                        mainActivity.binding.chooseAnotherCityButton.setVisibility(View.VISIBLE);
+
                         //Show the fields from this WeatherInformation model.
                         mainActivity.changeFragmentAreaShowWeatherFragment(this.weatherInformation);
                     }
@@ -108,30 +109,20 @@ public class MainActivity extends AppCompatActivity {
                 //When the retrieval code has completed, the retrieved method will happen.
                 retrievalCode.retrieve();
 
-                //Retrieve the actions.
-                ChooseCityOrShowListAction chooseCityOrShowListAction = mainActivity.viewModel.getChooseCityOrShowListAction();
-
-                //Change the action that's available to the other action.
-                chooseCityOrShowListAction.availableActionChosen();
-
-                //Change text for the action that's available.
-                mainActivity.binding.changeCityButton.setText(chooseCityOrShowListAction.getActionText());
-
                 //Add an action to the actions area.
-                Button chooseAnotherCityButton = new Button(mainActivity);
-                chooseAnotherCityButton.setText("Choose another city");
-                chooseAnotherCityButton.setOnClickListener(new View.OnClickListener() {
+                mainActivity.binding.chooseAnotherCityButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         //Show the list in order to allow choosing another city.
                         mainActivity.changeFragmentAreaChooseCityFragment();
                     }
                 });
-                LinearLayout actionsArea = mainActivity.binding.actionsArea;
-                actionsArea.addView(chooseAnotherCityButton);
-                chooseAnotherCityButton.setVisibility(View.INVISIBLE);
+
             }
         });
+
+        //Show ChooseCityFragment when starting.
+        this.changeFragmentAreaChooseCityFragment();
     }
 
     /**
@@ -155,6 +146,9 @@ public class MainActivity extends AppCompatActivity {
      * ChooseCityFragment allows another city to be chosen.
      */
     public void changeFragmentAreaChooseCityFragment() {
+        //Don't show the action to choose another city.
+        this.binding.chooseAnotherCityButton.setVisibility(View.INVISIBLE);
+
         //Create ChooseCityFragment, and provide the model.
         Fragment chooseCityFragment = new ChooseCityFragment();
 
