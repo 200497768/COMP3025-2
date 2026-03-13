@@ -11,12 +11,12 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
 import comp3025.assignment2.models.WeatherInformation;
-import comp3025.assignment2.retrieval.RetrievalCode;
 
 
 /**
@@ -68,6 +68,17 @@ public class MainActivity extends AppCompatActivity {
         this.viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
         MainActivity mainActivity = this;
+
+        MainActivityViewModel viewModel = this.viewModel;
+        this.viewModel.getMutableLiveData().observe(this, new Observer<WeatherInformation>() {
+            @Override
+            public void onChanged(WeatherInformation weatherInformation) {
+                //Change the fragment area to show ShowWeatherFragment.
+                WeatherInformation changedWeatherInformation = viewModel.getMutableLiveData().getValue();
+                mainActivity.changeFragmentAreaShowWeatherFragment(changedWeatherInformation);
+            }
+        });
+
         this.binding.chooseCityButton.setOnClickListener(new View.OnClickListener() {
 
             /**
@@ -77,24 +88,7 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                //Create the WeatherInformation model, and show ShowWeatherFragment.
-                //We can write RetrievalCode, or ExampleModelRetrievalCode.
-                RetrievalCode retrievalCode = new RetrievalCode() {
-
-                    /**
-                     * The retrieval code has produced the WeatherInformation model.
-                     * This method provides the model to ShowWeatherFragment.
-                     */
-                    @Override
-                    public void retrieved() {
-                        //Change the fragment area to show ShowWeatherFragment.
-                        mainActivity.changeFragmentAreaShowWeatherFragment(this.weatherInformation);
-                    }
-                };
-
-                //Use the retrieval code to retrieve the model.
-                //When the retrieval code has completed, the retrieved method will happen.
-                retrievalCode.retrieve();
+                mainActivity.viewModel.retrieve();
 
                 //Add an action to the actions area.
                 mainActivity.binding.chooseAnotherCityButton.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
 
         //Show ChooseCityFragment when starting.
         this.changeFragmentAreaChooseCityFragment();

@@ -43,7 +43,7 @@ public class RetrievalCode {
      * If the retrieval code is extended, when the model is available, this method must change the field and use the retrieved method.
      */
     public void retrieve() {
-        String city = "";
+        String city = "Barrie";
         String urlString = "http://api.weatherapi.com/v1/current.json?key=b47d3ee63f574764af5163148261303&q=" + city + "&aqi=no";
 
         Request request = new Request.Builder().url(urlString).build();
