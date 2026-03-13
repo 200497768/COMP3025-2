@@ -29,10 +29,12 @@ public class ChooseCityFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        //The view binding class can only be accessed after it has been created, like during this method.
+        //We're changing text during this method because the view binding class can't be accessed before this method.
+
         //Prepare the view binding class.
         this.binding = FragmentChooseCityBinding.bind(view);
-
-
 
     }
 }
