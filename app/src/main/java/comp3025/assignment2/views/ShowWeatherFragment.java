@@ -53,13 +53,13 @@ public class ShowWeatherFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        //The view binding class can only be accessed after it has been created, like during this method.
+        //We're changing text during this method because the view binding class can't be accessed before this method.
+
         //Prepare the view binding class.
         this.binding = FragmentShowWeatherBinding.bind(view);
 
         //Show every field from the model.
-        //The view binding class can only be accessed after it has been created, like during this method.
-        //we're changing text during this method because the view binding class can't be accessed before this method.
-        Log.i("200497768", "The view binding class is " + this.binding);
         this.binding.cityNameTextView.setText("" + this.weatherInformation.getCityName());
         this.binding.countryNameTextView.setText("" + this.weatherInformation.getCountryName());
         this.binding.currentTemperatureCTextView.setText("" + this.weatherInformation.getCurrentTemperatureC());
