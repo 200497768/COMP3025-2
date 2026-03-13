@@ -2,6 +2,8 @@ package comp3025.assignment2.views;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
+import comp3025.assignment2.models.WeatherInformation;
 import comp3025.assignment2.retrieval.ExampleModelRetrievalCode;
 import comp3025.assignment2.retrieval.RetrievalCode;
 
@@ -95,14 +98,7 @@ public class MainActivity extends AppCompatActivity {
                      */
                     @Override
                     public void retrieved() {
-                        //Create ShowWeatherFragment, and provide the model.
-                        Fragment showWeatherFragment = new ShowWeatherFragment(this.weatherInformation);
-
-                        //Change the fragment area to show ShowWeatherFragment.
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                        fragmentTransaction.replace(R.id.fragment_container, showWeatherFragment);
-                        fragmentTransaction.commit();
+                        mainActivity.changeFragmentAreaShowWeatherFragment(this.weatherInformation);
                     }
                 };
 
@@ -119,8 +115,41 @@ public class MainActivity extends AppCompatActivity {
                 //Change text for the action that's available.
                 mainActivity.binding.changeCityButton.setText(chooseCityOrShowListAction.getActionText());
 
+                //Add an action to the actions area.
+                Button chooseAnotherCityButton = new Button(mainActivity);
+                chooseAnotherCityButton.setText("Choose another city");
+                chooseAnotherCityButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mainActivity.changeFragmentAreaChooseCityFragment();
+                    }
+                });
+                LinearLayout actionsArea = mainActivity.binding.actionsArea;
+                actionsArea.addView(chooseAnotherCityButton);
             }
         });
+    }
+
+    public void changeFragmentAreaShowWeatherFragment(WeatherInformation weatherInformation) {
+        //Create ShowWeatherFragment, and provide the model.
+        Fragment showWeatherFragment = new ShowWeatherFragment(weatherInformation);
+
+        //Change the fragment area to show ShowWeatherFragment.
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, showWeatherFragment);
+        fragmentTransaction.commit();
+    }
+
+    public void changeFragmentAreaChooseCityFragment() {
+        //Create ChooseCityFragment, and provide the model.
+        Fragment chooseCityFragment = new ChooseCityFragment();
+
+        //Change the fragment area to show ChooseCityFragment.
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, chooseCityFragment);
+        fragmentTransaction.commit();
     }
 
 }

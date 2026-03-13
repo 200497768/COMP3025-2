@@ -19,6 +19,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:id="@+id/actionsArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8BC34A"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/fragment_container"
+        app:layout_constraintTop_toBottomOf="@id/changeCityButton">
+
+
+    </LinearLayout>
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="0dp"
