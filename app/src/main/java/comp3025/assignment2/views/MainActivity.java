@@ -22,7 +22,6 @@ import comp3025.assignment2.retrieval.RetrievalCode;
 
 /**
  * This is the code for assignment 2.
- *
  * @author Yatri Devangbhai Padhiyar
  * @author Hao Tian
  */

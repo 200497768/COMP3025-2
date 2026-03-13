@@ -23,7 +23,6 @@ import okhttp3.Response;
  * The retrieval code includes the retrieve method, and the retrieved method.
  * The retrieve method is responsible for retrieving weather information, and creating the model.
  * The retrieved method is responsible for using the WeatherInformation model that has been created by the retrieve method.
- *
  * @author Yatri Devangbhai Padhiyar
  * @author Anastasios Perdikoulias
  * @author Hao Tian
@@ -52,6 +51,10 @@ public class RetrievalCode {
 
         RetrievalCode retrievalCode = this;
         client.newCall(request).enqueue(new Callback() {
+
+            /**
+             * This method creates the WeatherInformation model.
+             */
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 Objects.requireNonNull(response.body());
@@ -69,13 +72,15 @@ public class RetrievalCode {
                 retrievalCode.retrieved();
             }
 
+            /**
+             * This method doesn't create the WeatherInformation model.
+             */
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
 
             }
         });
     }
-
 
     /**
      * The retrieve method causes this method to happen after the model has been retrieved and created.
