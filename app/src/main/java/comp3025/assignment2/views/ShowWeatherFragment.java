@@ -39,7 +39,7 @@ public class ShowWeatherFragment extends Fragment {
     public ShowWeatherFragment(WeatherInformation weatherInformation) {
         this.weatherInformation = weatherInformation;
 
-        Log.i("200497768", "ShowWeatherFragment has received a model with " + this.weatherInformation.getCityName() + " as the city name.");
+        Log.i("200594802 and 200497768", "ShowWeatherFragment has received a model with " + this.weatherInformation.getCityName() + " as the city name.");
 
     }
 

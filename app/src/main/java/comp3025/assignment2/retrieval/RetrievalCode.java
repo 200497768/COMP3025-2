@@ -60,7 +60,7 @@ public class RetrievalCode {
                 Objects.requireNonNull(response.body());
 
                 String responseData = response.body().string();
-                Log.i("tag", responseData);
+                Log.i("200594802 and 200497768", responseData);
 
                 //Produce the WeatherInformation model by using information from responseData.
                 WeatherInformation weatherInformation = retrievalCode.getModelFromResponseData(responseData);
@@ -87,7 +87,7 @@ public class RetrievalCode {
      * During this method, the weatherInformation field will be the model.
      */
     public void retrieved() {
-        Log.i("tag", "Retrieval has completed.");
+        Log.i("200594802 and 200497768", "Retrieval has completed.");
     }
 
     /**
@@ -104,7 +104,7 @@ public class RetrievalCode {
         //At this time, no fields have been changed.
         WeatherInformation weatherInformation = new WeatherInformation();
 
-        Log.i("tag", "The retrieval code will start changing fields for the model.");
+        Log.i("200594802 and 200497768", "The retrieval code will start changing fields for the model.");
 
         //Change the field for name of the city to match responseData.
         try {
@@ -117,9 +117,9 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setCityName(cityName);
-            Log.i("tag", "The name of the city field has been retrieved as " + weatherInformation.getCityName());
+            Log.i("200594802 and 200497768", "The name of the city field has been retrieved as " + weatherInformation.getCityName());
         } catch (JSONException e) {
-            Log.i("tag", "JSONException when retrieving the name of the city field.");
+            Log.i("200594802 and 200497768", "JSONException when retrieving the name of the city field.");
         }
 
         //Change the field for name of the country to match responseData.
@@ -133,9 +133,9 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setCountryName(countryName);
-            Log.i("tag", "The name of the country field has been retrieved as " + weatherInformation.getCountryName());
+            Log.i("200594802 and 200497768", "The name of the country field has been retrieved as " + weatherInformation.getCountryName());
         } catch (JSONException e) {
-            Log.i("tag", "JSONException when retrieving the name of the country field.");
+            Log.i("200594802 and 200497768", "JSONException when retrieving the name of the country field.");
         }
 
         //Change the field for current temperature C to match responseData.
@@ -149,9 +149,9 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setCurrentTemperatureC(currentTemperatureC);
-            Log.i("tag", "The current temperature C field has been retrieved as " + weatherInformation.getCurrentTemperatureC());
+            Log.i("200594802 and 200497768", "The current temperature C field has been retrieved as " + weatherInformation.getCurrentTemperatureC());
         } catch (JSONException e) {
-            Log.i("tag", "JSONException when retrieving the current temperature C field.");
+            Log.i("200594802 and 200497768", "JSONException when retrieving the current temperature C field.");
         }
 
         //Change the field for current temperature F to match responseData.
@@ -165,9 +165,9 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setCurrentTemperatureF(currentTemperatureF);
-            Log.i("tag", "The current temperature F field has been retrieved as " + weatherInformation.getCurrentTemperatureF());
+            Log.i("200594802 and 200497768", "The current temperature F field has been retrieved as " + weatherInformation.getCurrentTemperatureF());
         } catch (JSONException e) {
-            Log.i("tag", "JSONException when retrieving the current temperature F field.");
+            Log.i("200594802 and 200497768", "JSONException when retrieving the current temperature F field.");
         }
 
         //Change the field for condition text to match responseData.
@@ -182,9 +182,9 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setWeatherConditionText(text);
-            Log.i("tag", "The condition text field has been retrieved as " + weatherInformation.getWeatherConditionText());
+            Log.i("200594802 and 200497768", "The condition text field has been retrieved as " + weatherInformation.getWeatherConditionText());
         } catch (JSONException e) {
-            Log.i("tag", "JSONException when retrieving the condition text field.");
+            Log.i("200594802 and 200497768", "JSONException when retrieving the condition text field.");
         }
 
         //Change the field for condition picture to match responseData.
@@ -199,9 +199,9 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setWeatherConditionPicture(picture);
-            Log.i("tag", "The condition picture field has been retrieved as " + weatherInformation.getWeatherConditionPicture());
+            Log.i("200594802 and 200497768", "The condition picture field has been retrieved as " + weatherInformation.getWeatherConditionPicture());
         } catch (JSONException e) {
-            Log.i("tag", "JSONException when retrieving the condition picture field.");
+            Log.i("200594802 and 200497768", "JSONException when retrieving the condition picture field.");
         }
 
         //Change the field for feels like C to match responseData.
@@ -212,12 +212,12 @@ public class RetrievalCode {
 
             //Retrieve the feels like C field.
             double feelsLikeC = current.getDouble("feelslike_c");
-            Log.i("tag", "The feels like C field has been retrieved as " + weatherInformation.getFeelsLikeC());
+            Log.i("200594802 and 200497768", "The feels like C field has been retrieved as " + weatherInformation.getFeelsLikeC());
 
             //Change the field for the model.
             weatherInformation.setFeelsLikeC(feelsLikeC);
         } catch (JSONException e) {
-            Log.i("tag", "JSONException when retrieving the feels like C field.");
+            Log.i("200594802 and 200497768", "JSONException when retrieving the feels like C field.");
         }
 
         //Change the field for feels like F to match responseData.
@@ -231,9 +231,9 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setFeelsLikeF(feelsLikeF);
-            Log.i("tag", "The feels like F field has been retrieved as " + weatherInformation.getFeelsLikeF());
+            Log.i("200594802 and 200497768", "The feels like F field has been retrieved as " + weatherInformation.getFeelsLikeF());
         } catch (JSONException e) {
-            Log.i("tag", "JSONException when retrieving the feels like F field.");
+            Log.i("200594802 and 200497768", "JSONException when retrieving the feels like F field.");
         }
 
         //Change the field for humidity to match responseData.
@@ -247,9 +247,9 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setHumidityPercentage(humidity);
-            Log.i("tag", "The humidity field has been retrieved as " + weatherInformation.getHumidityPercentage());
+            Log.i("200594802 and 200497768", "The humidity field has been retrieved as " + weatherInformation.getHumidityPercentage());
         } catch (JSONException e) {
-            Log.i("tag", "JSONException when retrieving the humidity field.");
+            Log.i("200594802 and 200497768", "JSONException when retrieving the humidity field.");
         }
 
         //Change the field for wind speed to match responseData.
@@ -263,9 +263,9 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setWindSpeed(windSpeed);
-            Log.i("tag", "The wind speed field has been retrieved as " + weatherInformation.getWindSpeed());
+            Log.i("200594802 and 200497768", "The wind speed field has been retrieved as " + weatherInformation.getWindSpeed());
         } catch (JSONException e) {
-            Log.i("tag", "JSONException when retrieving the wind speed field.");
+            Log.i("200594802 and 200497768", "JSONException when retrieving the wind speed field.");
         }
 
         //Change the field for wind direction text to match responseData.
@@ -279,9 +279,9 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setWindDirectionText(windDirectionText);
-            Log.i("tag", "The wind direction text field has been retrieved as " + weatherInformation.getWindDirectionText());
+            Log.i("200594802 and 200497768", "The wind direction text field has been retrieved as " + weatherInformation.getWindDirectionText());
         } catch (JSONException e) {
-            Log.i("tag", "JSONException when retrieving the wind direction text field.");
+            Log.i("200594802 and 200497768", "JSONException when retrieving the wind direction text field.");
         }
 
         //Change the field for wind direction angle to match responseData.
@@ -295,12 +295,12 @@ public class RetrievalCode {
 
             //Change the field for the model.
             weatherInformation.setWindDirectionAngle(windDirectionAngle);
-            Log.i("tag", "The wind direction angle field has been retrieved as " + weatherInformation.getWindDirectionAngle());
+            Log.i("200594802 and 200497768", "The wind direction angle field has been retrieved as " + weatherInformation.getWindDirectionAngle());
         } catch (JSONException e) {
-            Log.i("tag", "JSONException when retrieving the wind direction angle field.");
+            Log.i("200594802 and 200497768", "JSONException when retrieving the wind direction angle field.");
         }
 
-        Log.i("tag", "The retrieval code has finished changing fields for the model.");
+        Log.i("200594802 and 200497768", "The retrieval code has finished changing fields for the model.");
 
         return weatherInformation;
 
