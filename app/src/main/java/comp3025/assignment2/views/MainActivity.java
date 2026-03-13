@@ -16,7 +16,6 @@ import androidx.lifecycle.ViewModelProvider;
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
 import comp3025.assignment2.models.WeatherInformation;
-import comp3025.assignment2.retrieval.ExampleModelRetrievalCode;
 import comp3025.assignment2.retrieval.RetrievalCode;
 
 
@@ -80,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Create the WeatherInformation model, and show ShowWeatherFragment.
                 //We can write RetrievalCode, or ExampleModelRetrievalCode.
-                RetrievalCode retrievalCode = new ExampleModelRetrievalCode() {
+                RetrievalCode retrievalCode = new RetrievalCode() {
 
                     /**
                      * The retrieval code has produced the WeatherInformation model.
