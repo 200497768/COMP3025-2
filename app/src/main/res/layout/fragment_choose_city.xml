@@ -12,4 +12,12 @@
         android:layout_height="wrap_content"
         android:text="@string/choose_city_fragment" />
 
+    <EditText
+        android:id="@+id/cityEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="What city?"
+        android:inputType="text" />
+
 </LinearLayout>
