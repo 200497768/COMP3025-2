@@ -163,5 +163,9 @@ public class MainActivity extends AppCompatActivity {
 //In order to fix "Permission denied (missing INTERNET permission?)", we added some code from a book.
 //We needed to add "<uses-permission android:name="android.permission.INTERNET" />" to the code (Elenkov, 2016, pp. 33–34).
 
+//In order to fix a problem with communication, we needed to add some code.
+//"    android:usesCleartextTraffic="true">" (Solar2D, 2020).
+
 //References
 //Elenkov, N. (2016). Android security internals: An in-depth guide to android’s security architecture (1st edition). No Starch Press.
+//Solar2D. (2020). Network Security Configuration - Clear text traffic permitted. https://forums.solar2d.com/t/network-security-configuration-clear-text-traffic-permitted/350414

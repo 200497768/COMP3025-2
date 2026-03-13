@@ -79,6 +79,7 @@ public class RetrievalCode {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 Log.i("200594802 and 200497768", "The WeatherInformation model wasn't retrieved.");
+                Log.i("200594802 and 200497768", "" + e);
             }
         });
     }
