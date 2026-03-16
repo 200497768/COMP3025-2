@@ -94,7 +94,7 @@ public class CityRetrievalCode {
                 }
 
                 //Change the field.
-                this.cityOptions = cityOptions;
+                retrievalCode.cityOptions = cityOptions;
 
                 //The retrieved method needs to happen after the model has been created.
                 retrievalCode.retrieved();
@@ -110,6 +110,11 @@ public class CityRetrievalCode {
             }
     });
 }
+
+    public List<City> getCityOptions() {
+        return cityOptions;
+    }
+
     public void retrieved(){
 
     }
