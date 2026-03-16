@@ -32,7 +32,7 @@ public class CreatedViewHolder extends RecyclerView.ViewHolder {
         this.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("200497768", "CreatedViewHolder");
+                Log.d("200497768", "CreatedViewHolder " + getAbsoluteAdapterPosition());
             }
         });
     }
