@@ -4,9 +4,15 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+import comp3025.assignment2.models.City;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -37,6 +43,22 @@ public class CityRetrievalCode {
 
                 //Produce the WeatherInformation model by using information from responseData.
 
+                //Retrieve the city model part.
+                try {
+                    JSONArray json = new JSONArray(responseData);
+
+                    List<City> cityOptions = new ArrayList<>();
+
+                    for (int number = 0; number < json.length(); number = number + 1) {
+                        //Retrieve the city.
+                        json.get(number);
+                        json.
+                                cityOptions.add()
+                    }
+
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
 
                 //Change the field.
 
