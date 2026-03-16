@@ -27,6 +27,7 @@ import okhttp3.Response;
  * @author Hao Tian
  */
 public class CityRetrievalCode {
+    private List<City> cityOptions;
 
     public void retrieve() {
         String city = "Barrie";
@@ -93,7 +94,7 @@ public class CityRetrievalCode {
                 }
 
                 //Change the field.
-
+                this.cityOptions = cityOptions;
 
                 //The retrieved method needs to happen after the model has been created.
                 retrievalCode.retrieved();
