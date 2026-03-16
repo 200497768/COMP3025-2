@@ -1,5 +1,6 @@
 package comp3025.assignment2.views;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +10,12 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentChooseCityBinding;
 import comp3025.assignment2.retrieval.CityRetrievalCode;
+import comp3025.assignment2.views.choose.CreatedAdapter;
 
 /**
  * This fragment allows a city to be chosen.
@@ -20,6 +23,17 @@ import comp3025.assignment2.retrieval.CityRetrievalCode;
  * @author Hao Tian
  */
 public class ChooseCityFragment extends Fragment {
+
+    private Context applicationContext;
+
+    public ChooseCityFragment() {
+        //This is needed.
+    }
+
+    public ChooseCityFragment(Context applicationContext) {
+        this.applicationContext = applicationContext;
+    }
+
     private FragmentChooseCityBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,12 +71,20 @@ public class ChooseCityFragment extends Fragment {
                      */
                     @Override
                     public void retrieved() {
+                        //In order to write this code, we've started with the example code from the week 9 class (A. Perdikoulias, personal communication, March 13, 2026).
+                        LinearLayoutManager layoutManager = new LinearLayoutManager(chooseCityFragment.applicationContext);
+                        chooseCityFragment.binding.recyclerView.setLayoutManager(layoutManager);
 
+//In order to write this code, we've started with the example code from the week 9 class (A. Perdikoulias, personal communication, March 13, 2026).
+                        CreatedAdapter createdAdapter = new CreatedAdapter(this.cityOptions);
+                        chooseCityFragment.binding.recyclerView.setAdapter(createdAdapter);
                     }
                 };
 
                 //Retrieve the city option models.
                 cityRetrievalCode.retrieve();
+
+
             }
         });
     }
