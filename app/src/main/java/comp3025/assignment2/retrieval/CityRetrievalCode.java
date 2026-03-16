@@ -27,7 +27,7 @@ import okhttp3.Response;
  * @author Hao Tian
  */
 public class CityRetrievalCode {
-    private List<City> cityOptions;
+    public List<City> cityOptions;
 
     /**
      * This field is the city name that was written, and needs to be retrieved.
