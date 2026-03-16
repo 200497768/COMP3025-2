@@ -40,8 +40,7 @@ public class CityRetrievalCode {
     }
 
     public void retrieve() {
-        String city = "Barrie";
-        String urlString = "http://api.weatherapi.com/v1/search.json?key=b47d3ee63f574764af5163148261303&q=" + city;
+        String urlString = "http://api.weatherapi.com/v1/search.json?key=b47d3ee63f574764af5163148261303&q=" + this.neededCityName;
 
         Request request = new Request.Builder().url(urlString).build();
 
