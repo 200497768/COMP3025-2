@@ -34,6 +34,8 @@ public class MainActivityViewModel extends ViewModel {
              */
             @Override
             public void retrieved() {
+                //Change the field.
+                //MainActivity includes code that will happen when this field has been changed.
                 mainActivityViewModel.mutableLiveData.postValue(this.weatherInformation);
             }
         };
