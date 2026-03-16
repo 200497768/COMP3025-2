@@ -12,6 +12,10 @@ import comp3025.assignment2.retrieval.RetrievalCode;
  * @author Hao Tian
  */
 public class MainActivityViewModel extends ViewModel {
+
+    /**
+     * This field is the WeatherInformation model that MainActivity is showing at this time.
+     */
     private MutableLiveData<WeatherInformation> mutableLiveData = new MutableLiveData<>();
 
     public MutableLiveData<WeatherInformation> getMutableLiveData() {
