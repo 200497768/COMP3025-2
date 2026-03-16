@@ -12,5 +12,11 @@
         android:layout_height="wrap_content"
         android:text="This needs to show a city option model." />
 
+    <TextView
+        android:id="@+id/cityNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="City name" />
+
 
 </LinearLayout>
