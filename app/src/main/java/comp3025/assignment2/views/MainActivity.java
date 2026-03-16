@@ -105,15 +105,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Show ChooseCityFragment when starting.
         this.changeFragmentAreaChooseCityFragment();
-
-        // code to load fragment
-        if (savedInstanceState == null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, new ChooseCityFragment())
-                    .commit();
-        }
-
     }
 
     /**
@@ -144,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         this.binding.chooseAnotherCityButton.setVisibility(View.INVISIBLE);
 
         //Create ChooseCityFragment, and provide the model.
-        Fragment chooseCityFragment = new ChooseCityFragment();
+        Fragment chooseCityFragment = new ChooseCityFragment(getApplicationContext());
 
         //Change the fragment area to show ChooseCityFragment.
         FragmentManager fragmentManager = getSupportFragmentManager();
