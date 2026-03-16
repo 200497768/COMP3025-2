@@ -10,6 +10,7 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import comp3025.assignment2.R;
@@ -65,6 +66,9 @@ public class ChooseCityFragment extends Fragment {
 
         //Prepare the view binding class.
         this.binding = FragmentChooseCityBinding.bind(view);
+
+        //Create the ViewModel for this fragment.
+        this.viewModel = new ViewModelProvider(this).get(ChooseCityFragmentViewModel.class);
 
         ChooseCityFragment chooseCityFragment = this;
         //Change what happens when choosing the option to the retrieve city option models.
