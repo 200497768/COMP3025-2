@@ -24,6 +24,11 @@ import comp3025.assignment2.views.choose.CreatedAdapter;
  */
 public class ChooseCityFragment extends Fragment {
 
+    /**
+     * This field is needed in order for this fragment to create LinearLayoutManager.
+     * LinearLayoutManager is needed when showing RecyclerView items.
+     * Another activity can provide this field by using the getApplicationContext method.
+     */
     private Context applicationContext;
 
     public ChooseCityFragment() {
@@ -34,7 +39,11 @@ public class ChooseCityFragment extends Fragment {
         this.applicationContext = applicationContext;
     }
 
+    /**
+     * This field is the view binding class for this fragment.
+     */
     private FragmentChooseCityBinding binding;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -83,8 +92,6 @@ public class ChooseCityFragment extends Fragment {
 
                 //Retrieve the city option models.
                 cityRetrievalCode.retrieve();
-
-
             }
         });
     }
