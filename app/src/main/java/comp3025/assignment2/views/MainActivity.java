@@ -89,7 +89,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Add the code that will happen when choosing the action to show a city.
+        //Change the action so that another city can be chosen.
+        mainActivity.binding.chooseAnotherCityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Change the fragment area to show ChooseCityFragment.
+                mainActivity.changeFragmentAreaChooseCityFragment();
+            }
+        });
+
+        //Change the action that will happen when choosing the action to show a city.
         this.binding.chooseCityButton.setOnClickListener(new View.OnClickListener() {
 
             /**
@@ -106,16 +115,6 @@ public class MainActivity extends AppCompatActivity {
                 //The ViewModel will change the WeatherInformation model field when this method has finished retrieving.
                 //When the ViewModel changes the field, that will cause the onChanged method to happen.
                 mainActivity.viewModel.retrieveWeatherInformation(city);
-
-                //Add an action to the actions area to allow choosing another city.
-                mainActivity.binding.chooseAnotherCityButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        //Change the fragment area to show ChooseCityFragment.
-                        mainActivity.changeFragmentAreaChooseCityFragment();
-                    }
-                });
-
             }
         });
 
