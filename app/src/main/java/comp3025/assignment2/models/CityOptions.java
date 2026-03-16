@@ -15,4 +15,8 @@ public class CityOptions {
     public List<City> getCityOptions() {
         return cityOptions;
     }
+
+    public void addCityOption(City city) {
+        this.cityOptions.add(city);
+    }
 }
