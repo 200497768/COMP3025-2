@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,12 +38,14 @@ public class ChooseCityFragment extends Fragment {
         //Prepare the view binding class.
         this.binding = FragmentChooseCityBinding.bind(view);
 
+        ChooseCityFragment chooseCityFragment = this;
         //Change what happens when choosing the option to the retrieve city option models.
         this.binding.retrieveCityOptionModelsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Retrieve the name of the city that was written.
-                String cityName = "Barrie";
+                EditText cityEditText = chooseCityFragment.binding.cityEditText;
+                String cityName = "" + cityEditText.getText();
 
                 //Provide the city name to the retrieval code.
                 //The action that needs to happen when city option models have been retrieved needs to be provided.
