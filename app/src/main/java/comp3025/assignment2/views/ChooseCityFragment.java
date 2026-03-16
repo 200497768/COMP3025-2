@@ -10,11 +10,13 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentChooseCityBinding;
+import comp3025.assignment2.models.CityOptions;
 import comp3025.assignment2.retrieval.CityRetrievalCode;
 import comp3025.assignment2.views.choose.CreatedAdapter;
 
@@ -69,6 +71,19 @@ public class ChooseCityFragment extends Fragment {
 
         //Create the ViewModel for this fragment.
         this.viewModel = new ViewModelProvider(this).get(ChooseCityFragmentViewModel.class);
+
+        //Add the code that will happen when the City model from the ViewModel changes.
+        this.viewModel.getMutableLiveData().observe(getViewLifecycleOwner(), new Observer<CityOptions>() {
+
+            /**
+             * This method happens when the CityOptions model from the ViewModel have been changed.
+             * The code for this method changes RecyclerView to show the CityOptions model.
+             */
+            @Override
+            public void onChanged(CityOptions cityOptions) {
+
+            }
+        });
 
         ChooseCityFragment chooseCityFragment = this;
         //Change what happens when choosing the option to the retrieve city option models.
