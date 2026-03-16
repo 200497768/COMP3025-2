@@ -23,11 +23,11 @@ import okhttp3.Response;
 /**
  * This is the retrieval code that's responsible for retrieving the city options.
  * This code is similar to the retrieval code that retrieves the WeatherInformation model for a city.
- *
  * @author Yatri Devangbhai Padhiyar
  * @author Hao Tian
  */
 public class CityRetrievalCode {
+
     public void retrieve() {
         String city = "Barrie";
         String urlString = "http://api.weatherapi.com/v1/search.json?key=b47d3ee63f574764af5163148261303&q=" + city;
@@ -61,7 +61,31 @@ public class CityRetrievalCode {
                         //Retrieve the city with this number.
                         JSONObject cityFromResponseData = json.getJSONObject(number);
 
-                        //Retrieve
+                        //Retrieve city name.
+                        String cityName = cityFromResponseData.getString("name");
+
+                        //Retrieve province.
+                        String province = cityFromResponseData.getString("region");
+
+                        //Retrieve country.
+                        String country = cityFromResponseData.getString("country");
+
+                        //Retrieve lat.
+                        double lat = cityFromResponseData.getDouble("lat");
+
+                        //Retrieve lon.
+                        double lon = cityFromResponseData.getDouble("lon");
+
+                        //Create the city option model.
+                        City city = new City();
+                        city.setCity(cityName);
+                        city.setProvince(province);
+                        city.setCountry(country);
+                        city.setLat(lat);
+                        city.setLon(lon);
+
+                        //Add the city option model to the list.
+                        cityOptions.add(city);
                     }
 
                 } catch (JSONException e) {
