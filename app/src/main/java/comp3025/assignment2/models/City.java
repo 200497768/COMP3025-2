@@ -10,31 +10,31 @@ public class City {
     /**
      * This is the city name.
      */
-    private String name;
+    private String city = "No city available";
 
     /**
      * This is the province name.
      */
-    private String province;
+    private String province = "No province available";
 
     /**
      * This is the country name.
      */
-    private String country;
+    private String country = "No country available";
 
     /**
      * This field needs to be provided in order to retrieve the WeatherInformation model.
      * We'll need to provide it when we retrieve the model.
      * Since we only need to provide it, we don't need to understand what this field means.
      */
-    private double lat;
+    private double lat = 1;
 
     /**
      * This field needs to be provided in order to retrieve the WeatherInformation model.
      * We'll need to provide it when we retrieve the model.
      * Since we only need to provide it, we don't need to understand what this field means.
      */
-    private double lon;
+    private double lon = 1;
 
     public double getLon() {
         return lon;
@@ -68,11 +68,5 @@ public class City {
         this.province = province;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }
