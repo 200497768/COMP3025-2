@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentChooseCityBinding;
+import comp3025.assignment2.retrieval.CityRetrievalCode;
 
 /**
  * This fragment allows a city to be chosen.
@@ -36,5 +37,7 @@ public class ChooseCityFragment extends Fragment {
         //Prepare the view binding class.
         this.binding = FragmentChooseCityBinding.bind(view);
 
+        CityRetrievalCode cityRetrievalCode = new CityRetrievalCode();
+        cityRetrievalCode.retrieve();
     }
 }
