@@ -152,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
         //We need to create CityOptionChosenAction first.
         //This is the action that needs to happen when a city has been chosen during ChooseCityFragment.
+        MainActivity mainActivity = this;
         CityOptionChosenAction cityOptionChosenAction = new CityOptionChosenAction() {
 
             /**
@@ -162,7 +163,8 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void cityOptionChosen(City city) {
-
+//Provide this city to the ViewModel.
+                mainActivity.viewModel.getCityOptionMutableLiveData().postValue(city);
             }
         };
 

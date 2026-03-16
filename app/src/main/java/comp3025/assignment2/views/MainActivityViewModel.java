@@ -3,6 +3,7 @@ package comp3025.assignment2.views;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import comp3025.assignment2.models.City;
 import comp3025.assignment2.models.WeatherInformation;
 import comp3025.assignment2.retrieval.RetrievalCode;
 
@@ -20,6 +21,17 @@ public class MainActivityViewModel extends ViewModel {
 
     public MutableLiveData<WeatherInformation> getMutableLiveData() {
         return mutableLiveData;
+    }
+
+    /**
+     * This field is the city option model that has been chosen.
+     * This field is for the ViewModel to use.
+     * When this field changes, the ViewModel needs to retrieve the WeatherInformation model, and change the fragment area.
+     */
+    private MutableLiveData<City> cityOptionMutableLiveData = new MutableLiveData<>();
+
+    public MutableLiveData<City> getCityOptionMutableLiveData() {
+        return cityOptionMutableLiveData;
     }
 
     /**
