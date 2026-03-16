@@ -16,7 +16,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
-import comp3025.assignment2.models.City;
 import comp3025.assignment2.models.WeatherInformation;
 
 
@@ -152,23 +151,8 @@ public class MainActivity extends AppCompatActivity {
 
         //We need to create CityOptionChosenAction first.
         //This is the action that needs to happen when a city has been chosen during ChooseCityFragment.
-        MainActivity mainActivity = this;
-        CityOptionChosenAction cityOptionChosenAction = new CityOptionChosenAction() {
 
-            /**
-             * This method happens when ChooseCityFragment has produced a city option model.
-             * In other words, this method happens when a city has been chosen.
-             * This method is responsible for providing the chosen city to the ViewModel for MainActivity.
-             * The ViewModel will retrieve the WeatherInformation model, and change the fragment area.
-             */
-            @Override
-            public void cityOptionChosen(City city) {
-//Provide this city to the ViewModel.
-                mainActivity.viewModel.getCityOptionMutableLiveData().postValue(city);
-            }
-        };
-
-        Fragment chooseCityFragment = new ChooseCityFragment(getApplicationContext(), cityOptionChosenAction);
+        Fragment chooseCityFragment = new ChooseCityFragment(getApplicationContext(), this.viewModel.getCityOptionChosenAction());
 
         //Change the fragment area to show ChooseCityFragment.
         FragmentManager fragmentManager = getSupportFragmentManager();

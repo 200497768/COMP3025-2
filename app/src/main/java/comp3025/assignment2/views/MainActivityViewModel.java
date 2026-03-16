@@ -1,5 +1,7 @@
 package comp3025.assignment2.views;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -29,6 +31,49 @@ public class MainActivityViewModel extends ViewModel {
      * When this field changes, the ViewModel needs to retrieve the WeatherInformation model, and change the fragment area.
      */
     private MutableLiveData<City> cityOptionMutableLiveData = new MutableLiveData<>();
+
+    private CityOptionChosenAction cityOptionChosenAction;
+
+    public CityOptionChosenAction getCityOptionChosenAction() {
+        return cityOptionChosenAction;
+    }
+
+    public MainActivityViewModel() {
+        //Create the city option chosen action.
+        MainActivityViewModel viewModel = this;
+        CityOptionChosenAction cityOptionChosenAction = new CityOptionChosenAction() {
+
+            /**
+             * This method happens when ChooseCityFragment has produced a city option model.
+             * In other words, this method happens when a city has been chosen.
+             * This method is responsible for providing the chosen city to the ViewModel for MainActivity.
+             * The ViewModel will retrieve the WeatherInformation model, and change the fragment area.
+             */
+            @Override
+            public void cityOptionChosen(City city) {
+//Provide this city to the ViewModel.
+                viewModel.cityOptionChosen(city);
+            }
+        };
+
+        //Change the field.
+        this.cityOptionChosenAction = cityOptionChosenAction;
+    }
+
+    /**
+     * This method happens when the ViewModel receives the city option model for the chosen city.
+     * In other words, this method happens when a city has been chosen.
+     * This method needs to change the city option model to the WeatherInformation model.
+     * In addition, this method needs to show the WeatherInformation model by changing the field from the ViewModel.
+     */
+    private void cityOptionChosen(City city) {
+        Log.i("200497768", "The city that the ViewModel received is " + city.getCity());
+
+        //Retrieve the WeatherInformation model for the chosen city.
+
+        //Change the field to the WeatherInformation model that was retrieved.
+
+    }
 
     public MutableLiveData<City> getCityOptionMutableLiveData() {
         return cityOptionMutableLiveData;
