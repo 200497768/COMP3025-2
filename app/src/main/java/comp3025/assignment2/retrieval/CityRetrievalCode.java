@@ -111,10 +111,6 @@ public class CityRetrievalCode {
     });
 }
 
-    public List<City> getCityOptions() {
-        return cityOptions;
-    }
-
     public void retrieved(){
 
     }
