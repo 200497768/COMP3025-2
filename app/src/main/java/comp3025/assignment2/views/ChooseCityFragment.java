@@ -10,14 +10,17 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import java.util.List;
+
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentChooseCityBinding;
+import comp3025.assignment2.models.City;
 import comp3025.assignment2.models.CityOptions;
-import comp3025.assignment2.retrieval.CityRetrievalCode;
 import comp3025.assignment2.views.choose.CreatedAdapter;
 
 /**
@@ -73,19 +76,34 @@ public class ChooseCityFragment extends Fragment {
         this.viewModel = new ViewModelProvider(this).get(ChooseCityFragmentViewModel.class);
 
         //Add the code that will happen when the City model from the ViewModel changes.
+        ChooseCityFragment chooseCityFragment = this;
         this.viewModel.getMutableLiveData().observe(getViewLifecycleOwner(), new Observer<CityOptions>() {
 
             /**
              * This method happens when the CityOptions model from the ViewModel have been changed.
-             * The code for this method changes RecyclerView to show the CityOptions model.
+             * The code for this method changes the RecyclerView items to the City models.
              */
             @Override
             public void onChanged(CityOptions cityOptions) {
+                //Retrieve the CityOptions model.
+                MutableLiveData<CityOptions> mutableLiveData = chooseCityFragment.viewModel.getMutableLiveData();
+                CityOptions cityOptionsModel = mutableLiveData.getValue();
 
+                //Retrieve the individual CityOption models.
+                List<City> cityOptionModels = cityOptionsModel.getCityOptions();
+
+                //Change the RecyclerView items to the City models.
+
+                //In order to write this code, we've started with the example code from the week 9 class (A. Perdikoulias, personal communication, March 13, 2026).
+                LinearLayoutManager layoutManager = new LinearLayoutManager(chooseCityFragment.applicationContext);
+                chooseCityFragment.binding.recyclerView.setLayoutManager(layoutManager);
+
+//In order to write this code, we've started with the example code from the week 9 class (A. Perdikoulias, personal communication, March 13, 2026).
+                CreatedAdapter createdAdapter = new CreatedAdapter(cityOptionModels);
+                chooseCityFragment.binding.recyclerView.setAdapter(createdAdapter);
             }
         });
 
-        ChooseCityFragment chooseCityFragment = this;
         //Change what happens when choosing the option to the retrieve city option models.
         this.binding.retrieveCityOptionModelsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,28 +112,8 @@ public class ChooseCityFragment extends Fragment {
                 EditText cityEditText = chooseCityFragment.binding.cityEditText;
                 String cityName = "" + cityEditText.getText();
 
-                //Provide the city name to the retrieval code.
-                //The action that needs to happen when city option models have been retrieved needs to be provided.
-                CityRetrievalCode cityRetrievalCode = new CityRetrievalCode(cityName) {
-
-                    /**
-                     * The retrieval code has produced the retrieved city option models.
-                     * This method provides the models to ChooseCityFragment.
-                     */
-                    @Override
-                    public void retrieved() {
-                        //In order to write this code, we've started with the example code from the week 9 class (A. Perdikoulias, personal communication, March 13, 2026).
-                        LinearLayoutManager layoutManager = new LinearLayoutManager(chooseCityFragment.applicationContext);
-                        chooseCityFragment.binding.recyclerView.setLayoutManager(layoutManager);
-
-//In order to write this code, we've started with the example code from the week 9 class (A. Perdikoulias, personal communication, March 13, 2026).
-                        CreatedAdapter createdAdapter = new CreatedAdapter(this.cityOptions);
-                        chooseCityFragment.binding.recyclerView.setAdapter(createdAdapter);
-                    }
-                };
-
-                //Retrieve the city option models.
-                cityRetrievalCode.retrieve();
+                //Use the ViewModel to retrieve the city options.
+                chooseCityFragment.viewModel.retrieve(cityName);
             }
         });
     }
