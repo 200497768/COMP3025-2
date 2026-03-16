@@ -29,6 +29,16 @@ import okhttp3.Response;
 public class CityRetrievalCode {
     private List<City> cityOptions;
 
+    /**
+     * This field is the city name that was written, and needs to be retrieved.
+     * The city retrieval code needs to retrieve city option models with a city name that's similar to this name.
+     */
+    private String neededCityName;
+
+    public CityRetrievalCode(String neededCityName) {
+        this.neededCityName = neededCityName;
+    }
+
     public void retrieve() {
         String city = "Barrie";
         String urlString = "http://api.weatherapi.com/v1/search.json?key=b47d3ee63f574764af5163148261303&q=" + city;

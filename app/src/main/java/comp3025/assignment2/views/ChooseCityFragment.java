@@ -37,7 +37,30 @@ public class ChooseCityFragment extends Fragment {
         //Prepare the view binding class.
         this.binding = FragmentChooseCityBinding.bind(view);
 
-        CityRetrievalCode cityRetrievalCode = new CityRetrievalCode();
-        cityRetrievalCode.retrieve();
+        //Change what happens when choosing the option to the retrieve city option models.
+        this.binding.retrieveCityOptionModelsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Retrieve the name of the city that was written.
+                String cityName = "Barrie";
+
+                //Provide the city name to the retrieval code.
+                //The action that needs to happen when city option models have been retrieved needs to be provided.
+                CityRetrievalCode cityRetrievalCode = new CityRetrievalCode(cityName) {
+
+                    /**
+                     * The retrieval code has produced the retrieved city option models.
+                     * This method provides the models to ChooseCityFragment.
+                     */
+                    @Override
+                    public void retrieved() {
+
+                    }
+                };
+
+                //Retrieve the city option models.
+                cityRetrievalCode.retrieve();
+            }
+        });
     }
 }
