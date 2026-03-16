@@ -35,7 +35,24 @@ public class CreatedAdapter extends RecyclerView.Adapter<CreatedViewHolder> {
     public CreatedViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.city_layout, parent, false);
 
-        CreatedViewHolder createdViewHolder = new CreatedViewHolder(itemView);
+        CreatedAdapter createdAdapter = this;
+
+        CreatedViewHolder createdViewHolder = new CreatedViewHolder(itemView) {
+
+            /**
+             * A city option has been chosen.
+             * This method needs to determine the city model that corresponds with this number.
+             * In addition, the fragment area needs to be changed to ShowWeatherFragment.
+             */
+            @Override
+            public void cityOptionChosen(int absoluteAdapterPosition) {
+                //Retrieve the city option that was chosen.
+                City city = createdAdapter.cityOptions.get(absoluteAdapterPosition);
+
+                //Change the fragment area.
+
+            }
+        };
 
         return createdViewHolder;
     }
