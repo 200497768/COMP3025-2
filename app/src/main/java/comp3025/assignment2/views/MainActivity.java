@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
+import comp3025.assignment2.models.City;
 import comp3025.assignment2.models.WeatherInformation;
 
 
@@ -98,10 +99,13 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
+                City city = new City();
+                city.setCity("Barrie");
+
                 //Use the ViewModel to retrieve the WeatherInformation model for this city.
                 //The ViewModel will change the WeatherInformation model field when this method has finished retrieving.
                 //When the ViewModel changes the field, that will cause the onChanged method to happen.
-                mainActivity.viewModel.retrieveWeatherInformation();
+                mainActivity.viewModel.retrieveWeatherInformation(city);
 
                 //Add an action to the actions area to allow choosing another city.
                 mainActivity.binding.chooseAnotherCityButton.setOnClickListener(new View.OnClickListener() {

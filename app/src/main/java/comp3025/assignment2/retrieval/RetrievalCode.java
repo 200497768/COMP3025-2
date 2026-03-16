@@ -10,6 +10,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.Objects;
 
+import comp3025.assignment2.models.City;
 import comp3025.assignment2.models.WeatherInformation;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -29,6 +30,8 @@ import okhttp3.Response;
  */
 public class RetrievalCode {
 
+    private City city;
+
     /**
      * This field is the WeatherInformation model, with information about the chosen city.
      * This field will only be available after the retrieve method has finished.
@@ -38,13 +41,23 @@ public class RetrievalCode {
      */
     public WeatherInformation weatherInformation;
 
+    public RetrievalCode(City city) {
+        this.city = city;
+    }
+
+    public RetrievalCode() {
+        //Only ExampleModelRetrievalCode is allowed to use this.
+        //Ensure that other code provides the city option model, instead of using this code.
+        City city = new City();
+        this.city = city;
+    }
+
     /**
      * This method retrieves the model, and changes the field.
      * If the retrieval code is extended, when the model is available, this method must change the field and use the retrieved method.
      */
     public void retrieve() {
-        String city = "Barrie";
-        String urlString = "http://api.weatherapi.com/v1/current.json?key=b47d3ee63f574764af5163148261303&q=" + city + "&aqi=no";
+        String urlString = "http://api.weatherapi.com/v1/current.json?key=b47d3ee63f574764af5163148261303&q=" + this.city.getCity() + "&aqi=no";
 
         Request request = new Request.Builder().url(urlString).build();
 

@@ -69,10 +69,8 @@ public class MainActivityViewModel extends ViewModel {
     private void cityOptionChosen(City city) {
         Log.i("200497768", "The city that the ViewModel received is " + city.getCity());
 
-        //Retrieve the WeatherInformation model for the chosen city.
-
-        //Change the field to the WeatherInformation model that was retrieved.
-
+        //Retrieve the WeatherInformation model for the chosen city, and change the field to the WeatherInformation model.
+        this.retrieveWeatherInformation(city);
     }
 
     public MutableLiveData<City> getCityOptionMutableLiveData() {
@@ -83,11 +81,11 @@ public class MainActivityViewModel extends ViewModel {
      * This method starts retrieving the WeatherInformation model.
      * The code for this method changes the WeatherInformation model field when the retrieving code has finished.
      */
-    public void retrieveWeatherInformation() {
+    public void retrieveWeatherInformation(City city) {
         //Create the WeatherInformation model, and show ShowWeatherFragment.
         //We can write RetrievalCode, or ExampleModelRetrievalCode.
         MainActivityViewModel mainActivityViewModel = this;
-        RetrievalCode retrievalCode = new RetrievalCode() {
+        RetrievalCode retrievalCode = new RetrievalCode(city) {
 
             /**
              * The retrieval code has produced the WeatherInformation model.
