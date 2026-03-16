@@ -9,11 +9,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 import comp3025.assignment2.models.City;
+import comp3025.assignment2.models.CityOptions;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -27,7 +26,7 @@ import okhttp3.Response;
  * @author Hao Tian
  */
 public class CityRetrievalCode {
-    public List<City> cityOptions;
+    public CityOptions cityOptions = new CityOptions();
 
     /**
      * This field is the city name that was written, and needs to be retrieved.
@@ -65,8 +64,6 @@ public class CityRetrievalCode {
                 try {
                     JSONArray json = new JSONArray(responseData);
 
-                    List<City> cityOptions = new ArrayList<>();
-
                     for (int number = 0; number < json.length(); number = number + 1) {
                         //Retrieve the city with this number.
                         JSONObject cityFromResponseData = json.getJSONObject(number);
@@ -95,7 +92,7 @@ public class CityRetrievalCode {
                         city.setLon(lon);
 
                         //Add the city option model to the list.
-                        cityOptions.add(city);
+                        retrievalCode.cityOptions.addCityOption(city);
                     }
 
                 } catch (JSONException e) {
