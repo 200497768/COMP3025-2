@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,6 +20,13 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+/**
+ * This is the retrieval code that's responsible for retrieving the city options.
+ * This code is similar to the retrieval code that retrieves the WeatherInformation model for a city.
+ *
+ * @author Yatri Devangbhai Padhiyar
+ * @author Hao Tian
+ */
 public class CityRetrievalCode {
     public void retrieve() {
         String city = "Barrie";
@@ -50,10 +58,10 @@ public class CityRetrievalCode {
                     List<City> cityOptions = new ArrayList<>();
 
                     for (int number = 0; number < json.length(); number = number + 1) {
-                        //Retrieve the city.
-                        json.get(number);
-                        json.
-                                cityOptions.add()
+                        //Retrieve the city with this number.
+                        JSONObject cityFromResponseData = json.getJSONObject(number);
+
+                        //Retrieve
                     }
 
                 } catch (JSONException e) {
