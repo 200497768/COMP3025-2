@@ -13,6 +13,7 @@ import java.util.List;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.models.City;
+import comp3025.assignment2.views.CityOptionChosenAction;
 
 /**
  * This class is needed for RecyclerView.
@@ -24,8 +25,11 @@ import comp3025.assignment2.models.City;
 public class CreatedAdapter extends RecyclerView.Adapter<CreatedViewHolder> {
     private List<City> cityOptions;
 
-    public CreatedAdapter(List<City> cityOptions) {
+    private CityOptionChosenAction cityOptionChosenAction;
+
+    public CreatedAdapter(List<City> cityOptions, CityOptionChosenAction cityOptionChosenAction) {
         this.cityOptions = cityOptions;
+        this.cityOptionChosenAction = cityOptionChosenAction;
     }
 
     /**
@@ -52,8 +56,8 @@ public class CreatedAdapter extends RecyclerView.Adapter<CreatedViewHolder> {
 
                 Log.i("200497768", "The city that was chosen is " + city.getCity());
 
-                //Change the fragment area.
-
+                //Provide the city option that was chosen to the city option chosen area.
+                createdAdapter.cityOptionChosenAction.cityOptionChosen(city);
             }
         };
 

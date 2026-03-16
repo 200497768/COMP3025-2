@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
+import comp3025.assignment2.models.City;
 import comp3025.assignment2.models.WeatherInformation;
 
 
@@ -148,7 +149,18 @@ public class MainActivity extends AppCompatActivity {
         this.binding.chooseAnotherCityButton.setVisibility(View.INVISIBLE);
 
         //Create ChooseCityFragment, and provide the model.
-        Fragment chooseCityFragment = new ChooseCityFragment(getApplicationContext());
+
+        //We need to create CityOptionChosenAction first.
+        //This is the action that needs to happen when a city has been chosen during ChooseCityFragment.
+        CityOptionChosenAction cityOptionChosenAction = new CityOptionChosenAction() {
+
+            @Override
+            public void cityOptionChosen(City city) {
+
+            }
+        };
+
+        Fragment chooseCityFragment = new ChooseCityFragment(getApplicationContext(), cityOptionChosenAction);
 
         //Change the fragment area to show ChooseCityFragment.
         FragmentManager fragmentManager = getSupportFragmentManager();

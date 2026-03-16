@@ -37,12 +37,15 @@ public class ChooseCityFragment extends Fragment {
      */
     private Context applicationContext;
 
+    private CityOptionChosenAction cityOptionChosenAction;
+
     public ChooseCityFragment() {
         //This is needed.
     }
 
-    public ChooseCityFragment(Context applicationContext) {
+    public ChooseCityFragment(Context applicationContext, CityOptionChosenAction cityOptionChosenAction) {
         this.applicationContext = applicationContext;
+        this.cityOptionChosenAction = cityOptionChosenAction;
     }
 
     /**
@@ -99,7 +102,7 @@ public class ChooseCityFragment extends Fragment {
                 chooseCityFragment.binding.recyclerView.setLayoutManager(layoutManager);
 
 //In order to write this code, we've started with the example code from the week 9 class (A. Perdikoulias, personal communication, March 13, 2026).
-                CreatedAdapter createdAdapter = new CreatedAdapter(cityOptionModels);
+                CreatedAdapter createdAdapter = new CreatedAdapter(cityOptionModels, chooseCityFragment.cityOptionChosenAction);
                 chooseCityFragment.binding.recyclerView.setAdapter(createdAdapter);
             }
         });
