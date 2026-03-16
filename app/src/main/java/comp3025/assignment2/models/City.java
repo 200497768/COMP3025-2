@@ -2,16 +2,26 @@ package comp3025.assignment2.models;
 
 /**
  * This model is a city option that has been retrieved.
- *
  * @author Yatri Devangbhai Padhiyar
  * @author Hao Tian
  */
 public class City {
 
     /**
-     * This field is the name of the city that's available.
+     * This is the city name.
      */
     private String name;
+
+    /**
+     * This is the province name.
+     */
+    private String province;
+
+    /**
+     * This is the country name.
+     */
+    private String country;
+
 
     /**
      * This field needs to be provided in order to retrieve the WeatherInformation model.
