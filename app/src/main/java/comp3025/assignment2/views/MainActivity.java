@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 //Use the ViewModel to retrieve the WeatherInformation model for this city.
                 //The ViewModel will change the WeatherInformation model field when this method has finished retrieving.
                 //When the ViewModel changes the field, that will cause the onChanged method to happen.
-                mainActivity.viewModel.retrieve();
+                mainActivity.viewModel.retrieveWeatherInformation();
 
                 //Add an action to the actions area to allow choosing another city.
                 mainActivity.binding.chooseAnotherCityButton.setOnClickListener(new View.OnClickListener() {

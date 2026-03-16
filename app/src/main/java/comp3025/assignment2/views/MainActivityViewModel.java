@@ -22,7 +22,7 @@ public class MainActivityViewModel extends ViewModel {
      * This method starts retrieving the WeatherInformation model.
      * The code for this method changes the WeatherInformation model field when the retrieving code has finished.
      */
-    public void retrieve() {
+    public void retrieveWeatherInformation() {
         //Create the WeatherInformation model, and show ShowWeatherFragment.
         //We can write RetrievalCode, or ExampleModelRetrievalCode.
         MainActivityViewModel mainActivityViewModel = this;
