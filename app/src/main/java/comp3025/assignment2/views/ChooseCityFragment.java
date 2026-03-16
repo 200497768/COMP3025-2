@@ -44,6 +44,11 @@ public class ChooseCityFragment extends Fragment {
      */
     private FragmentChooseCityBinding binding;
 
+    /**
+     * This field is the ViewModel for this fragment.
+     */
+    private ChooseCityFragmentViewModel viewModel;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
