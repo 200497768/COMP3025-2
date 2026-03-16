@@ -1,5 +1,6 @@
 package comp3025.assignment2.views.choose;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +49,8 @@ public class CreatedAdapter extends RecyclerView.Adapter<CreatedViewHolder> {
             public void cityOptionChosen(int absoluteAdapterPosition) {
                 //Retrieve the city option that was chosen.
                 City city = createdAdapter.cityOptions.get(absoluteAdapterPosition);
+
+                Log.i("200497768", "The city that was chosen is " + city.getCity());
 
                 //Change the fragment area.
 
