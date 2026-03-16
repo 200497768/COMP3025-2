@@ -39,4 +39,12 @@ public class ChooseCityFragmentViewModel extends ViewModel {
         //Retrieve the city option models.
         cityRetrievalCode.retrieve();
     }
+
+    /**
+     * This method happens when the code from CreatedViewHolder happens because a RecyclerView has been chosen.
+     * This method is responsible for showing ShowWeatherFragment for the chosen city.
+     */
+    public void cityChosen() {
+
+    }
 }
