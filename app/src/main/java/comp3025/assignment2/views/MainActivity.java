@@ -161,6 +161,10 @@ public class MainActivity extends AppCompatActivity {
 //In order to fix a problem with communication, we needed to add some code.
 //"    android:usesCleartextTraffic="true">" (Solar2D, 2020).
 
+//For CityRetrevialCode, I needed to refer to (Piwowarek, 2025) in order to understand how I can access each city.
+//The example code provided by this source shows similar data, and in the example, the family item is retrieved.
+
 //References
 //Elenkov, N. (2016). Android security internals: An in-depth guide to android’s security architecture (1st edition). No Starch Press.
+//Piwowarek, G. (2025). Getting a Value in JSONObject. https://www.baeldung.com/java-jsonobject-get-value
 //Solar2D. (2020). Network Security Configuration - Clear text traffic permitted. https://forums.solar2d.com/t/network-security-configuration-clear-text-traffic-permitted/350414
