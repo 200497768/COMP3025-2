@@ -67,10 +67,15 @@ public class MainActivity extends AppCompatActivity {
         //Create the ViewModel for this activity.
         this.viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
+        //Add the code that will happen when the WeatherInformation model from the ViewModel changes.
         MainActivity mainActivity = this;
-
         MainActivityViewModel viewModel = this.viewModel;
         this.viewModel.getMutableLiveData().observe(this, new Observer<WeatherInformation>() {
+
+            /**
+             * This method happens when the WeatherInformation model from the ViewModel has been changed.
+             * The code for this method changes the fragment area to show ShowWeatherFragment.
+             */
             @Override
             public void onChanged(WeatherInformation weatherInformation) {
                 //Change the fragment area to show ShowWeatherFragment.
@@ -79,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Add the code that will happen when choosing the action to show a city.
         this.binding.chooseCityButton.setOnClickListener(new View.OnClickListener() {
 
             /**
