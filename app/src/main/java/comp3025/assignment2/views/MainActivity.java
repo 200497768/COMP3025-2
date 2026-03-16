@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(WeatherInformation weatherInformation) {
                 //Change the fragment area to show ShowWeatherFragment.
+                //Retrieve the WeatherInformation model from the ViewModel, and provide it to ShowWeatherFragment.
                 WeatherInformation changedWeatherInformation = viewModel.getMutableLiveData().getValue();
                 mainActivity.changeFragmentAreaShowWeatherFragment(changedWeatherInformation);
             }
@@ -94,9 +95,12 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
+                //Use the ViewModel to retrieve the WeatherInformation model for this city.
+                //The ViewModel will change the WeatherInformation model field when this method has finished retrieving.
+                //When the ViewModel changes the field, that will cause the onChanged method to happen.
                 mainActivity.viewModel.retrieve();
 
-                //Add an action to the actions area.
+                //Add an action to the actions area to allow choosing another city.
                 mainActivity.binding.chooseAnotherCityButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
