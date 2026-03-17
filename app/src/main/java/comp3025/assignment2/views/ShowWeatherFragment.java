@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentShowWeatherBinding;
@@ -31,6 +32,11 @@ public class ShowWeatherFragment extends Fragment {
      * This field is the view binding class.
      */
     private FragmentShowWeatherBinding binding;
+
+    /**
+     * This field is the ViewModel for this fragment.
+     */
+    private ShowWeatherFragmentViewModel viewModel;
 
     public ShowWeatherFragment() {
 //This is needed.
@@ -61,6 +67,9 @@ public class ShowWeatherFragment extends Fragment {
 
         //Prepare the view binding class.
         this.binding = FragmentShowWeatherBinding.bind(view);
+
+        //Create the ViewModel for this fragment.
+        this.viewModel = new ViewModelProvider(this).get(ShowWeatherFragmentViewModel.class);
 
         //Show every field from the model.
         this.binding.cityNameTextView.setText("" + this.weatherInformation.getCityName());
