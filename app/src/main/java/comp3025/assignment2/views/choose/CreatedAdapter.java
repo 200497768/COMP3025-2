@@ -77,9 +77,17 @@ public class CreatedAdapter extends RecyclerView.Adapter<CreatedViewHolder> {
 
         //The remaining code for this method changes views to match the city option model.
 
-        //Change the name of the city.
+        //Change the city name TextView item.
         TextView cityNameTextView = holder.getCityNameTextView();
         cityNameTextView.setText(city.getCity());
+
+        //Change the province name TextView item.
+        TextView provinceNameTextView = holder.getProvinceNameTextView();
+        provinceNameTextView.setText(city.getProvince());
+
+        //Change the country name TextView item.
+        TextView countryNameTextView = holder.getCountryNameTextView();
+        countryNameTextView.setText(city.getCountry());
     }
 
     /**
