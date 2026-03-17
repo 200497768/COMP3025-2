@@ -110,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 City city = new City();
                 city.setCity("Barrie");
+                city.setLon(44.38);
+                city.setLat(-79.7);
 
                 //Use the ViewModel to retrieve the WeatherInformation model for this city.
                 //The ViewModel will change the WeatherInformation model field when this method has finished retrieving.
