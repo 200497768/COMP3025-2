@@ -96,7 +96,8 @@ public class CityRetrievalCode {
                     }
 
                 } catch (JSONException e) {
-                    throw new RuntimeException(e);
+                    Log.i("200594802 and 200497768", "Couldn't retrieve city option models.");
+                    Log.i("200594802 and 200497768", "" + e);
                 }
 
                 //Change the field.
