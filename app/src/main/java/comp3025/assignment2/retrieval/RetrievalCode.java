@@ -64,6 +64,7 @@ public class RetrievalCode {
     public void retrieve() {
         String urlString = "http://api.weatherapi.com/v1/current.json?key=b47d3ee63f574764af5163148261303&q=" + this.cityOption.getCity() + "&aqi=no";
 
+        //Create a request.
         Request request = new Request.Builder().url(urlString).build();
 
         OkHttpClient client = new OkHttpClient();
