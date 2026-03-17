@@ -30,6 +30,11 @@ import okhttp3.Response;
  */
 public class RetrievalCode {
 
+    /**
+     * This field is the city option model that this retrieval code has received.
+     * The city option model must be provided when creating this retrieval code.
+     * The retrieval code will maintain this city as a field, and will be able to retrieve the WeatherInformation model for this city.
+     */
     private City city;
 
     /**
