@@ -17,16 +17,21 @@ import comp3025.assignment2.R;
  */
 public class CreatedViewHolder extends RecyclerView.ViewHolder {
 
-    private TextView cityNameTextView;
+    /**
+     * This field allows the methods to access the individual TextView items that might need to be retrieved.
+     */
+    private View itemView;
 
     public CreatedViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        //Retrieve each view that will be needed from itemView, so that it becomes a field.
+        //Change the field to this itemView, so that the code will be able to access the individual TextView items in the future.
+        this.itemView = itemView;
 
-        //Retrieve the TextView item that will be used to show the name of the city.
-        this.cityNameTextView = itemView.findViewById(R.id.cityNameTextView);
-
+        //Change what happens when this item has been chosen.
+        //This code causes the cityOptionChosen method to happen.
+        //Every item corresponds with a city option model, and the cityOptionChosen method will receive that number.
+        //This number can be used to retrieve the city option model that was chosen.
         CreatedViewHolder createdViewHolder = this;
         this.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,8 +53,31 @@ public class CreatedViewHolder extends RecyclerView.ViewHolder {
 
     }
 
+    /**
+     * This method retrieves the TextView item for city name.
+     * The TextView item can be changed, including by changing text to match the city option model.
+     */
     public TextView getCityNameTextView() {
+        TextView cityNameTextView = this.itemView.findViewById(R.id.cityNameTextView);
         return cityNameTextView;
+    }
+
+    /**
+     * This method retrieves the TextView item for province name.
+     * The TextView item can be changed, including by changing text to match the city option model.
+     */
+    public TextView getProvinceNameTextView() {
+        TextView provinceNameTextView = this.itemView.findViewById(R.id.provinceNameTextView);
+        return provinceNameTextView;
+    }
+
+    /**
+     * This method retrieves the TextView item for country name.
+     * The TextView item can be changed, including by changing text to match the city option model.
+     */
+    public TextView getCountryNameTextView() {
+        TextView countryNameTextView = this.itemView.findViewById(R.id.countryNameTextView);
+        return countryNameTextView;
     }
 
 }
