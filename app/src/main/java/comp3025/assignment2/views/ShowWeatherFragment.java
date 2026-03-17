@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.R;
@@ -23,12 +25,6 @@ import comp3025.assignment2.models.WeatherInformation;
 public class ShowWeatherFragment extends Fragment {
 
     /**
-     * This field is the WeatherInformation model that ShowWeatherFragment has received.
-     * ShowWeatherFragment is responsible for showing the fields from this model.
-     */
-    private WeatherInformation weatherInformation;
-
-    /**
      * This field is the view binding class.
      */
     private FragmentShowWeatherBinding binding;
@@ -38,15 +34,27 @@ public class ShowWeatherFragment extends Fragment {
      */
     private ShowWeatherFragmentViewModel viewModel;
 
+    /**
+     * This field is the WeatherInformation model that this fragment was created with.
+     * When this fragment is being created, this field might be changed, depending on if this fragment is being created by MainActivity.
+     * If this field has been changed to a WeatherInformation model, the code for this fragment will provide it to the ViewModel.
+     * If a WeatherInformation model isn't provided, the ViewModel will provide the WeatherInformation model instead.
+     */
+    private WeatherInformation createdWithWeatherInformation = null;
+
     public ShowWeatherFragment() {
 //This is needed.
+        //MainActivity must not use this.
+        //Instead, MainActivity must provide the WeatherInformation model.
     }
 
     public ShowWeatherFragment(WeatherInformation weatherInformation) {
-        this.weatherInformation = weatherInformation;
 
-        Log.i("200594802 and 200497768", "ShowWeatherFragment has received a model with " + this.weatherInformation.getCityName() + " as the city name.");
+        Log.i("200594802 and 200497768", "ShowWeatherFragment has received a model with " + weatherInformation.getCityName() + " as the city name.");
 
+        //Change the field for the WeatherInformation model that this fragment was created with.
+        //This model will be provided to the ViewModel.
+        this.createdWithWeatherInformation = weatherInformation;
     }
 
 
@@ -71,16 +79,33 @@ public class ShowWeatherFragment extends Fragment {
         //Create the ViewModel for this fragment.
         this.viewModel = new ViewModelProvider(this).get(ShowWeatherFragmentViewModel.class);
 
-        //Show every field from the model.
-        this.binding.cityNameTextView.setText("" + this.weatherInformation.getCityName());
-        this.binding.countryNameTextView.setText("" + this.weatherInformation.getCountryName());
-        this.binding.currentTemperatureCTextView.setText("" + this.weatherInformation.getCurrentTemperatureC() + "°C");
-        this.binding.currentTemperatureFTextView.setText("" + this.weatherInformation.getCurrentTemperatureF() + "°F");
-        this.binding.conditionTextTextView.setText("" + this.weatherInformation.getWeatherConditionText());
-        this.binding.feelsLikeCTextView.setText("Feels like " + this.weatherInformation.getFeelsLikeC() + "°C");
-        this.binding.humidityTextView.setText("Humidity " + this.weatherInformation.getHumidityPercentage() + "%");
-        this.binding.windSpeedTextView.setText("Wind speed " + this.weatherInformation.getWindSpeed() + " km/h");
-        this.binding.windDirectionTextTextView.setText("" + this.weatherInformation.getWindDirectionText());
+        //Change what happens when the model changes.
+        //This code must happen before providing the WeatherInformation model that this fragment was created with to the ViewModel.
+        ShowWeatherFragment showWeatherFragment = this;
+        this.viewModel.getWeatherInformationMutableLiveData().observe(getViewLifecycleOwner(), new Observer<WeatherInformation>() {
+            @Override
+            public void onChanged(WeatherInformation weatherInformation) {
+                //Retrieve the changed WeatherInformation model.
+                MutableLiveData<WeatherInformation> weatherInformationMutableLiveData = showWeatherFragment.viewModel.getWeatherInformationMutableLiveData();
+                WeatherInformation changedWeatherInformation = weatherInformationMutableLiveData.getValue();
+
+                //Show every field from the model.
+                showWeatherFragment.binding.cityNameTextView.setText("" + changedWeatherInformation.getCityName());
+                showWeatherFragment.binding.countryNameTextView.setText("" + changedWeatherInformation.getCountryName());
+                showWeatherFragment.binding.currentTemperatureCTextView.setText("" + changedWeatherInformation.getCurrentTemperatureC() + "°C");
+                showWeatherFragment.binding.currentTemperatureFTextView.setText("" + changedWeatherInformation.getCurrentTemperatureF() + "°F");
+                showWeatherFragment.binding.conditionTextTextView.setText("" + changedWeatherInformation.getWeatherConditionText());
+                showWeatherFragment.binding.feelsLikeCTextView.setText("Feels like " + changedWeatherInformation.getFeelsLikeC() + "°C");
+                showWeatherFragment.binding.humidityTextView.setText("Humidity " + changedWeatherInformation.getHumidityPercentage() + "%");
+                showWeatherFragment.binding.windSpeedTextView.setText("Wind speed " + changedWeatherInformation.getWindSpeed() + " km/h");
+                showWeatherFragment.binding.windDirectionTextTextView.setText("" + changedWeatherInformation.getWindDirectionText());
+            }
+        });
+
+        //This fragment was created with a WeatherInformation model.
+        //Provide the WeatherInformation model that this fragment was created with to the ViewModel.
+        //This code must only happen after the ViewModel has been created.
+        this.viewModel.weatherInformationChanged(this.createdWithWeatherInformation);
 
     }
 }
