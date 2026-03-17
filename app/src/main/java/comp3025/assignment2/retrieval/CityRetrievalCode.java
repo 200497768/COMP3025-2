@@ -11,7 +11,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.Objects;
 
-import comp3025.assignment2.models.City;
+import comp3025.assignment2.models.CityOption;
 import comp3025.assignment2.models.CityOptions;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -84,15 +84,15 @@ public class CityRetrievalCode {
                         double lon = cityFromResponseData.getDouble("lon");
 
                         //Create the city option model.
-                        City city = new City();
-                        city.setCity(cityName);
-                        city.setProvince(province);
-                        city.setCountry(country);
-                        city.setLat(lat);
-                        city.setLon(lon);
+                        CityOption cityOption = new CityOption();
+                        cityOption.setCity(cityName);
+                        cityOption.setProvince(province);
+                        cityOption.setCountry(country);
+                        cityOption.setLat(lat);
+                        cityOption.setLon(lon);
 
                         //Add the city option model to the list.
-                        retrievalCode.cityOptions.addCityOption(city);
+                        retrievalCode.cityOptions.addCityOption(cityOption);
                     }
 
                 } catch (JSONException e) {

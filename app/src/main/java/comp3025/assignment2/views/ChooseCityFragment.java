@@ -19,7 +19,7 @@ import java.util.List;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentChooseCityBinding;
-import comp3025.assignment2.models.City;
+import comp3025.assignment2.models.CityOption;
 import comp3025.assignment2.models.CityOptions;
 import comp3025.assignment2.views.choose.CreatedAdapter;
 
@@ -93,7 +93,7 @@ public class ChooseCityFragment extends Fragment {
                 CityOptions cityOptionsModel = mutableLiveData.getValue();
 
                 //Retrieve the individual CityOption models.
-                List<City> cityOptionModels = cityOptionsModel.getCityOptions();
+                List<CityOption> cityOptionModels = cityOptionsModel.getCityOptions();
 
                 //Change the RecyclerView items to the City models.
 

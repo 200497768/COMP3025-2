@@ -5,7 +5,7 @@ package comp3025.assignment2.models;
  * @author Yatri Devangbhai Padhiyar
  * @author Hao Tian
  */
-public class City {
+public class CityOption {
 
     /**
      * This is the city name.

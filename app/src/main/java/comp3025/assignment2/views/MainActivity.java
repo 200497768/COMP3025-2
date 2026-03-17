@@ -16,7 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
-import comp3025.assignment2.models.City;
+import comp3025.assignment2.models.CityOption;
 import comp3025.assignment2.models.WeatherInformation;
 
 
@@ -108,15 +108,15 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                City city = new City();
-                city.setCity("Barrie");
-                city.setLon(44.38);
-                city.setLat(-79.7);
+                CityOption cityOption = new CityOption();
+                cityOption.setCity("Barrie");
+                cityOption.setLon(44.38);
+                cityOption.setLat(-79.7);
 
                 //Use the ViewModel to retrieve the WeatherInformation model for this city.
                 //The ViewModel will change the WeatherInformation model field when this method has finished retrieving.
                 //When the ViewModel changes the field, that will cause the onChanged method to happen.
-                mainActivity.viewModel.retrieveWeatherInformation(city);
+                mainActivity.viewModel.retrieveWeatherInformation(cityOption);
             }
         });
 

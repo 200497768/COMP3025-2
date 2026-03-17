@@ -5,7 +5,7 @@ import android.util.Log;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import comp3025.assignment2.models.City;
+import comp3025.assignment2.models.CityOption;
 import comp3025.assignment2.models.WeatherInformation;
 import comp3025.assignment2.retrieval.RetrievalCode;
 
@@ -30,7 +30,7 @@ public class MainActivityViewModel extends ViewModel {
      * This field is for the ViewModel to use.
      * When this field changes, the ViewModel needs to retrieve the WeatherInformation model, and change the fragment area.
      */
-    private MutableLiveData<City> cityOptionMutableLiveData = new MutableLiveData<>();
+    private MutableLiveData<CityOption> cityOptionMutableLiveData = new MutableLiveData<>();
 
     private CityOptionChosenAction cityOptionChosenAction;
 
@@ -50,9 +50,9 @@ public class MainActivityViewModel extends ViewModel {
              * The ViewModel will retrieve the WeatherInformation model, and change the fragment area.
              */
             @Override
-            public void cityOptionChosen(City city) {
+            public void cityOptionChosen(CityOption cityOption) {
 //Provide this city to the ViewModel.
-                viewModel.cityOptionChosen(city);
+                viewModel.cityOptionChosen(cityOption);
             }
         };
 
@@ -66,14 +66,14 @@ public class MainActivityViewModel extends ViewModel {
      * This method needs to change the city option model to the WeatherInformation model.
      * In addition, this method needs to show the WeatherInformation model by changing the field from the ViewModel.
      */
-    private void cityOptionChosen(City city) {
-        Log.i("200497768", "The city that the ViewModel received is " + city.getCity());
+    private void cityOptionChosen(CityOption cityOption) {
+        Log.i("200497768", "The city option model that the ViewModel received is " + cityOption.getCity());
 
         //Retrieve the WeatherInformation model for the chosen city, and change the field to the WeatherInformation model.
-        this.retrieveWeatherInformation(city);
+        this.retrieveWeatherInformation(cityOption);
     }
 
-    public MutableLiveData<City> getCityOptionMutableLiveData() {
+    public MutableLiveData<CityOption> getCityOptionMutableLiveData() {
         return cityOptionMutableLiveData;
     }
 
@@ -81,11 +81,11 @@ public class MainActivityViewModel extends ViewModel {
      * This method starts retrieving the WeatherInformation model.
      * The code for this method changes the WeatherInformation model field when the retrieving code has finished.
      */
-    public void retrieveWeatherInformation(City city) {
+    public void retrieveWeatherInformation(CityOption cityOption) {
         //Create the WeatherInformation model, and show ShowWeatherFragment.
         //We can write RetrievalCode, or ExampleModelRetrievalCode.
         MainActivityViewModel mainActivityViewModel = this;
-        RetrievalCode retrievalCode = new RetrievalCode(city) {
+        RetrievalCode retrievalCode = new RetrievalCode(cityOption) {
 
             /**
              * The retrieval code has produced the WeatherInformation model.

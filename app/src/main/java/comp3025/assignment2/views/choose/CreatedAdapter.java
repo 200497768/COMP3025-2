@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import comp3025.assignment2.R;
-import comp3025.assignment2.models.City;
+import comp3025.assignment2.models.CityOption;
 import comp3025.assignment2.views.CityOptionChosenAction;
 
 /**
@@ -23,11 +23,11 @@ import comp3025.assignment2.views.CityOptionChosenAction;
  * @author Hao Tian
  */
 public class CreatedAdapter extends RecyclerView.Adapter<CreatedViewHolder> {
-    private List<City> cityOptions;
+    private List<CityOption> cityOptions;
 
     private CityOptionChosenAction cityOptionChosenAction;
 
-    public CreatedAdapter(List<City> cityOptions, CityOptionChosenAction cityOptionChosenAction) {
+    public CreatedAdapter(List<CityOption> cityOptions, CityOptionChosenAction cityOptionChosenAction) {
         this.cityOptions = cityOptions;
         this.cityOptionChosenAction = cityOptionChosenAction;
     }
@@ -52,12 +52,12 @@ public class CreatedAdapter extends RecyclerView.Adapter<CreatedViewHolder> {
             @Override
             public void cityOptionChosen(int absoluteAdapterPosition) {
                 //Retrieve the city option that was chosen.
-                City city = createdAdapter.cityOptions.get(absoluteAdapterPosition);
+                CityOption cityOption = createdAdapter.cityOptions.get(absoluteAdapterPosition);
 
-                Log.i("200497768", "The city that was chosen is " + city.getCity());
+                Log.i("200497768", "The city option model that was chosen is " + cityOption.getCity());
 
                 //Provide the city option that was chosen to the city option chosen area.
-                createdAdapter.cityOptionChosenAction.cityOptionChosen(city);
+                createdAdapter.cityOptionChosenAction.cityOptionChosen(cityOption);
             }
         };
 
@@ -73,21 +73,21 @@ public class CreatedAdapter extends RecyclerView.Adapter<CreatedViewHolder> {
         //When this code happens, it provides a number that can be used to determine the city option model that the code is showing.
 
         //Retrieve a single city option model using this number.
-        City city = this.cityOptions.get(position);
+        CityOption cityOption = this.cityOptions.get(position);
 
         //The remaining code for this method changes views to match the city option model.
 
         //Change the city name TextView item.
         TextView cityNameTextView = holder.getCityNameTextView();
-        cityNameTextView.setText(city.getCity());
+        cityNameTextView.setText(cityOption.getCity());
 
         //Change the province name TextView item.
         TextView provinceNameTextView = holder.getProvinceNameTextView();
-        provinceNameTextView.setText(city.getProvince());
+        provinceNameTextView.setText(cityOption.getProvince());
 
         //Change the country name TextView item.
         TextView countryNameTextView = holder.getCountryNameTextView();
-        countryNameTextView.setText(city.getCountry());
+        countryNameTextView.setText(cityOption.getCountry());
     }
 
     /**

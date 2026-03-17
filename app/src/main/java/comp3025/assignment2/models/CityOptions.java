@@ -10,13 +10,13 @@ import java.util.List;
  * @author Hao Tian
  */
 public class CityOptions {
-    private List<City> cityOptions = new ArrayList<>();
+    private List<CityOption> cityOptions = new ArrayList<>();
 
-    public List<City> getCityOptions() {
+    public List<CityOption> getCityOptions() {
         return cityOptions;
     }
 
-    public void addCityOption(City city) {
-        this.cityOptions.add(city);
+    public void addCityOption(CityOption cityOption) {
+        this.cityOptions.add(cityOption);
     }
 }
