@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">COMP3025 2</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="choose_city_fragment">Choose a city.</string>
     <string name="show_weather_fragment">Showing weather for this city.</string>
     <string name="main_activity">This is MainActivity.</string>
