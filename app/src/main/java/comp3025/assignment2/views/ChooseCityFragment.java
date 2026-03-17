@@ -78,6 +78,9 @@ public class ChooseCityFragment extends Fragment {
         //Create the ViewModel for this fragment.
         this.viewModel = new ViewModelProvider(this).get(ChooseCityFragmentViewModel.class);
 
+        //Remove the message explaining that no city options could be retrieved.
+        this.binding.cityNotExistTextView.setVisibility(View.GONE);
+
         //Add the code that will happen when the City model from the ViewModel changes.
         ChooseCityFragment chooseCityFragment = this;
         this.viewModel.getMutableLiveData().observe(getViewLifecycleOwner(), new Observer<CityOptions>() {
@@ -104,6 +107,11 @@ public class ChooseCityFragment extends Fragment {
 //In order to write this code, we've started with the example code from the week 9 class (A. Perdikoulias, personal communication, March 13, 2026).
                 CreatedAdapter createdAdapter = new CreatedAdapter(cityOptionModels, chooseCityFragment.cityOptionChosenAction);
                 chooseCityFragment.binding.recyclerView.setAdapter(createdAdapter);
+
+                if (cityOptionModels.size() == 0) {
+                    //Show a message explaining that no city option models could be retrieved.
+                    chooseCityFragment.binding.cityNotExistTextView.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -111,6 +119,9 @@ public class ChooseCityFragment extends Fragment {
         this.binding.retrieveCityOptionModelsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Remove the message explaining that no city options could be retrieved.
+                chooseCityFragment.binding.cityNotExistTextView.setVisibility(View.GONE);
+
                 //Retrieve the name of the city that was written.
                 EditText cityEditText = chooseCityFragment.binding.cityEditText;
                 String cityName = "" + cityEditText.getText();

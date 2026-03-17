@@ -29,10 +29,18 @@
         android:textSize="20sp"
         android:text="Retrieve city option models" />
 
+    <TextView
+        android:id="@+id/cityNotExistTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="City not exist"
+        android:textSize="20sp" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F44336" />
+
 
 </LinearLayout>
