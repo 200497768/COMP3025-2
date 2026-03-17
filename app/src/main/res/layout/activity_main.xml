@@ -32,7 +32,7 @@
             android:id="@+id/chooseCityButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choose this city"
+            android:text="@string/show_example_city"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
