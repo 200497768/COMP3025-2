@@ -2,6 +2,8 @@ package comp3025.assignment2.views;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,7 +83,7 @@ public class ChooseCityFragment extends Fragment {
         //Remove the message explaining that no city options could be retrieved.
         this.binding.cityNotExistTextView.setVisibility(View.GONE);
 
-        //Add the code that will happen when the City model from the ViewModel changes.
+        //Add the code that will happen when the City option model from the ViewModel changes.
         ChooseCityFragment chooseCityFragment = this;
         this.viewModel.getMutableLiveData().observe(getViewLifecycleOwner(), new Observer<CityOptions>() {
 
@@ -117,18 +119,61 @@ public class ChooseCityFragment extends Fragment {
 
         //Change what happens when choosing the option to the retrieve city option models.
         this.binding.retrieveCityOptionModelsButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * The code for this method happens when text for this TextView item has changed.
+             * This method provides the name of the city to the ViewModel, and retrieves the CityOption models.
+             */
             @Override
             public void onClick(View v) {
-                //Remove the message explaining that no city options could be retrieved.
-                chooseCityFragment.binding.cityNotExistTextView.setVisibility(View.GONE);
-
-                //Retrieve the name of the city that was written.
-                EditText cityEditText = chooseCityFragment.binding.cityEditText;
-                String cityName = "" + cityEditText.getText();
-
-                //Use the ViewModel to retrieve the city options.
-                chooseCityFragment.viewModel.retrieve(cityName);
+                chooseCityFragment.cityNameWritten();
             }
         });
+
+
+//Change what happens when text for this TextView item is changed (CodePath, n.d.).
+        this.binding.cityEditText.addTextChangedListener(new TextWatcher() {
+
+            /**
+             * The code for this method happens when text for this TextView item has changed.
+             * This method provides the name of the city to the ViewModel, and retrieves the CityOption models.
+             */
+            @Override
+            public void afterTextChanged(Editable s) {
+                chooseCityFragment.cityNameWritten();
+            }
+
+            /**
+             * No action needs to happen at this time.
+             */
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            /**
+             * No action needs to happen at this time.
+             */
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+        });
+    }
+
+    /**
+     * The code for this method happens when text for this TextView item has changed.
+     * This method provides the name of the city to the ViewModel, and retrieves the CityOption models.
+     */
+    public void cityNameWritten() {
+        //Remove the message explaining that no city options could be retrieved.
+        this.binding.cityNotExistTextView.setVisibility(View.GONE);
+
+        //Retrieve the name of the city that was written.
+        EditText cityEditText =this.binding.cityEditText;
+        String cityName = "" + cityEditText.getText();
+
+        //Use the ViewModel to retrieve the city options.
+        this.viewModel.retrieve(cityName);
     }
 }
