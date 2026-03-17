@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">COMP3025 2</string>
-    <string name="choose_city_fragment">Choose a city.</string>
+    <string name="choose_city_fragment">Write the name of a city.</string>
     <string name="show_weather_fragment">Showing weather for this city.</string>
     <string name="main_activity">This is MainActivity.</string>
+    <string name="city_name_not_exist">This city name doesn\'t exist.</string>
+    <string name="write_city_name">City</string>
+    <string name="retrieve_city_options">Retrieve</string>
+    <string name="show_example_city">Show an example city</string>
 </resources>

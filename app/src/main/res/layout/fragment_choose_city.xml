@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:ems="10"
-        android:hint="What city?"
+        android:hint="@string/write_city_name"
         android:inputType="text" />
 
     <Button
@@ -27,13 +27,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="Retrieve city option models" />
+        android:text="@string/retrieve_city_options" />
 
     <TextView
         android:id="@+id/cityNotExistTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="City not exist"
+        android:text="@string/city_name_not_exist"
         android:textSize="20sp" />
 
     <androidx.recyclerview.widget.RecyclerView
