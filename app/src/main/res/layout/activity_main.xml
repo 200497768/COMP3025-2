@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2196F3"
+    android:background="#396a93"
     tools:context=".MainActivity">
 
     <TextView
@@ -23,7 +23,8 @@
         android:id="@+id/actionsArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#8BC34A"
+        android:layout_margin="20sp"
+        android:background="#396a93"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/fragment_container"
         app:layout_constraintTop_toBottomOf="@id/chooseCityButton">
