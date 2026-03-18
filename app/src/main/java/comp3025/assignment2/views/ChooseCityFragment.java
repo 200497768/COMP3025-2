@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -140,6 +141,8 @@ public class ChooseCityFragment extends Fragment {
              */
             @Override
             public void afterTextChanged(Editable s) {
+                String cityName = "" + chooseCityFragment.binding.cityEditText.getText();
+                Log.i("200594802 and 200497768", "During the afterTextChanged method, the name of the city has been written as " + cityName);
                 chooseCityFragment.cityNameWritten();
             }
 
@@ -148,7 +151,8 @@ public class ChooseCityFragment extends Fragment {
              */
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                String cityName = "" + chooseCityFragment.binding.cityEditText.getText();
+                Log.i("200594802 and 200497768", "During the beforeTextChanged method, the name of the city has been written as " + cityName);
             }
 
             /**
@@ -156,7 +160,8 @@ public class ChooseCityFragment extends Fragment {
              */
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                String cityName = "" + chooseCityFragment.binding.cityEditText.getText();
+                Log.i("200594802 and 200497768", "During the onTextChanged method, the name of the city has been written as " + cityName);
             }
         });
     }
