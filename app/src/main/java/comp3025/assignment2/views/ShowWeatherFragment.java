@@ -91,6 +91,7 @@ public class ShowWeatherFragment extends Fragment {
 
                 //Show every field from the model.
                 showWeatherFragment.binding.cityNameTextView.setText("" + changedWeatherInformation.getCityName());
+                showWeatherFragment.binding.provinceNameTextView.setText("" + changedWeatherInformation.getProvince());
                 showWeatherFragment.binding.countryNameTextView.setText("" + changedWeatherInformation.getCountryName());
                 showWeatherFragment.binding.currentTemperatureCTextView.setText("" + changedWeatherInformation.getCurrentTemperatureC() + "°C");
                 showWeatherFragment.binding.currentTemperatureFTextView.setText("" + changedWeatherInformation.getCurrentTemperatureF() + "°F");

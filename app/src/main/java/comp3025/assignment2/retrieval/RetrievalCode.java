@@ -143,6 +143,22 @@ public class RetrievalCode {
             Log.i("200594802 and 200497768", "JSONException when retrieving the name of the city field.");
         }
 
+        //Change the field for the name of the province to match responseData.
+        try {
+            //Retrieve the location part.
+            JSONObject json = new JSONObject(responseData);
+            JSONObject location = json.getJSONObject("location");
+
+            //Retrieve name of the province.
+            String provinceName = location.getString("region");
+
+            //Change the field for the model.
+            weatherInformation.setProvince(provinceName);
+            Log.i("200594802 and 200497768", "The name of the province field has been retrieved as " + weatherInformation.getProvince());
+        } catch (JSONException e) {
+            Log.i("200594802 and 200497768", "JSONException when retrieving the name of the province field.");
+        }
+
         //Change the field for name of the country to match responseData.
         try {
             //Retrieve the location part.
