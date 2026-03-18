@@ -60,6 +60,7 @@ public class CityOption {
     }
 
     public void setCountry(String country) {
+        //Only change the field if it was provided to the model.
         if (country == null) {
             //Don't change the field.
             Log.i("200594802 and 200497768", "The country field wasn't changed because it wasn't provided to the CityOption model.");
@@ -74,6 +75,7 @@ public class CityOption {
     }
 
     public void setProvince(String province) {
+        //Only change the field if it was provided to the model.
         if (province == null) {
             //Don't change the field.
             Log.i("200594802 and 200497768", "The province field wasn't changed because it wasn't provided to the CityOption model.");
@@ -88,6 +90,7 @@ public class CityOption {
     }
 
     public void setCity(String city) {
+        //Only change the field if it was provided to the model.
         if (city == null) {
             //Don't change the field.
             Log.i("200594802 and 200497768", "The city field wasn't changed because it wasn't provided to the CityOption model.");
