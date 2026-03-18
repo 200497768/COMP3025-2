@@ -20,6 +20,26 @@ public class WeatherInformation {
     private String cityName = "No city name available";
 
     /**
+     * This field is the name of the province that this weather information model is for.
+     */
+    private String province = "No province available";
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        //Only change the field if it was provided to the model.
+        if (province == null) {
+            //Don't change the field.
+            Log.i("200594802 and 200497768", "The province field wasn't changed because it wasn't provided to the WeatherInformation model.");
+        } else {
+            //Change the field.
+            this.province = province;
+        }
+    }
+
+    /**
      * This field is the name of the country that this weather information model is for.
      */
     private String countryName = "No country name available";
