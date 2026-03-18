@@ -1,11 +1,14 @@
 package comp3025.assignment2.models;
 
+import android.util.Log;
+
 /**
  * This is the model that includes weather information that has been retrieved.
  * The model includes a field for every piece of information that we need to show in ShowWeatherFragment.
  * When a city has been chosen, the code from MainActivity starts the retrieval code.
  * The retrieval code creates the model for that city, and changes the fields to match responseData.
  * The code from MainActivity provides the model to ShowWeatherFragment, and ShowWeatherFragment shows the individual fields.
+ *
  * @author Yatri Devangbhai Padhiyar
  * @author Hao Tian
  */
@@ -14,12 +17,12 @@ public class WeatherInformation {
     /**
      * This field is the name of the city that this weather information model is for.
      */
-    private String cityName = "No city name";
+    private String cityName = "No city name available";
 
     /**
      * This field is the name of the country that this weather information model is for.
      */
-    private String countryName = "No country name";
+    private String countryName = "No country name available";
 
     /**
      * This field is current temperature C.
@@ -34,14 +37,21 @@ public class WeatherInformation {
     /**
      * This field is condition as text.
      */
-    private String weatherConditionText = "No condition text";
+    private String weatherConditionText = "No condition text available";
 
     public String getWeatherConditionPicture() {
         return weatherConditionPicture;
     }
 
     public void setWeatherConditionPicture(String weatherConditionPicture) {
-        this.weatherConditionPicture = weatherConditionPicture;
+        //Only change the field if it was provided to the model.
+        if (weatherConditionPicture == null) {
+            //Don't change the field.
+            Log.i("200594802 and 200497768", "The weather condition picture field wasn't changed because it wasn't provided to the WeatherInformation model.");
+        } else {
+            //Change the field.
+            this.weatherConditionPicture = weatherConditionPicture;
+        }
     }
 
     public String getWeatherConditionText() {
@@ -80,7 +90,7 @@ public class WeatherInformation {
     /**
      * This field is wind direction written as letters, like SW.
      */
-    private String windDirectionText = "No wind direction text";
+    private String windDirectionText = "No wind direction text available";
 
     /**
      * This field is wind direction as an angle.
@@ -100,7 +110,14 @@ public class WeatherInformation {
     }
 
     public void setWindDirectionText(String windDirectionText) {
-        this.windDirectionText = windDirectionText;
+        //Only change the field if it was provided to the model.
+        if (windDirectionText == null) {
+            //Don't change the field.
+            Log.i("200594802 and 200497768", "The wind direction text field wasn't changed because it wasn't provided to the WeatherInformation model.");
+        } else {
+            //Change the field.
+            this.windDirectionText = windDirectionText;
+        }
     }
 
     public double getWindSpeed() {
@@ -156,7 +173,14 @@ public class WeatherInformation {
     }
 
     public void setCountryName(String countryName) {
-        this.countryName = countryName;
+        //Only change the field if it was provided to the model.
+        if (countryName == null) {
+            //Don't change the field.
+            Log.i("200594802 and 200497768", "The country name field wasn't changed because it wasn't provided to the WeatherInformation model.");
+        } else {
+            //Change the field.
+            this.countryName = countryName;
+        }
     }
 
     public String getCityName() {
@@ -164,6 +188,13 @@ public class WeatherInformation {
     }
 
     public void setCityName(String cityName) {
-        this.cityName = cityName;
+        //Only change the field if it was provided to the model.
+        if (cityName == null) {
+            //Don't change the field.
+            Log.i("200594802 and 200497768", "The city name field wasn't changed because it wasn't provided to the WeatherInformation model.");
+        } else {
+            //Change the field.
+            this.cityName = cityName;
+        }
     }
 }

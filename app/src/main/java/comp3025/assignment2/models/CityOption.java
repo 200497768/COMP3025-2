@@ -1,7 +1,10 @@
 package comp3025.assignment2.models;
 
+import android.util.Log;
+
 /**
  * This model is a city option that has been retrieved.
+ *
  * @author Yatri Devangbhai Padhiyar
  * @author Hao Tian
  */
@@ -57,7 +60,14 @@ public class CityOption {
     }
 
     public void setCountry(String country) {
-        this.country = country;
+        //Only change the field if it was provided to the model.
+        if (country == null) {
+            //Don't change the field.
+            Log.i("200594802 and 200497768", "The country field wasn't changed because it wasn't provided to the CityOption model.");
+        } else {
+            //Change the field.
+            this.country = country;
+        }
     }
 
     public String getProvince() {
@@ -65,7 +75,14 @@ public class CityOption {
     }
 
     public void setProvince(String province) {
-        this.province = province;
+        //Only change the field if it was provided to the model.
+        if (province == null) {
+            //Don't change the field.
+            Log.i("200594802 and 200497768", "The province field wasn't changed because it wasn't provided to the CityOption model.");
+        } else {
+            //Change the field.
+            this.province = province;
+        }
     }
 
     public String getCity() {
@@ -73,6 +90,13 @@ public class CityOption {
     }
 
     public void setCity(String city) {
-        this.city = city;
+        //Only change the field if it was provided to the model.
+        if (city == null) {
+            //Don't change the field.
+            Log.i("200594802 and 200497768", "The city field wasn't changed because it wasn't provided to the CityOption model.");
+        } else {
+            //Change the field.
+            this.city = city;
+        }
     }
 }
