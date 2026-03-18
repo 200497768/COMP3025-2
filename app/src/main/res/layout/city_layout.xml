@@ -3,22 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#009688"
+    android:background="#FFC107"
     android:orientation="vertical"
     tools:context=".ChooseCityFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="Choose this city" />
+        android:text="Choose this city"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/cityNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="City name" />
+        android:text="City name"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/provinceNameTextView"
