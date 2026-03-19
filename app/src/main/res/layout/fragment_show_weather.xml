@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/show_weather_fragment"
         android:textColor="@color/white"
+        android:layout_marginTop="16dp"
         android:textSize="20sp" />
 
     <LinearLayout
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content"
             android:text="Name of city"
             android:textColor="@color/white"
+            android:layout_marginTop="16dp"
             android:textSize="20sp" />
 
         <TextView
@@ -35,6 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name of province"
+            android:layout_marginTop="16dp"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -46,6 +49,7 @@
             android:layout_marginBottom="32dp"
             android:text="Name of country"
             android:textColor="@color/white"
+            android:layout_marginTop="16dp"
             android:textSize="20sp" />
 
         <TextView
@@ -100,6 +104,7 @@
             android:layout_marginStart="80dp"
             android:text="Humidity"
             android:textColor="@color/white"
+            android:layout_marginTop="16dp"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -127,6 +132,7 @@
             android:layout_height="wrap_content"
             android:text="Wind direction text"
             android:textColor="@color/white"
+            android:layout_marginTop="16dp"
             android:textSize="20sp" />
 
     </LinearLayout>
