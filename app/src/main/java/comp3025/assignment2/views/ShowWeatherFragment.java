@@ -95,6 +95,10 @@ public class ShowWeatherFragment extends Fragment {
                 WeatherInformation changedWeatherInformation = weatherInformationMutableLiveData.getValue();
 
                 //Show every field from the model.
+                //Every field must be changed to a string.
+                //In order to avoid problems, every field from the model must be changed to a string before being provided to the setText method.
+                //The setText method must not receive a number.
+                //We have written code to change every field to a string, even if the model writes the field as a string.
                 showWeatherFragment.binding.cityNameTextView.setText("" + changedWeatherInformation.getCityName());
                 showWeatherFragment.binding.provinceNameTextView.setText("" + changedWeatherInformation.getProvince());
                 showWeatherFragment.binding.countryNameTextView.setText("" + changedWeatherInformation.getCountryName());
@@ -104,7 +108,7 @@ public class ShowWeatherFragment extends Fragment {
                 showWeatherFragment.binding.feelsLikeCTextView.setText("Feels like " + changedWeatherInformation.getFeelsLikeC() + "°C");
                 showWeatherFragment.binding.humidityTextView.setText("Humidity " + changedWeatherInformation.getHumidityPercentage() + "%");
                 showWeatherFragment.binding.windSpeedTextView.setText("Wind speed " + changedWeatherInformation.getWindSpeed() + " km/h");
-                showWeatherFragment.binding.windDirectionTextTextView.setText("" + changedWeatherInformation.getWindDirectionText());
+                showWeatherFragment.binding.windDirectionTextTextView.setText("Wind direction " + changedWeatherInformation.getWindDirectionText());
 
                 //Change the picture.
                 //The picture is a field that's part of the model, so we can retrieve the picture from the model.
