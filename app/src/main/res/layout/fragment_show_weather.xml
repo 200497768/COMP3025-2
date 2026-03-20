@@ -68,11 +68,22 @@
             android:textColor="@color/white"
             android:textSize="20sp" />
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back" />
+
         <TextView
             android:id="@+id/conditionTextTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+
             android:text="Condition"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -137,17 +148,6 @@
             android:text="Wind direction text"
             android:textColor="@color/white"
             android:textSize="20sp" />
-
-        <ImageView
-
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/back" />
 
     </LinearLayout>
 
