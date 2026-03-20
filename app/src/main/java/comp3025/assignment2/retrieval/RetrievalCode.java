@@ -1,7 +1,5 @@
 package comp3025.assignment2.retrieval;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -10,7 +8,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Objects;
 
 import comp3025.assignment2.models.CityOption;
@@ -81,12 +78,6 @@ public class RetrievalCode {
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 Objects.requireNonNull(response.body());
-
-                InputStream inputStream = response.body().byteStream();
-                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-//need APA
-
-
 
                 String responseData = response.body().string();
                 Log.i("200594802 and 200497768", responseData);
