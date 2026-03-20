@@ -26,6 +26,11 @@ import okhttp3.Response;
  */
 public class PictureRetrievalCode {
 
+    /**
+     * This field is the string that will be used to retrieve the picture.
+     * We must ensure that this string is correct.
+     * If this string isn't correct, the retrieval code will cause a problem when providing the string to okhttp.
+     */
     private String urlString;
 
     public Bitmap bitmap;
@@ -42,7 +47,7 @@ public class PictureRetrievalCode {
     public void retrieve() {
 
         //Create a request.
-        Request request = new Request.Builder().url("http:" + this.urlString).build();
+        Request request = new Request.Builder().url("string" + this.urlString).build();
 
         OkHttpClient client = new OkHttpClient();
 

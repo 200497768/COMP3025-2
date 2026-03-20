@@ -228,7 +228,7 @@ public class RetrievalCode {
             Log.i("200594802 and 200497768", "JSONException when retrieving the condition text field.");
         }
 
-        //Change the field for condition picture to match responseData.
+        //Change the field for condition picture string to match responseData.
         try {
             //Retrieve condition part.
             JSONObject json = new JSONObject(responseData);
@@ -236,7 +236,9 @@ public class RetrievalCode {
             JSONObject condition = current.getJSONObject("condition");
 
             //Retrieve condition picture.
-            String picture = condition.getString("icon");
+            //This string must be correct, because we will use it to retrieve the picture.
+            //The string from the model needs to be combined with another string in order us to be able to use it to retrieve the picture.
+            String picture = "http:" + condition.getString("icon");
 
             //Change the field for the model.
             weatherInformation.setWeatherConditionPictureString(picture);
