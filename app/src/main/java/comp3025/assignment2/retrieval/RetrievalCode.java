@@ -238,10 +238,10 @@ public class RetrievalCode {
             //Retrieve condition picture.
             //This string must be correct, because we will use it to retrieve the picture.
             //The string from the model needs to be combined with another string in order us to be able to use it to retrieve the picture.
-            String picture = "http:" + condition.getString("icon");
+            String pictureString = "http:" + condition.getString("icon");
 
             //Change the field for the model.
-            weatherInformation.setWeatherConditionPictureString(picture);
+            weatherInformation.setWeatherConditionPictureString(pictureString);
             Log.i("200594802 and 200497768", "The condition picture string field has been retrieved as " + weatherInformation.getWeatherConditionPictureString());
         } catch (JSONException e) {
             Log.i("200594802 and 200497768", "JSONException when retrieving the condition picture string field.");
