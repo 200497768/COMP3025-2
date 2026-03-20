@@ -7,6 +7,7 @@
     android:background="#5a91bf"
     android:orientation="vertical"
     android:padding="20sp"
+    android:background="@drawable/back"
     tools:context=".ChooseCityFragment">
 
     <TextView
