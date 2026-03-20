@@ -63,7 +63,6 @@
             android:id="@+id/currentTemperatureFTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:text="Temperature F"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -95,7 +94,6 @@
             android:id="@+id/feelsLikeCTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:text="Feels like C"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -117,14 +115,15 @@
         android:id="@+id/windSpeedArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="20sp"
         android:background="#325d81"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20sp">
 
         <TextView
             android:id="@+id/windSpeedTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:text="Wind speed"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -133,9 +132,9 @@
             android:id="@+id/windDirectionTextTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="Wind direction text"
             android:textColor="@color/white"
-            android:layout_marginTop="16dp"
             android:textSize="20sp" />
 
     </LinearLayout>
