@@ -64,6 +64,7 @@
             android:id="@+id/currentTemperatureFTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
             android:text="Temperature F"
             android:textColor="@color/white"
             android:textSize="20sp" />
