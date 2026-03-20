@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF9800"
+    android:background="#447eaf"
     android:orientation="vertical"
     tools:context=".ShowWeatherFragment">
 
@@ -11,14 +11,16 @@
         android:id="@+id/showWeatherFragmentTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="@string/show_weather_fragment" />
+        android:text="@string/show_weather_fragment"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp" />
 
     <LinearLayout
         android:id="@+id/currentConditionsArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#00BCD4"
+        android:background="#325d81"
         android:orientation="vertical">
 
         <TextView
@@ -26,6 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name of city"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
             android:textSize="20sp" />
 
         <TextView
@@ -33,6 +37,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name of province"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <TextView
@@ -42,6 +48,8 @@
 
             android:layout_marginBottom="32dp"
             android:text="Name of country"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
             android:textSize="20sp" />
 
         <TextView
@@ -50,6 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="160dp"
             android:text="Temperature C"
+            android:textColor="@color/white"
             android:textSize="34sp" />
 
         <TextView
@@ -58,6 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="Temperature F"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <TextView
@@ -66,6 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="Condition"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -74,7 +85,7 @@
         android:id="@+id/feelsLikeArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#8BC34A"
+        android:background="#325d81"
         android:orientation="vertical">
 
         <TextView
@@ -83,6 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="Feels like C"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <TextView
@@ -91,6 +103,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
             android:text="Humidity"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -100,7 +114,7 @@
         android:id="@+id/windSpeedArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FF5722"
+        android:background="#325d81"
         android:orientation="vertical">
 
         <TextView
@@ -109,6 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="Wind speed"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <TextView
@@ -116,6 +131,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Wind direction text"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
             android:textSize="20sp" />
 
     </LinearLayout>

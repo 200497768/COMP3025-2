@@ -4,15 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10sp"
+    android:background="#5a91bf"
     android:orientation="vertical"
     android:padding="20sp"
     android:background="@drawable/back"
     tools:context=".ChooseCityFragment">
 
     <TextView
+        android:id="@+id/co"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Choose this city"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <TextView
@@ -20,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="City name"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <TextView
@@ -27,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Province name"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <TextView
@@ -34,6 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Country name"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
 
