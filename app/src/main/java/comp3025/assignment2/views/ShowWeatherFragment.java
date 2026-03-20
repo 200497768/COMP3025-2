@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -78,6 +79,13 @@ public class ShowWeatherFragment extends Fragment {
 
         //Create the ViewModel for this fragment.
         this.viewModel = new ViewModelProvider(this).get(ShowWeatherFragmentViewModel.class);
+
+        //2026-03-20 14:41:26.927 11360-11400 200594802 and 200497768 comp3025.assignment2                 I  The condition text field has been retrieved as Fog
+        //2026-03-20 14:41:26.931 11360-11400 200594802 and 200497768 comp3025.assignment2                 I  The condition picture field has been retrieved as //cdn.weatherapi.com/weather/64x64/day/248.png
+        //2026-03-20 14:41:26.935 11360-11400 200594802 and 200497768 comp3025.assignment2                 I  The feels like C field has been retrieved as 1.0
+
+        ImageView imageView = new ImageView(getContext());
+        imageView.setImageDrawable();
 
         //Change what happens when the model changes.
         //This code must happen before providing the WeatherInformation model that this fragment was created with to the ViewModel.
