@@ -89,7 +89,11 @@ public class RetrievalCode {
                 retrievalCode.weatherInformation = weatherInformation;
 
                 //The retrieved method needs to happen after the model has been created.
-                retrievalCode.retrieved();
+
+                //Don't use the retrieval method, because this code must wait for the picture to be retrieved.
+                //The picture will likely finish after the rest of the WeatherInformation model.
+                //We're not certain about this, so we've written the code to retrieve the picture after most of the model has been created.
+//If we didn't need to retrieve the picture, we would use the retrieved method.
             }
 
             /**
@@ -235,10 +239,10 @@ public class RetrievalCode {
             String picture = condition.getString("icon");
 
             //Change the field for the model.
-            weatherInformation.setWeatherConditionPicture(picture);
-            Log.i("200594802 and 200497768", "The condition picture field has been retrieved as " + weatherInformation.getWeatherConditionPicture());
+            weatherInformation.setWeatherConditionPictureString(picture);
+            Log.i("200594802 and 200497768", "The condition picture string field has been retrieved as " + weatherInformation.getWeatherConditionPictureString());
         } catch (JSONException e) {
-            Log.i("200594802 and 200497768", "JSONException when retrieving the condition picture field.");
+            Log.i("200594802 and 200497768", "JSONException when retrieving the condition picture string field.");
         }
 
         //Change the field for feels like C to match responseData.
@@ -338,6 +342,22 @@ public class RetrievalCode {
         }
 
         Log.i("200594802 and 200497768", "The retrieval code has finished changing fields for the model.");
+
+        //Change the field for condition picture.
+        //Change the picture.
+        RetrievalCode retrievalCode = this;
+        String changeString = weatherInformation.getWeatherConditionPictureString();
+        PictureRetrievalCode pictureRetrievalCode = new PictureRetrievalCode(changeString) {
+            @Override
+            public void retrieved() {
+                //Change the field for the model.
+                weatherInformation.setWeatherConditionPictureBitmap(this.bitmap);
+
+                //The retrieved method needs to happen after the picture has been retrieved.
+                retrievalCode.retrieved();
+            }
+        };
+        pictureRetrievalCode.retrieve();
 
         return weatherInformation;
 

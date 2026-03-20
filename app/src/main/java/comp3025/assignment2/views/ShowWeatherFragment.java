@@ -16,7 +16,6 @@ import androidx.lifecycle.ViewModelProvider;
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentShowWeatherBinding;
 import comp3025.assignment2.models.WeatherInformation;
-import comp3025.assignment2.retrieval.PictureRetrievalCode;
 
 /**
  * This fragment shows weather information for the city that has been chosen.
@@ -108,14 +107,11 @@ public class ShowWeatherFragment extends Fragment {
                 showWeatherFragment.binding.windDirectionTextTextView.setText("" + changedWeatherInformation.getWindDirectionText());
 
                 //Change the picture.
-                String changeString = changedWeatherInformation.getWeatherConditionPicture();
-                PictureRetrievalCode pictureRetrievalCode = new PictureRetrievalCode(changeString) {
-                    @Override
-                    public void retrieved() {
-                        showWeatherFragment.binding.imageView.setImageBitmap(this.bitmap);
-                    }
-                };
-                pictureRetrievalCode.retrieve();
+                //The picture is a field that's part of the model, so we can retrieve the picture from the model.
+                //The code to retrieve the picture happened when the model was being retrieved.
+                //When this method happens, the model, including the picture, is supposed to have finished being retrieved.
+                showWeatherFragment.binding.imageView.setImageBitmap(changedWeatherInformation.getWeatherConditionPictureBitmap());
+
             }
         });
 
