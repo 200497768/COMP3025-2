@@ -7,4 +7,5 @@
     <string name="write_city_name">City</string>
     <string name="retrieve_city_options">Retrieve</string>
     <string name="show_example_city">Show an example city</string>
+    <string name="weather">Weather retrieval system</string>
 </resources>
