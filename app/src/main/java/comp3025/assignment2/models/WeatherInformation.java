@@ -1,5 +1,6 @@
 package comp3025.assignment2.models;
 
+import android.graphics.Bitmap;
 import android.util.Log;
 
 /**
@@ -59,18 +60,18 @@ public class WeatherInformation {
      */
     private String weatherConditionText = "No condition text available";
 
-    public String getWeatherConditionPicture() {
-        return weatherConditionPicture;
+    public String getWeatherConditionPictureString() {
+        return weatherConditionPictureString;
     }
 
-    public void setWeatherConditionPicture(String weatherConditionPicture) {
+    public void setWeatherConditionPictureString(String weatherConditionPictureString) {
         //Only change the field if it was provided to the model.
-        if (weatherConditionPicture == null) {
+        if (weatherConditionPictureString == null) {
             //Don't change the field.
-            Log.i("200594802 and 200497768", "The weather condition picture field wasn't changed because it wasn't provided to the WeatherInformation model.");
+            Log.i("200594802 and 200497768", "The weather condition picture string field wasn't changed because it wasn't provided to the WeatherInformation model.");
         } else {
             //Change the field.
-            this.weatherConditionPicture = weatherConditionPicture;
+            this.weatherConditionPictureString = weatherConditionPictureString;
         }
     }
 
@@ -83,9 +84,19 @@ public class WeatherInformation {
     }
 
     /**
-     * This field is condition as picture.
+     * This field is condition picture string.
      */
-    private String weatherConditionPicture = "";
+    private String weatherConditionPictureString = "";
+
+    private Bitmap weatherConditionPictureBitmap;
+
+    public Bitmap getWeatherConditionPictureBitmap() {
+        return weatherConditionPictureBitmap;
+    }
+
+    public void setWeatherConditionPictureBitmap(Bitmap weatherConditionPictureBitmap) {
+        this.weatherConditionPictureBitmap = weatherConditionPictureBitmap;
+    }
 
     /**
      * This field is feels like C.
