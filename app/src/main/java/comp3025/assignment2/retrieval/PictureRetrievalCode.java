@@ -42,7 +42,7 @@ public class PictureRetrievalCode {
     public void retrieve() {
 
         //Create a request.
-        Request request = new Request.Builder().url(this.urlString).build();
+        Request request = new Request.Builder().url("http:" + this.urlString).build();
 
         OkHttpClient client = new OkHttpClient();
 
