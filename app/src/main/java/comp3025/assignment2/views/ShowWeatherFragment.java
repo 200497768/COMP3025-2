@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentShowWeatherBinding;
 import comp3025.assignment2.models.WeatherInformation;
+import comp3025.assignment2.retrieval.PictureRetrievalCode;
 
 /**
  * This fragment shows weather information for the city that has been chosen.
@@ -84,8 +84,6 @@ public class ShowWeatherFragment extends Fragment {
         //2026-03-20 14:41:26.931 11360-11400 200594802 and 200497768 comp3025.assignment2                 I  The condition picture field has been retrieved as //cdn.weatherapi.com/weather/64x64/day/248.png
         //2026-03-20 14:41:26.935 11360-11400 200594802 and 200497768 comp3025.assignment2                 I  The feels like C field has been retrieved as 1.0
 
-        ImageView imageView = new ImageView(getContext());
-        imageView.setImageDrawable();
 
         //Change what happens when the model changes.
         //This code must happen before providing the WeatherInformation model that this fragment was created with to the ViewModel.
@@ -108,6 +106,16 @@ public class ShowWeatherFragment extends Fragment {
                 showWeatherFragment.binding.humidityTextView.setText("Humidity " + changedWeatherInformation.getHumidityPercentage() + "%");
                 showWeatherFragment.binding.windSpeedTextView.setText("Wind speed " + changedWeatherInformation.getWindSpeed() + " km/h");
                 showWeatherFragment.binding.windDirectionTextTextView.setText("" + changedWeatherInformation.getWindDirectionText());
+
+                //Change the picture.
+                String changeString = changedWeatherInformation.getWeatherConditionPicture();
+                PictureRetrievalCode pictureRetrievalCode = new PictureRetrievalCode(changeString) {
+                    @Override
+                    public void retrieved() {
+                        showWeatherFragment.binding.imageView.setImageBitmap(this.bitmap);
+                    }
+                };
+                pictureRetrievalCode.retrieve();
             }
         });
 
