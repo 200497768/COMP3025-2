@@ -339,7 +339,6 @@ public class RetrievalCode {
 
         Log.i("200594802 and 200497768", "The retrieval code has finished changing fields for the model.");
 
-
         return weatherInformation;
 
     }
