@@ -18,8 +18,10 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
- * This class is code
- *
+ * This class is code that retrieves a picture.
+ * In order to use this class, a string must be provided.
+ * For the assignment, the string that will be provided to this class is the picture string from the WeatherInformation model.
+ * This class can still be used outside of the assignment to retrieve a picture.
  * @author Yatri Devangbhai Padhiyar
  * @author Anastasios Perdikoulias
  * @author Hao Tian
@@ -33,16 +35,19 @@ public class PictureRetrievalCode {
      */
     private String urlString;
 
+    /**
+     * This field is the picture that has been retrieved.
+     * This field is only available during the retrieved method, or after it has finished.
+     * Accessing this field during the retrieved method is recommended.
+     */
     public Bitmap bitmap;
-
 
     public PictureRetrievalCode(String urlString) {
         this.urlString = urlString;
     }
 
     /**
-     * This method retrieves the model, and changes the field.
-     * If the retrieval code is extended, when the model is available, this method must change the field and use the retrieved method.
+     * This method retrieves the picture using the string that was provided.
      */
     public void retrieve() {
 
@@ -55,12 +60,13 @@ public class PictureRetrievalCode {
         client.newCall(request).enqueue(new Callback() {
 
             /**
-             * This method creates the
+             * This method creates the picture, and causes the retrieved method to happen.
              */
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 Objects.requireNonNull(response.body());
 
+                //Create the picture.
                 InputStream inputStream = response.body().byteStream();
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
 //need APA
@@ -68,24 +74,24 @@ public class PictureRetrievalCode {
                 //Change the field.
                 retrievalCode.bitmap = bitmap;
 
-                //The retrieved method needs to happen after the model has been created.
+                //The retrieved method needs to happen after the picture has been created, and the field has been changed to the picture.
                 retrievalCode.retrieved();
             }
 
             /**
-             * This method doesn't create the WeatherInformation model.
+             * This method doesn't create the picture.
              */
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                Log.i("200594802 and 200497768", "The WeatherInformation model wasn't retrieved.");
+                Log.i("200594802 and 200497768", "The picture wasn't retrieved.");
                 Log.i("200594802 and 200497768", "" + e);
             }
         });
     }
 
     /**
-     * The retrieve method causes this method to happen after the model has been retrieved and created.
-     * During this method, the weatherInformation field will be the model.
+     * The retrieve method causes this method to happen after the picture has been retrieved and created.
+     * During this method, the weatherInformation bitmap field will be the picture.
      */
     public void retrieved() {
         Log.i("200594802 and 200497768", "Retrieval has completed.");
