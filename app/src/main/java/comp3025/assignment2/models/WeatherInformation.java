@@ -1,5 +1,6 @@
 package comp3025.assignment2.models;
 
+import android.graphics.Bitmap;
 import android.util.Log;
 
 /**
@@ -86,6 +87,16 @@ public class WeatherInformation {
      * This field is condition picture string.
      */
     private String weatherConditionPictureString = "";
+
+    private Bitmap weatherConditionPictureBitmap;
+
+    public Bitmap getWeatherConditionPictureBitmap() {
+        return weatherConditionPictureBitmap;
+    }
+
+    public void setWeatherConditionPictureBitmap(Bitmap weatherConditionPictureBitmap) {
+        this.weatherConditionPictureBitmap = weatherConditionPictureBitmap;
+    }
 
     /**
      * This field is feels like C.
