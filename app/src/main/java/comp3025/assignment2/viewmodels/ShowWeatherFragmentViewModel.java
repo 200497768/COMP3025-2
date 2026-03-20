@@ -1,4 +1,4 @@
-package comp3025.assignment2.views;
+package comp3025.assignment2.viewmodels;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;

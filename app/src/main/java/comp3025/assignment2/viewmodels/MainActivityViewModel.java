@@ -1,4 +1,4 @@
-package comp3025.assignment2.views;
+package comp3025.assignment2.viewmodels;
 
 import android.util.Log;
 
@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel;
 import comp3025.assignment2.models.CityOption;
 import comp3025.assignment2.models.WeatherInformation;
 import comp3025.assignment2.retrieval.RetrievalCode;
+import comp3025.assignment2.views.CityOptionChosenAction;
 
 /**
  * This class is the ViewModel for MainActivity.

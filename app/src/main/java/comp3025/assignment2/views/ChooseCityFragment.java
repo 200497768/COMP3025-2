@@ -24,6 +24,7 @@ import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentChooseCityBinding;
 import comp3025.assignment2.models.CityOption;
 import comp3025.assignment2.models.CityOptions;
+import comp3025.assignment2.viewmodels.ChooseCityFragmentViewModel;
 import comp3025.assignment2.views.choose.CreatedAdapter;
 
 /**

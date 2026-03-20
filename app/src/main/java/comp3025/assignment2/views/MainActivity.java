@@ -18,6 +18,7 @@ import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
 import comp3025.assignment2.models.CityOption;
 import comp3025.assignment2.models.WeatherInformation;
+import comp3025.assignment2.viewmodels.MainActivityViewModel;
 
 
 /**

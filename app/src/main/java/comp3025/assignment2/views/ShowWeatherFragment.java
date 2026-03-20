@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentShowWeatherBinding;
 import comp3025.assignment2.models.WeatherInformation;
+import comp3025.assignment2.viewmodels.ShowWeatherFragmentViewModel;
 
 /**
  * This fragment shows weather information for the city that has been chosen.
