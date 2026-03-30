@@ -4,8 +4,9 @@ import android.util.Log;
 
 /**
  * This model is a city option that has been retrieved.
- *
+ * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
+ * @author Dawa Angchuk Sherpa
  * @author Hao Tian
  */
 public class CityOption {
