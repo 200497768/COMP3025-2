@@ -29,7 +29,9 @@ import comp3025.assignment2.views.choose.CreatedAdapter;
 
 /**
  * This fragment allows a city to be chosen.
+ * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
+ * @author Dawa Angchuk Sherpa
  * @author Hao Tian
  */
 public class ChooseCityFragment extends Fragment {

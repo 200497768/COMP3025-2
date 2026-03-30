@@ -5,8 +5,9 @@ import java.util.List;
 
 /**
  * This is a model that includes multiple city option models.
- *
+ * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
+ * @author Dawa Angchuk Sherpa
  * @author Hao Tian
  */
 public class CityOptions {

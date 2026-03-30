@@ -7,7 +7,9 @@ import comp3025.assignment2.models.WeatherInformation;
 
 /**
  * This class is the ViewModel for ShowWeatherFragment.
+ * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
+ * @author Dawa Angchuk Sherpa
  * @author Hao Tian
  */
 public class ShowWeatherFragmentViewModel extends ViewModel {

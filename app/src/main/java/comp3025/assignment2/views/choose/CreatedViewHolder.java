@@ -11,8 +11,10 @@ import comp3025.assignment2.R;
 /**
  * This class is needed for RecyclerView.
  * In order to write this code, we've started with the example code from the week 9 class (A. Perdikoulias, personal communication, March 13, 2026).
+ * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Anastasios Perdikoulias
+ * @author Dawa Angchuk Sherpa
  * @author Hao Tian
  */
 public class CreatedViewHolder extends RecyclerView.ViewHolder {

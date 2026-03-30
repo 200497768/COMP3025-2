@@ -20,7 +20,9 @@ import comp3025.assignment2.viewmodels.ShowWeatherFragmentViewModel;
 
 /**
  * This fragment shows weather information for the city that has been chosen.
+ * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
+ * @author Dawa Angchuk Sherpa
  * @author Hao Tian
  */
 public class ShowWeatherFragment extends Fragment {

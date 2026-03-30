@@ -8,7 +8,9 @@ import comp3025.assignment2.retrieval.CityRetrievalCode;
 
 /**
  * This class is the ViewModel for ChooseCityFragment.
+ * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
+ * @author Dawa Angchuk Sherpa
  * @author Hao Tian
  */
 public class ChooseCityFragmentViewModel extends ViewModel {
