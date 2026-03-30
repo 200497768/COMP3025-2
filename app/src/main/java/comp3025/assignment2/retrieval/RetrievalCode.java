@@ -24,8 +24,10 @@ import okhttp3.Response;
  * The retrieval code includes the retrieve method, and the retrieved method.
  * The retrieve method is responsible for retrieving weather information, and creating the model.
  * The retrieved method is responsible for using the WeatherInformation model that has been created by the retrieve method.
+ * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Anastasios Perdikoulias
+ * @author Dawa Angchuk Sherpa
  * @author Hao Tian
  */
 public class RetrievalCode {
