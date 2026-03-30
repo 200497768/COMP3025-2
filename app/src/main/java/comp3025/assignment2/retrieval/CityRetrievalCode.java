@@ -24,6 +24,7 @@ import okhttp3.Response;
  * This code is similar to the retrieval code that retrieves the WeatherInformation model for a city.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
+ * @author Anastasios Perdikoulias
  * @author Dawa Angchuk Sherpa
  * @author Hao Tian
  */
