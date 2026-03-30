@@ -12,7 +12,9 @@ import comp3025.assignment2.views.CityOptionChosenAction;
 
 /**
  * This class is the ViewModel for MainActivity.
+ * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
+ * @author Dawa Angchuk Sherpa
  * @author Hao Tian
  */
 public class MainActivityViewModel extends ViewModel {
