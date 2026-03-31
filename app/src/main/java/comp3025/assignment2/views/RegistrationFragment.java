@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentRegistrationBinding;
-import comp3025.assignment2.viewmodels.LoginFragmentViewModel;
+import comp3025.assignment2.viewmodels.RegistrationFragmentViewModel;
 
 /**
  * This fragment includes views for registration.
@@ -55,7 +55,7 @@ public class RegistrationFragment extends Fragment {
         this.binding = FragmentRegistrationBinding.bind(view);
 
         //Create the ViewModel for this fragment.
-        this.viewModel = new ViewModelProvider(this).get(LoginFragmentViewModel.class);
+        this.viewModel = new ViewModelProvider(this).get(RegistrationFragmentViewModel.class);
 
     }
 }

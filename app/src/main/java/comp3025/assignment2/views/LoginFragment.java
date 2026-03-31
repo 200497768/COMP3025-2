@@ -41,7 +41,6 @@ public class LoginFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_login, container, false);
     }
 
-
     /**
      * This method prepares the view binding class, and shows every field from the model.
      */
