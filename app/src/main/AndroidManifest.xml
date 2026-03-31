@@ -14,10 +14,10 @@
         android:theme="@style/Theme.COMP30252"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".views.LoginRegistrationActivity"
+            android:name=".views.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".views.MainActivity"
+            android:name=".views.LoginRegistrationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
