@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
 //References
 //All for Android, Android for All. (2015). How to create a layout with rounded corner borders in Android ? https://www.ssaurel.com/blog/how-to-create-a-layout-with-rounded-corner-borders-in-android/
 //CodePath. (n.d.). Basic Event Listeners. https://guides.codepath.org/android/Basic-Event-Listeners
-//DiMarzio, J. (2016). Beginning Android Programming with Android Studio, Fourth Edition (4th edition). Wrox.
+//DiMarzio, J. (2016). Beginning Android Programming with Android Studio (4th ed.). Wrox.
 //Elenkov, N. (2016). Android security internals: An in-depth guide to android’s security architecture (1st edition). No Starch Press.
 //Martin, E. (2026). Decode an OkHttp JSON Response. https://www.baeldung.com/okhttp-json-response
 //Petzl, S. (2024). How to Put a Border Around an Android TextView. https://www.repeato.app/how-to-put-a-border-around-an-android-textview/
