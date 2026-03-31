@@ -34,6 +34,21 @@ public class LoginFragment extends Fragment {
      */
     private LoginFragmentViewModel viewModel;
 
+    /**
+     * This field is the action that needs to happen after the login task has completed.
+     */
+    private CompletedAction completedAction;
+
+    public LoginFragment() {
+//This is needed.
+        //LoginRegistrationActivity must not use this.
+        //Instead, LoginRegistrationActivity must provide LoginCompletedAction.
+    }
+
+    public LoginFragment(CompletedAction completedAction) {
+        this.completedAction = completedAction;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -55,5 +70,18 @@ public class LoginFragment extends Fragment {
         //Create the ViewModel for this fragment.
         this.viewModel = new ViewModelProvider(this).get(LoginFragmentViewModel.class);
 
+        //Change the action that happens when the login task has been completed.
+        LoginFragment loginFragment = this;
+        this.binding.completeButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * This method happens when the login task has been completed.
+             * This method needs to cause the completed action for LoginFragment to happen.
+             */
+            @Override
+            public void onClick(View v) {
+                loginFragment.completedAction.completed();
+            }
+        });
     }
 }

@@ -10,4 +10,5 @@
     <string name="weather">Weather retrieval system</string>
     <string name="registration_fragment">Registration</string>
     <string name="login_fragment">Login</string>
+    <string name="login_registration_activity">Choose whether you want to use login or registration.</string>
 </resources>
