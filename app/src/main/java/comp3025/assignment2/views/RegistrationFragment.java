@@ -5,9 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import comp3025.assignment2.R;
+import comp3025.assignment2.databinding.FragmentRegistrationBinding;
 
 /**
  * This fragment includes views for registration.
@@ -21,10 +24,27 @@ import comp3025.assignment2.R;
  */
 public class RegistrationFragment extends Fragment {
 
+    /**
+     * This field is the view binding class.
+     */
+    private FragmentRegistrationBinding binding;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_registration, container, false);
+    }
+
+    /**
+     * This method prepares the view binding class, and shows every field from the model.
+     */
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        //The view binding class can only be accessed after it has been created, like during this method.
+        //We're changing text during this method because the view binding class can't be accessed before this method.
+
+        //Prepare the view binding class.
+        this.binding = FragmentRegistrationBinding.bind(view);
     }
 }
