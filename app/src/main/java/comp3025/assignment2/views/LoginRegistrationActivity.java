@@ -1,5 +1,6 @@
 package comp3025.assignment2.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -70,8 +71,16 @@ public class LoginRegistrationActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
+                //Create a completed action.
+                CompletedAction completedAction = new CompletedAction() {
+                    @Override
+                    public void completed() {
+                        loginRegistrationActivity.loginCompleted();
+                    }
+                };
+
                 //Create LoginFragment.
-                Fragment loginFragment = new LoginFragment();
+                Fragment loginFragment = new LoginFragment(completedAction);
 
                 //Show the created fragment.
                 loginRegistrationActivity.changeFragmentArea(loginFragment);
@@ -105,5 +114,16 @@ public class LoginRegistrationActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container,fragment);
         fragmentTransaction.commit();
+    }
+
+    /**
+     * This method changes the program to show MainActivity.
+     * This method needs to happen after the login task has been completed.
+     */
+    public void loginCompleted() {
+        //Create an explicit intent that refers to MainActivity.
+        Intent intent = new Intent(LoginRegistrationActivity.this, MainActivity.class);
+
+        startActivity(intent);
     }
 }
