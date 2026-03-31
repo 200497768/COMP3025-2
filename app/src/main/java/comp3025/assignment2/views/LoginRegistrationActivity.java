@@ -70,11 +70,11 @@ public class LoginRegistrationActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                //Create RegistrationFragment.
-                Fragment registrationFragment = new RegistrationFragment();
+                //Create LoginFragment.
+                Fragment loginFragment = new LoginFragment();
 
                 //Show the created fragment.
-                loginRegistrationActivity.changeFragmentArea(registrationFragment);
+                loginRegistrationActivity.changeFragmentArea(loginFragment);
             }
         });
 
@@ -87,11 +87,11 @@ public class LoginRegistrationActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                //Create LoginFragment.
-                Fragment loginFragment = new LoginFragment();
+                //Create RegistrationFragment.
+                Fragment registrationFragment = new RegistrationFragment();
 
                 //Show the created fragment.
-                loginRegistrationActivity.changeFragmentArea(loginFragment);
+                loginRegistrationActivity.changeFragmentArea(registrationFragment);
             }
         });
     }
