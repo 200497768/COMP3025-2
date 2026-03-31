@@ -8,9 +8,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentRegistrationBinding;
+import comp3025.assignment2.viewmodels.LoginFragmentViewModel;
 
 /**
  * This fragment includes views for registration.
@@ -29,6 +31,11 @@ public class RegistrationFragment extends Fragment {
      */
     private FragmentRegistrationBinding binding;
 
+    /**
+     * This field is the ViewModel for this fragment.
+     */
+    private RegistrationFragmentViewModel viewModel;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -46,5 +53,9 @@ public class RegistrationFragment extends Fragment {
 
         //Prepare the view binding class.
         this.binding = FragmentRegistrationBinding.bind(view);
+
+        //Create the ViewModel for this fragment.
+        this.viewModel = new ViewModelProvider(this).get(LoginFragmentViewModel.class);
+
     }
 }
