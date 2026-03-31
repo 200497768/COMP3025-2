@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityLoginRegistrationBinding;
@@ -56,20 +59,51 @@ public class LoginRegistrationActivity extends AppCompatActivity {
             return insets;
         });
 
+        LoginRegistrationActivity loginRegistrationActivity = this;
+
         //Change the action that happens when choosing login.
         this.binding.loginButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * This method happens when choosing the login option.
+             * The code for this method changes the fragment area to show LoginFragment.
+             */
             @Override
             public void onClick(View v) {
+                //Create RegistrationFragment.
+                Fragment registrationFragment = new RegistrationFragment();
 
+                //Show the created fragment.
+                loginRegistrationActivity.changeFragmentArea(registrationFragment);
             }
         });
 
         //Change the action that happens when choosing registration.
         this.binding.registrationButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * This method happens when choosing the login option.
+             * The code for this method changes the fragment area to show RegistrationFragment.
+             */
             @Override
             public void onClick(View v) {
+                //Create LoginFragment.
+                Fragment loginFragment = new LoginFragment();
 
+                //Show the created fragment.
+                loginRegistrationActivity.changeFragmentArea(loginFragment);
             }
         });
+    }
+
+    /**
+     * This method changes the fragment area for LoginRegistrationActivity to show the provided fragment.
+     */
+    private void changeFragmentArea(Fragment fragment) {
+        //Change the fragment area to show the provided fragment.
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container,fragment);
+        fragmentTransaction.commit();
     }
 }
