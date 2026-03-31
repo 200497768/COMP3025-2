@@ -8,9 +8,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentLoginBinding;
+import comp3025.assignment2.viewmodels.LoginFragmentViewModel;
 
 /**
  * This fragment includes views for writing login information.
@@ -26,6 +28,11 @@ public class LoginFragment extends Fragment {
      * This field is the view binding class.
      */
     private FragmentLoginBinding binding;
+
+    /**
+     * This field is the ViewModel for this fragment.
+     */
+    private LoginFragmentViewModel viewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,5 +52,9 @@ public class LoginFragment extends Fragment {
 
         //Prepare the view binding class.
         this.binding = FragmentLoginBinding.bind(view);
+
+        //Create the ViewModel for this fragment.
+        this.viewModel = new ViewModelProvider(this).get(LoginFragmentViewModel.class);
+
     }
 }
