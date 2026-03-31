@@ -50,6 +50,9 @@ public class PictureRetrievalCode {
 
     /**
      * This method retrieves the picture using the string that was provided.
+     * The method from okhttp provides the picture as InputStream (Martin, 2026).
+     * This needs to be changed to Bitmap in order to show it in a view.
+     * "The decodeStream() method from the BitmapFactory class" can be used in order to change InputStream to Bitmap (DiMarzio, 2016, p. 357).
      */
     public void retrieve() {
 
@@ -68,10 +71,11 @@ public class PictureRetrievalCode {
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 Objects.requireNonNull(response.body());
 
-                //Create the picture.
+                //Create the picture by retrieving it as InputStream (Martin, 2026).
                 InputStream inputStream = response.body().byteStream();
+
+                //Change InputStream to Bitmap (DiMarzio, 2016, p. 357).
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-//need APA
 
                 //Change the field.
                 retrievalCode.bitmap = bitmap;
