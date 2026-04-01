@@ -9,35 +9,55 @@
     tools:context=".retrieval.LoginRegistrationActivity">
 
     <LinearLayout
-        android:id="@+id/optionsArea"
+        android:id="@+id/loginRegistrationArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="320dp"
         android:orientation="vertical"
-        android:padding="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/loginRegistrationActivityTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="20sp"
             android:text="@string/login_registration_activity"
+            android:textColor="@color/white"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/loginRegistrationActivityInformationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20sp"
+            android:text="@string/login_registration_activity_information"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/loginButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login" />
+        <LinearLayout
+            android:id="@+id/optionsArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="20sp">
 
-        <Button
-            android:id="@+id/registrationButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Registration" />
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login" />
+
+            <Button
+                android:id="@+id/registrationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registration" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
@@ -50,5 +70,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/optionsArea" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
