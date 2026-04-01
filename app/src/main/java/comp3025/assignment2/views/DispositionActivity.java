@@ -70,21 +70,16 @@ public class DispositionActivity extends AppCompatActivity {
 
             /**
              * This method happens when the completedText field from the ViewModel has been changed.
-             * This method needs to retrieve the completedText field from the ViewModel.
-             * After it has been retrieved, the method needs to change completedTextView to show that text.
              */
             @Override
             public void onChanged(String s) {
-                //Retrieve the completedText field.
-                String completedText = dispositionActivity.viewModel.getCompletedText().getValue();
-
-                //Retrieve completedTextView.
-                TextView completedTextView = dispositionActivity.binding.completedTextView;
-
-                //Change text for completedTextView so that it's the same as the field.
-                completedTextView.setText(completedText);
+                //The completedText field from the ViewModel has changed.
+                dispositionActivity.completedTextChanged();
             }
         });
+
+        //Change completedTextView so that it's the same as the ViewModel.
+        this.completedTextChanged();
 
         //Change the action that happens when choosing noRecordButton.
         this.binding.noRecordButton.setOnClickListener(new View.OnClickListener() {
@@ -99,5 +94,21 @@ public class DispositionActivity extends AppCompatActivity {
                 dispositionActivity.viewModel.noRecordChosen();
             }
         });
+    }
+
+    /**
+     * This method needs to happen when the completedText field from the ViewModel has changed.
+     * This method retrieves the completedText field from the ViewModel.
+     * After it has been retrieved, the method needs to change completedTextView to show that text.
+     */
+    public void completedTextChanged() {
+        //Retrieve the completedText field.
+        String completedText = this.viewModel.getCompletedText().getValue();
+
+        //Retrieve completedTextView.
+        TextView completedTextView = this.binding.completedTextView;
+
+        //Change text for completedTextView so that it's the same as the field.
+        completedTextView.setText(completedText);
     }
 }
