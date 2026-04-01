@@ -9,12 +9,10 @@
     tools:context=".views.DispositionActivity">
 
     <LinearLayout
-        android:id="@+id/loginRegistrationArea"
+        android:id="@+id/informationArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="320dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -39,5 +37,38 @@
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/optionsArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="210dp"
+        android:layout_marginBottom="320dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/informationArea">
+
+
+        <Button
+            android:id="@+id/noRecordButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't record" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/completedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20sp"
+        android:text="Completed"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/optionsArea" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
