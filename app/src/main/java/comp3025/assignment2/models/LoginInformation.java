@@ -9,6 +9,27 @@ package comp3025.assignment2.models;
  * @author Hao Tian
  */
 public class LoginInformation {
-    private String studentNumber;
-    private String password;
+    private String studentNumber = "No student number available";
+    private String password = "No password available";
+
+    public LoginInformation(String studentNumber, String password) {
+        this.studentNumber = studentNumber;
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getStudentNumber() {
+        return studentNumber;
+    }
+
+    public void setStudentNumber(String studentNumber) {
+        this.studentNumber = studentNumber;
+    }
 }
