@@ -138,11 +138,19 @@ public class LoginFragment extends Fragment {
         this.binding.passwordEditText.addTextChangedListener(new TextWatcher() {
 
             /**
-             * No action needs to happen at this time.
+             * This method happens when studentNumberEditText has changed.
+             * This method provides text from studentNumberEditText to the ViewModel.
              */
             @Override
             public void afterTextChanged(Editable s) {
+                //Retrieve the view.
+                EditText passwordEditText = loginFragment.binding.passwordEditText;
 
+                //Retrieve text that was written.
+                String password = "" + passwordEditText.getText();
+
+                //Provide text that was written to the ViewModel.
+                loginFragment.viewModel.passwordChanged(password);
             }
 
             /**
