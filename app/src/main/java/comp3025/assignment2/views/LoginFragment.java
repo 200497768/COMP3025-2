@@ -70,6 +70,17 @@ public class LoginFragment extends Fragment {
         //Create the ViewModel for this fragment.
         this.viewModel = new ViewModelProvider(this).get(LoginFragmentViewModel.class);
 
+        //Change the completed action field for the ViewModel, if it was provided to this fragment.
+        if (this.completedAction == null) {
+//The completed action wasn't provided to this fragment.
+            //This can happen if the fragment is being created again.
+            //Since this fragment was created before, the completed action field was changed for the existing ViewModel.
+            //The field for the ViewModel won't be changed, so the existing completed action will be used.
+        } else {
+            //Change the completed action field.
+            this.viewModel.setCompletedAction(this.completedAction);
+        }
+
         //Change the action that happens when the login task has been completed.
         LoginFragment loginFragment = this;
         this.binding.completeButton.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +91,11 @@ public class LoginFragment extends Fragment {
              */
             @Override
             public void onClick(View v) {
-                loginFragment.completedAction.completed();
+                //Retrieve the completed action from the ViewModel.
+                CompletedAction completedAction = loginFragment.viewModel.getCompletedAction().getValue();
+
+                //Use the completed method.
+                completedAction.completed();
             }
         });
 
