@@ -13,8 +13,22 @@ public class LoginInformation {
     private String password = "No password available";
 
     public LoginInformation(String studentNumber, String password) {
-        this.studentNumber = studentNumber;
-        this.password = password;
+
+        //Change the studentNumber field, but only if the field was provided.
+        if (studentNumber == null) {
+            //Don't change the field.
+        } else {
+            //Change the field.
+            this.studentNumber = studentNumber;
+        }
+
+        //Change the password field, but only if the field was provided.
+        if (password == null) {
+            //Don't change the field.
+        } else {
+            //Change the field.
+            this.password = password;
+        }
     }
 
     public String getPassword() {
