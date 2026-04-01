@@ -20,11 +20,29 @@ public class LoginFragmentViewModel extends ViewModel {
      */
     private MutableLiveData<CompletedAction> completedAction = new MutableLiveData<>();
 
+    /**
+     * This method returns the completed action field that was provided to the ViewModel.
+     */
     public MutableLiveData<CompletedAction> getCompletedAction() {
         return completedAction;
     }
 
-    public void setCompletedAction(CompletedAction completedAction) {
-        this.completedAction.postValue(completedAction);
+    /**
+     * This method changes the completed action field.
+     * If a completed action isn't provided to this method, the field won't be changed.
+     * If the fragment doesn't provide a completed action to change the field to, the existing field will be used.
+     * This can happen if the fragment is being created again.
+     */
+    public void changeCompletedAction(CompletedAction completedAction) {
+        //Change the completed action field for the ViewModel, if it was provided to this fragment.
+        if (completedAction == null) {
+//The completed action wasn't provided to this fragment.
+            //This can happen if the fragment is being created again.
+            //Since this fragment was created before, the completed action field was changed for the existing ViewModel.
+            //The field for the ViewModel won't be changed, so the existing completed action will be used.
+        } else {
+            //Change the completed action field.
+            this.completedAction.postValue(completedAction);
+        }
     }
 }
