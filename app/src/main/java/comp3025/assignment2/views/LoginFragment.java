@@ -1,9 +1,12 @@
 package comp3025.assignment2.views;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -92,6 +95,78 @@ public class LoginFragment extends Fragment {
 
                 //Use the completed method.
                 completedAction.completed();
+            }
+        });
+
+        //Change the field for the ViewModel when studentNumberEditText has changed.
+        this.binding.studentNumberEditText.addTextChangedListener(new TextWatcher() {
+
+            /**
+             * This method happens when studentNumberEditText has changed.
+             * This method provides text from studentNumberEditText to the ViewModel.
+             */
+            @Override
+            public void afterTextChanged(Editable s) {
+                //Retrieve the view.
+                EditText studentNumberEditText=loginFragment.binding.studentNumberEditText;
+
+                //Retrieve text that was written.
+                String studentNumber=""+studentNumberEditText.getText();
+
+                //Provide text that was written to the ViewModel.
+                loginFragment.viewModel.studentNumberChanged(studentNumber);
+            }
+
+            /**
+             * No action needs to happen at this time.
+             */
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            /**
+             * No action needs to happen at this time.
+             */
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+        });
+
+        //Change the field for the ViewModel when passwordEditText has changed.
+        this.binding.passwordEditText.addTextChangedListener(new TextWatcher() {
+
+            /**
+             * This method happens when studentNumberEditText has changed.
+             * This method provides text from studentNumberEditText to the ViewModel.
+             */
+            @Override
+            public void afterTextChanged(Editable s) {
+                //Retrieve the view.
+                EditText passwordEditText = loginFragment.binding.passwordEditText;
+
+                //Retrieve text that was written.
+                String password = "" + passwordEditText.getText();
+
+                //Provide text that was written to the ViewModel.
+                loginFragment.viewModel.passwordChanged(password);
+            }
+
+            /**
+             * No action needs to happen at this time.
+             */
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            /**
+             * No action needs to happen at this time.
+             */
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
             }
         });
 
