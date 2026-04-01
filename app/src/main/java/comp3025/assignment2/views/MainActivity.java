@@ -1,5 +1,6 @@
 package comp3025.assignment2.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -123,6 +124,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Change the action that will happen when choosing the LOGOFF option.
+        this.binding.logoffButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Use the method to request LOGOFF.
+                mainActivity.logoffRequested();
+            }
+        });
 
         //Show ChooseCityFragment when starting.
         this.changeFragmentAreaChooseCityFragment();
@@ -169,6 +178,15 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    /**
+     * This method happens when LOGOFF has been requested.
+     */
+    public void logoffRequested() {
+        //Create an explicit intent that refers to DispositionActivity.
+        Intent intent = new Intent(MainActivity.this, DispositionActivity.class);
+
+        startActivity(intent);
+    }
 }
 
 //In order to fix "Permission denied (missing INTERNET permission?)", we added some code from a book.
