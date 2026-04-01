@@ -83,5 +83,12 @@ public class LoginFragment extends Fragment {
                 loginFragment.completedAction.completed();
             }
         });
+
+        //Don't show output text until it's needed.
+        this.binding.outputTextView.setVisibility(View.GONE);
+    }
+
+    public boolean checkLoginInformation(String studentNumber, String password) {
+        return studentNumber.length() > 0;
     }
 }
