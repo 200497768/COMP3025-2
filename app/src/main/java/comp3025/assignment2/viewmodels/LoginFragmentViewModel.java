@@ -24,6 +24,16 @@ public class LoginFragmentViewModel extends ViewModel {
     private MutableLiveData<CompletedAction> completedAction = new MutableLiveData<>();
 
     /**
+     * This field is text that has been written for student number.
+     */
+    private MutableLiveData<String> studentNumber = new MutableLiveData<>();
+
+    /**
+     * This field is text that has been written for password.
+     */
+    private MutableLiveData<String> password = new MutableLiveData<>();
+
+    /**
      * This method returns the completed action field that was provided to the ViewModel.
      */
     public MutableLiveData<CompletedAction> getCompletedAction() {
@@ -50,17 +60,48 @@ public class LoginFragmentViewModel extends ViewModel {
     }
 
     /**
-     * This method creates a LoginInformation model.
+     * This method happens when any login information has changed.
+     * This includes student number or password.
+     * This method is responsible for creating the login information model.
      */
-    public LoginInformation createLoginInformationModel(){
-        LoginInformation loginInformation = new LoginInformation();
-        return loginInformation;
+    public void loginInformationChanged() {
+        //Retrieve the student number field.
+        String studentNumber = this.studentNumber.getValue();
+
+        //Retrieve the password field.
+        String password = this.password.getValue();
+
+        //Create the LoginInformation model.
+        LoginInformation loginInformation = new LoginInformation(studentNumber, password);
+
+        Log.i("200497768", "The LoginInformation model has been created using " + studentNumber + " and " + password);
     }
 
     /**
-     * This method happens when the student number has changed.
+     * The code from LoginFragment causes this method to happen when text for student number has been changed.
      */
     public void studentNumberChanged(String studentNumber) {
-        Log.i("200594802 and 200497768", "Student number has been changed to " + studentNumber);
+        //Change the field.
+        this.studentNumber.postValue(studentNumber);
+
+        //Show a message explaining that the field has been changed.
+        Log.i("200497768", "Student number has been changed to " + this.studentNumber.getValue());
+
+        //Another method needs to happen when any login information has changed.
+        this.loginInformationChanged();
+    }
+
+    /**
+     * The code from LoginFramgent causes this method to happen when text for password has been changed.
+     */
+    public void passwordChanged(String password) {
+        //Change the field.
+        this.password.postValue(password);
+
+        //Show a message explaining that the field has been changed.
+        Log.i("200497768", "Password has been changed to " + this.password.getValue());
+
+        //Another method needs to happen when any login information has changed.
+        this.loginInformationChanged();
     }
 }
