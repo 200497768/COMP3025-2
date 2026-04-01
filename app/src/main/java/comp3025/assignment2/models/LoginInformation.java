@@ -31,6 +31,10 @@ public class LoginInformation {
         }
     }
 
+    public LoginInformation() {
+
+    }
+
     public String getPassword() {
         return password;
     }
