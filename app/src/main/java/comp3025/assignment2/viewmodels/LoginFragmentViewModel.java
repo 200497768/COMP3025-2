@@ -1,5 +1,7 @@
 package comp3025.assignment2.viewmodels;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -51,12 +53,14 @@ public class LoginFragmentViewModel extends ViewModel {
      * This method creates a LoginInformation model.
      */
     public LoginInformation createLoginInformationModel(){
-
+        LoginInformation loginInformation = new LoginInformation();
+        return loginInformation;
     }
 
     /**
      * This method happens when the student number has changed.
      */
     public void studentNumberChanged(String studentNumber) {
+        Log.i("200594802 and 200497768", "Student number has been changed to " + studentNumber);
     }
 }
