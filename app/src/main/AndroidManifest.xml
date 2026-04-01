@@ -14,6 +14,9 @@
         android:theme="@style/Theme.COMP30252"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".views.DispositionActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.MainActivity"
             android:exported="false" />
         <activity
