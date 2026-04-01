@@ -21,15 +21,8 @@ public class LoginInformation {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getStudentNumber() {
         return studentNumber;
     }
 
-    public void setStudentNumber(String studentNumber) {
-        this.studentNumber = studentNumber;
-    }
 }
