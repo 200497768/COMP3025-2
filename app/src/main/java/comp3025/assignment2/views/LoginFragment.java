@@ -36,6 +36,9 @@ public class LoginFragment extends Fragment {
 
     /**
      * This field is the action that needs to happen after the login task has completed.
+     * The fragment is responsible for providing this field to the ViewModel.
+     * This field must only be accessed during the onViewCreated method.
+     * After that method, this fragment is supposed to access the completed action through the ViewModel, instead of this field.
      */
     private CompletedAction completedAction;
 
@@ -70,16 +73,9 @@ public class LoginFragment extends Fragment {
         //Create the ViewModel for this fragment.
         this.viewModel = new ViewModelProvider(this).get(LoginFragmentViewModel.class);
 
-        //Change the completed action field for the ViewModel, if it was provided to this fragment.
-        if (this.completedAction == null) {
-//The completed action wasn't provided to this fragment.
-            //This can happen if the fragment is being created again.
-            //Since this fragment was created before, the completed action field was changed for the existing ViewModel.
-            //The field for the ViewModel won't be changed, so the existing completed action will be used.
-        } else {
-            //Change the completed action field.
-            this.viewModel.setCompletedAction(this.completedAction);
-        }
+//Provide the completed action to the ViewModel.
+        //If a completed action wasn't provided to this fragment when it was created, the field for the ViewModel won't be changed.
+        this.viewModel.changeCompletedAction(this.completedAction);
 
         //Change the action that happens when the login task has been completed.
         LoginFragment loginFragment = this;
