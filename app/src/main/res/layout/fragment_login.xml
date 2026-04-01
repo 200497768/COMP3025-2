@@ -47,5 +47,13 @@
         android:text="Complete"
         android:textSize="20sp" />
 
+    <TextView
+        android:id="@+id/outputTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Output"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
 
 </LinearLayout>
