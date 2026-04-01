@@ -3,6 +3,7 @@ package comp3025.assignment2.viewmodels;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import comp3025.assignment2.models.LoginInformation;
 import comp3025.assignment2.views.CompletedAction;
 
 /**
@@ -44,5 +45,18 @@ public class LoginFragmentViewModel extends ViewModel {
             //Change the completed action field.
             this.completedAction.postValue(completedAction);
         }
+    }
+
+    /**
+     * This method creates a LoginInformation model.
+     */
+    public LoginInformation createLoginInformationModel(){
+
+    }
+
+    /**
+     * This method happens when the student number has changed.
+     */
+    public void studentNumberChanged(String studentNumber) {
     }
 }
