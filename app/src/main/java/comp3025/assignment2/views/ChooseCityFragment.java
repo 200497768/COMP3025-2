@@ -58,7 +58,12 @@ public class ChooseCityFragment extends Fragment {
     }
 
     public ChooseCityFragment(Context applicationContext, CityOptionChosenAction cityOptionChosenAction) {
+        //This field needs to be maintained until the onViewCreated method.
+        //During that method, this field will be provided to LinearLayoutManager.
         this.applicationContext = applicationContext;
+
+        //The city option chosen action needs to be maintained until the onViewCreated method.
+        //During that method, this field will be provided to CreatedAdapter.
         this.cityOptionChosenAction = cityOptionChosenAction;
     }
 
