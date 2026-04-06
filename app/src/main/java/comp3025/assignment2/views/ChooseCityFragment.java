@@ -190,7 +190,7 @@ public class ChooseCityFragment extends Fragment {
      */
     public void cityNameWritten() {
         //Remove the message explaining that no city options could be retrieved.
-        //We change the view to GONE, as opposed to INVISIBLE, since we don't want it to use any space.
+        //We decided to change the view to GONE, as opposed to INVISIBLE, since we don't want it to use any space.
         //The fragment will show the city options, instead of this view.
         this.binding.cityNotExistTextView.setVisibility(View.GONE);
 
@@ -198,7 +198,12 @@ public class ChooseCityFragment extends Fragment {
         EditText cityEditText =this.binding.cityEditText;
         String cityName = "" + cityEditText.getText();
 
-        //Use the ViewModel to retrieve the city options.
+        //Provide the name of the city to the ViewModel.
+        //The method from ViewModel will use the CityRetrievalCode to retrieve the city options.
         this.viewModel.retrieve(cityName);
+
+        //When retrieval has finished, the ViewModel will change the city options model field.
+        //When the ViewModel changes the model field, this fragment will change the city options that the fragment is showing.
+        //During the onViewCreated method, this fragment provided the code that needs to happen when the city options have been changed.
     }
 }
