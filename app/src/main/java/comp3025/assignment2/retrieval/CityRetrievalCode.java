@@ -51,6 +51,9 @@ public class CityRetrievalCode {
         this.neededCityName = neededCityName;
     }
 
+    /**
+     * This method retrieves the city option models.
+     */
     public void retrieve() {
         String urlString = "http://api.weatherapi.com/v1/search.json?key=b47d3ee63f574764af5163148261303&q=" + this.neededCityName;
 
@@ -131,6 +134,12 @@ public class CityRetrievalCode {
     });
 }
 
+    /**
+     * This method happens when the city option models have been created, and added to the field.
+     * The retrieve method causes this method to happen.
+     * The class that's extending the CityRetrievalCode class can provide code for this method.
+     * The code for this method can access the city option models through the cityOptions field.
+     */
     public void retrieved(){
 
     }
