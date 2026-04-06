@@ -24,6 +24,9 @@ public class MainActivityViewModel extends ViewModel {
      */
     private MutableLiveData<WeatherInformation> mutableLiveData = new MutableLiveData<>();
 
+    /**
+     * This method allows the code for MainActivity to retrieve the WeatherInformation model that MainActivity needs to show at this time.
+     */
     public MutableLiveData<WeatherInformation> getMutableLiveData() {
         return mutableLiveData;
     }
@@ -35,8 +38,19 @@ public class MainActivityViewModel extends ViewModel {
      */
     private MutableLiveData<CityOption> cityOptionMutableLiveData = new MutableLiveData<>();
 
+    /**
+     * This field is the action that needs to happen when a city option has been chosen.
+     * ChooseCityFragment is responsible for allowing a city to be chosen, not MainActivity.
+     * This field still needs to be created by MainActivity, since the action will need to cause MainActivity to change the fragment area.
+     * The code for MainActivity provides this field to ChooseCityFragment when the fragment is created.
+     */
     private CityOptionChosenAction cityOptionChosenAction;
 
+    /**
+     * This method returns the city option chosen action.
+     * The ViewModel creates the action, and maintains the action as a field.
+     * This method allows the code for MainActivity to retrieve this field in order to provide it to ChooseCityFragment.
+     */
     public CityOptionChosenAction getCityOptionChosenAction() {
         return cityOptionChosenAction;
     }
