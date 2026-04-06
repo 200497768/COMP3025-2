@@ -73,6 +73,16 @@ public class LoginRegistrationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Create a completed action.
                 CompletedAction completedAction = new CompletedAction() {
+
+                    /**
+                     * This method happens when LoginFragment has completed.
+                     * This method is responsible for showing MainActivity.
+                     * This method allows LoginRegistrationActivity to cause some code to happen when LoginFragment has been complete.d
+                     * LoginRegistrationActivity uses this class by creating a completed action, and providing it to LoginFragment.
+                     * LoginFragment maintains the completed action as a field for the ViewModel.
+                     * When the LoginFragment task has been completed, the ViewModel causes the completed method to happen.
+                     * This causes LoginRegistrationActivity to show MainActivity.
+                     */
                     @Override
                     public void completed() {
                         loginRegistrationActivity.loginCompleted();

@@ -10,7 +10,6 @@ import comp3025.assignment2.views.CompletedAction;
 
 /**
  * This class is the ViewModel for LoginFragment.
- *
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

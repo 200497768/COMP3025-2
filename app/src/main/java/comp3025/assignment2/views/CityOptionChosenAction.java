@@ -13,6 +13,7 @@ import comp3025.assignment2.models.CityOption;
  * @author Hao Tian
  */
 public class CityOptionChosenAction {
+
     /**
      * This method happens when a city option model has been chosen.
      * When a letter has been written, CityRetrievalCode retrieves matching city option models.
