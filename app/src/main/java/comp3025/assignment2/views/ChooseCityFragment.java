@@ -184,11 +184,14 @@ public class ChooseCityFragment extends Fragment {
     }
 
     /**
-     * The code for this method happens when text for this TextView item has changed.
+     * The code for this method happens when the name of the city has changed.
+     * In other words, text for the cityEditText item has been changed.
      * This method provides the name of the city to the ViewModel, and retrieves the CityOption models.
      */
     public void cityNameWritten() {
         //Remove the message explaining that no city options could be retrieved.
+        //We change the view to GONE, as opposed to INVISIBLE, since we don't want it to use any space.
+        //The fragment will show the city options, instead of this view.
         this.binding.cityNotExistTextView.setVisibility(View.GONE);
 
         //Retrieve the name of the city that was written.
