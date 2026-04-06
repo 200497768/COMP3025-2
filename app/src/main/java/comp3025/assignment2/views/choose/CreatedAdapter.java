@@ -25,8 +25,17 @@ import comp3025.assignment2.views.CityOptionChosenAction;
  * @author Hao Tian
  */
 public class CreatedAdapter extends RecyclerView.Adapter<CreatedViewHolder> {
+
+    /**
+     * This field is the city options model that the view is showing.
+     */
     private List<CityOption> cityOptions;
 
+    /**
+     * This field is the action that needs to happen when a city option has been chosen.
+     * This code receives the action from ChooseCityFragment.
+     * ChooseCityFragment receives the action from the ViewModel for MainActivity.
+     */
     private CityOptionChosenAction cityOptionChosenAction;
 
     public CreatedAdapter(List<CityOption> cityOptions, CityOptionChosenAction cityOptionChosenAction) {
@@ -93,7 +102,9 @@ public class CreatedAdapter extends RecyclerView.Adapter<CreatedViewHolder> {
     }
 
     /**
-     * APA
+     * This method returns the number of city options that exist.
+     * This number depends on the city options models that have been retrieved.
+     * In order to write this code, we've started with the example code from the week 9 class (A. Perdikoulias, personal communication, March 13, 2026).
      */
     @Override
     public int getItemCount() {
