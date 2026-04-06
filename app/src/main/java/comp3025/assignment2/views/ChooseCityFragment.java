@@ -52,7 +52,9 @@ public class ChooseCityFragment extends Fragment {
     private CityOptionChosenAction cityOptionChosenAction;
 
     public ChooseCityFragment() {
-        //This is needed.
+        //This is needed so that the fragment can be created again.
+        //When the fragment needs to be created again, the fields that we wrote won't be provided to the fragment.
+        //We can avoid this problem by maintaining any fields that we still need using the ViewModel.
     }
 
     public ChooseCityFragment(Context applicationContext, CityOptionChosenAction cityOptionChosenAction) {
