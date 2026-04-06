@@ -29,6 +29,16 @@ import okhttp3.Response;
  * @author Hao Tian
  */
 public class CityRetrievalCode {
+
+    /**
+     * This field is the city option models that have been retrieved.
+     * When CityRetrievalCode has been created, no models exist.
+     * During the retrieve method, CityRetrievalCode retrieves the city option models, and adds the models to this field.
+     * When retrieval has completed, CityRetrievalCode causes the retrieved method to happen.
+     * This field can be accessed by extending this class, and providing code for the retrieved method.
+     * Accessing this field from the retrieved method will avoid problems that can happen if the field is accessed before CityRetrievalCode has finished retrieval.
+     * CityRetrievalCode ensures that the retrieved method only happens after the retrieval has completed, and not during or before retrieval has finished.
+     */
     public CityOptions cityOptions = new CityOptions();
 
     /**
