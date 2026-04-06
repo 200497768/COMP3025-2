@@ -1,5 +1,7 @@
 package comp3025.assignment2.models;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +34,15 @@ public class CityOptions {
      * If a model isn't provided, the method won't add it.
      */
     public void addCityOption(CityOption cityOption) {
-        this.cityOptions.add(cityOption);
+        //Only add the city option model if it was provided to this method.
+        if (cityOption == null) {
+            //A city option model wasn't provided to this method.
+            Log.i("200594802 and 200497768", "A city option model wasn't added because the model wasn't provided to CityOptions.");
+        } else {
+            //Add the city option model.
+            this.cityOptions.add(cityOption);
+        }
+
+
     }
 }
