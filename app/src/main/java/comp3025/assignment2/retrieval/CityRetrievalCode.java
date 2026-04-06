@@ -29,6 +29,16 @@ import okhttp3.Response;
  * @author Hao Tian
  */
 public class CityRetrievalCode {
+
+    /**
+     * This field is the city option models that have been retrieved.
+     * When CityRetrievalCode has been created, no models exist.
+     * During the retrieve method, CityRetrievalCode retrieves the city option models, and adds the models to this field.
+     * When retrieval has completed, CityRetrievalCode causes the retrieved method to happen.
+     * This field can be accessed by extending this class, and providing code for the retrieved method.
+     * Accessing this field from the retrieved method will avoid problems that can happen if the field is accessed before CityRetrievalCode has finished retrieval.
+     * CityRetrievalCode ensures that the retrieved method only happens after the retrieval has completed, and not during or before retrieval has finished.
+     */
     public CityOptions cityOptions = new CityOptions();
 
     /**
@@ -41,6 +51,9 @@ public class CityRetrievalCode {
         this.neededCityName = neededCityName;
     }
 
+    /**
+     * This method retrieves the city option models.
+     */
     public void retrieve() {
         String urlString = "http://api.weatherapi.com/v1/search.json?key=b47d3ee63f574764af5163148261303&q=" + this.neededCityName;
 
@@ -121,6 +134,12 @@ public class CityRetrievalCode {
     });
 }
 
+    /**
+     * This method happens when the city option models have been created, and added to the field.
+     * The retrieve method causes this method to happen.
+     * The class that's extending the CityRetrievalCode class can provide code for this method.
+     * The code for this method can access the city option models through the cityOptions field.
+     */
     public void retrieved(){
 
     }
