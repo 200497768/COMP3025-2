@@ -184,7 +184,8 @@ public class ChooseCityFragment extends Fragment {
     }
 
     /**
-     * The code for this method happens when text for this TextView item has changed.
+     * The code for this method happens when the name of the city has changed.
+     * In other words, text for the cityEditText item has been changed.
      * This method provides the name of the city to the ViewModel, and retrieves the CityOption models.
      */
     public void cityNameWritten() {
