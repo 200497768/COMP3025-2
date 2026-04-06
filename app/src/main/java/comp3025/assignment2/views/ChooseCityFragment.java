@@ -43,14 +43,27 @@ public class ChooseCityFragment extends Fragment {
      */
     private Context applicationContext;
 
+    /**
+     * This field the action that needs to happen when a city option has been chosen.
+     * When MainActivity creates ChooseCityFragment, an action will be provided to this fragment.
+     * This fragment will provide the action to CreatedAdapter.
+     * When a city option has been chosen, CreatedAdapter will cause the action to happen, and provide the model that corresponds with the option that was chosen.
+     */
     private CityOptionChosenAction cityOptionChosenAction;
 
     public ChooseCityFragment() {
-        //This is needed.
+        //This is needed so that the fragment can be created again.
+        //When the fragment needs to be created again, the fields that we wrote won't be provided to the fragment.
+        //We can avoid this problem by maintaining any fields that we still need using the ViewModel.
     }
 
     public ChooseCityFragment(Context applicationContext, CityOptionChosenAction cityOptionChosenAction) {
+        //This field needs to be maintained until the onViewCreated method.
+        //During that method, this field will be provided to LinearLayoutManager.
         this.applicationContext = applicationContext;
+
+        //The city option chosen action needs to be maintained until the onViewCreated method.
+        //During that method, this field will be provided to CreatedAdapter.
         this.cityOptionChosenAction = cityOptionChosenAction;
     }
 
@@ -93,6 +106,7 @@ public class ChooseCityFragment extends Fragment {
 
             /**
              * This method happens when the CityOptions model from the ViewModel have been changed.
+             * In other words, this method happens when new city option models have been retrieved.
              * The code for this method changes the RecyclerView items to the City models.
              */
             @Override

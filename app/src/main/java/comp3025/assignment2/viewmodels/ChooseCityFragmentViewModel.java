@@ -14,12 +14,28 @@ import comp3025.assignment2.retrieval.CityRetrievalCode;
  * @author Hao Tian
  */
 public class ChooseCityFragmentViewModel extends ViewModel {
+
+    /**
+     * This field is the city options model that the fragment is showing.
+     * When the city retrieval code has finished, this field will be changed.
+     * The onChanged method for this fragment includes code that will show the city options after this field has been changed.
+     */
     private MutableLiveData<CityOptions> mutableLiveData = new MutableLiveData<>();
 
+    /**
+     * This method allows the fragment to retrieve the city options model.
+     * In addition, this method allows the fragment to provide code that will show the city options after the model has been changed.
+     */
     public MutableLiveData<CityOptions> getMutableLiveData() {
         return mutableLiveData;
     }
 
+    /**
+     * This method retrieves the city option models, using the name of the city that has been written.
+     * When the name of the city has been changed, the fragment provides the name of the city that has been written to this method.
+     * This method uses the city retrieval code to retrieve city options.
+     * When retrieval has finished, the field from this ViewModel will be changed, causing the fragment to show the models that have been retrieved.
+     */
     public void retrieve(String cityName) {
         //Provide the city name to the retrieval code.
         //The action that needs to happen when city option models have been retrieved needs to be provided.
