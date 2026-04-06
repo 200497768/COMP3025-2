@@ -189,6 +189,8 @@ public class ChooseCityFragment extends Fragment {
      */
     public void cityNameWritten() {
         //Remove the message explaining that no city options could be retrieved.
+        //We change the view to GONE, as opposed to INVISIBLE, since we don't want it to use any space.
+        //The fragment will show the city options, instead of this view.
         this.binding.cityNotExistTextView.setVisibility(View.GONE);
 
         //Retrieve the name of the city that was written.
