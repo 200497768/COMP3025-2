@@ -7,6 +7,7 @@ package comp3025.assignment2.models;
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa
  * @author Hao Tian
+ * testing
  */
 public class RegistrationInformation {
     private String studentNumber;
