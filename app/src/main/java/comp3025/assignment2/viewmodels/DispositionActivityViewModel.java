@@ -7,7 +7,7 @@ import comp3025.assignment2.models.LoginInformation;
 
 /**
  * This class is the ViewModel for DispositionActivity.
- *
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

@@ -22,6 +22,7 @@ import okhttp3.Response;
  * In order to use this class, a string must be provided.
  * For the assignment, the string that will be provided to this class is the picture string from the WeatherInformation model.
  * This class can still be used outside of the assignment to retrieve a picture.
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Anastasios Perdikoulias

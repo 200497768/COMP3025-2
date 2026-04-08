@@ -8,6 +8,7 @@ import comp3025.assignment2.retrieval.CityRetrievalCode;
 
 /**
  * This class is the ViewModel for ChooseCityFragment.
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

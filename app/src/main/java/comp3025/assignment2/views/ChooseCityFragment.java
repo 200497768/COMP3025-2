@@ -29,6 +29,7 @@ import comp3025.assignment2.views.choose.CreatedAdapter;
 
 /**
  * This fragment allows a city to be chosen.
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

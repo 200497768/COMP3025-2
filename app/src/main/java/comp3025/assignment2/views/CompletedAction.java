@@ -5,6 +5,7 @@ package comp3025.assignment2.views;
  * This class is used by LoginRegistrationActivity and LoginFragment.
  * LoginRegistrationActivity provides code to LoginFragment using this class.
  * When LoginFragment has completed, the completed method happens, causing LoginRegistrationActivity to show MainActivity.
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

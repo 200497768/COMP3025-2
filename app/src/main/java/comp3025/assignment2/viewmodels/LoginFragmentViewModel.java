@@ -10,6 +10,7 @@ import comp3025.assignment2.views.CompletedAction;
 
 /**
  * This class is the ViewModel for LoginFragment.
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

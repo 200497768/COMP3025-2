@@ -18,7 +18,7 @@ import comp3025.assignment2.viewmodels.RegistrationFragmentViewModel;
  * This fragment includes views for registration.
  * Registration refers to adding a person's login information to the system for the first time.
  * This can be thought of as registering courses.
- *
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa
