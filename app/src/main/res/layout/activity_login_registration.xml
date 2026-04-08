@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<ScrollView
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#396a93"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/loginRegistrationActivityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_registration_activity"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/loginRegistrationActivityInformationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_registration_activity_information"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Tab toggle: Login / Registration -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Sign In"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:backgroundTint="#2a5070"
+                android:stateListAnimator="@null"/>
+
+            <Button
+                android:id="@+id/registrationButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Create Account"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:backgroundTint="#1a3550"
+                android:alpha="0.5"
+                android:stateListAnimator="@null"/>
+
+        </LinearLayout>
+
+        <!-- Email -->
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="Email address"
+            android:textColor="@color/white"
+            android:textColorHint="#aac8e0"
+            android:background="@drawable/bg_input_normal"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:textSize="16sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Password -->
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="Password (min 6 characters)"
+            android:textColor="@color/white"
+            android:textColorHint="#aac8e0"
+            android:background="@drawable/bg_input_normal"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textSize="16sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Confirm Password — visible only on Create Account tab -->
+        <LinearLayout
+            android:id="@+id/confirmPasswordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/confirmPasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:hint="Re-enter password"
+                android:textColor="@color/white"
+                android:textColorHint="#aac8e0"
+                android:background="@drawable/bg_input_normal"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textSize="16sp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="12dp"/>
+
+        </LinearLayout>
+
+        <!-- Action button -->
+        <Button
+            android:id="@+id/actionButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Sign In"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#1a3550"
+            android:stateListAnimator="@null"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Progress bar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/white"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Error message -->
+        <TextView
+            android:id="@+id/errorTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#FF8080"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginTop="2dp"/>
+
+        <!-- Fragment container (kept for layout compatibility) -->
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+
+    </LinearLayout>
+</ScrollView>
+</layout>

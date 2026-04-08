@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<!--
+    activity_main.xml
+    This is the layout for MainActivity.
+    It shows:
+      - A title header "Weather Retrieval System"
+      - Buttons to show an example city and choose another city
+      - A fragment container where ChooseCityFragment and ShowWeatherFragment are swapped in
+      - A bottom navigation bar with Search, Saved, and Sign Out tabs
+    The old LOGOFF button has been removed — sign out is now handled by the bottom nav Sign Out tab.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#396a93"
+    tools:context=".MainActivity">
+
+    <!-- App title shown at the top of the screen -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20sp"
+        android:text="@string/weather"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Action buttons row: Show Example City and Choose Another City -->
+    <LinearLayout
+        android:id="@+id/actionsArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:background="#396a93"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/textView2"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Shows weather for a hardcoded example city (Barrie) -->
+        <Button
+            android:id="@+id/chooseCityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/show_example_city"
+            android:textSize="14sp"/>
+
+        <!-- Returns to ChooseCityFragment so another city can be searched -->
+        <Button
+            android:id="@+id/chooseAnotherCityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose another city"
+            android:textSize="14sp"/>
+
+        <!--
+            LOGOFF button removed — sign out is now in the bottom navigation bar.
+            The logoffButton id is kept here as a hidden zero-size view so the
+            Java code that references it does not crash.
+        -->
+        <Button
+            android:id="@+id/logoffButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <!--
+        Fragment container.
+        ChooseCityFragment and ShowWeatherFragment are swapped in here by MainActivity.
+        It fills the space between the action buttons and the bottom navigation bar.
+    -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#396a93"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/actionsArea"/>
+
+    <!--
+        Bottom Navigation Bar.
+        Three tabs: Search (goes to city search), Saved (goes to saved cities), Sign Out (logs the user out).
+        Sign out clears the back stack and returns to the login screen.
+    -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#2a5070"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Hidden legacy TextView kept for layout reference compatibility -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text=""/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

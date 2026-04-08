@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#325d81"
+    android:padding="14dp"
+    android:layout_marginBottom="8dp"
+    android:gravity="center_vertical"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- City info -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/savedCityNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City name"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="2dp"/>
+
+        <TextView
+            android:id="@+id/savedRegionCountryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Region, Country"
+            android:textColor="#aac8e0"
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+
+    <!-- Timestamp -->
+    <TextView
+        android:id="@+id/savedTimestampTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#aac8e0"
+        android:textSize="11sp"
+        android:layout_marginEnd="10dp"/>
+
+    <!-- Delete button -->
+    <TextView
+        android:id="@+id/savedDeleteButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:text="✕"
+        android:textSize="13sp"
+        android:textColor="#FF8080"
+        android:gravity="center"
+        android:background="#33EF4444"
+        android:clickable="true"
+        android:focusable="true"/>
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">COMP3025 2</string>
+    <string name="choose_city_fragment">Write the name of a city.</string>
+    <string name="show_weather_fragment">Showing weather for this city.</string>
+    <string name="main_activity">This is MainActivity.</string>
+    <string name="city_name_not_exist">This city name doesn\'t exist.</string>
+    <string name="write_city_name">City</string>
+    <string name="retrieve_city_options">Retrieve</string>
+    <string name="show_example_city">Show an example city</string>
+    <string name="weather">Weather retrieval system</string>
+    <string name="registration_fragment">Registration</string>
+    <string name="login_fragment">Login</string>
+    <string name="login_registration_activity">Login or registration</string>
+    <string name="login_registration_activity_information">Choose whether you want to use login or registration.</string>
+    <string name="logoff">LOGOFF</string>
+    <string name="disposition_activity">Disposition</string>
+    <string name="disposition_activity_information">Choose an action.</string>
+    <string name="saved_cities">Saved Cities</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_saved">Saved</string>
+    <string name="nav_settings">Settings</string>
+</resources>
