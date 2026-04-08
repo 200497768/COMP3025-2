@@ -5,6 +5,7 @@ import comp3025.assignment2.models.WeatherInformation;
 /**
  * This retrieval code produces the example WeatherInformation model.
  * The same example model will be produced if this code is used to retrieve it repeatedly.
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

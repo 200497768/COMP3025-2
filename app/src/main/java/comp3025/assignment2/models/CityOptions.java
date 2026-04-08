@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * This is a model that includes multiple city option models.
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

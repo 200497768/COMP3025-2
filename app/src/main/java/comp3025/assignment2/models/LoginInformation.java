@@ -2,7 +2,7 @@ package comp3025.assignment2.models;
 
 /**
  * This model is created during LoginFragment.
- *
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

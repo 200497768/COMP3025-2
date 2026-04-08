@@ -4,6 +4,7 @@ import android.util.Log;
 
 /**
  * This model is a city option that has been retrieved.
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

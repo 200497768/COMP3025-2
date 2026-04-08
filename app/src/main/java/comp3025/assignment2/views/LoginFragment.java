@@ -19,7 +19,7 @@ import comp3025.assignment2.viewmodels.LoginFragmentViewModel;
 
 /**
  * This fragment includes views for writing login information.
- *
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

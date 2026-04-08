@@ -27,6 +27,7 @@ import comp3025.assignment2.viewmodels.MainActivityViewModel;
  * MainActivity is responsible for changing the fragment area to ChooseCityFragment or ShowWeatherFragment.
  * ChooseCityFragment is used to show a list, and allow a city to be chosen.
  * ShowWeatherFragment is used to show weather information for a particular city.
+ * MainActivity also includes references for the rest of the code.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

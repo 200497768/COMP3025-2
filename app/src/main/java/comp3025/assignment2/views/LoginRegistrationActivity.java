@@ -18,7 +18,7 @@ import comp3025.assignment2.databinding.ActivityLoginRegistrationBinding;
 
 /**
  * This activity shows LoginFragment and RegistrationFragment.
- *
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

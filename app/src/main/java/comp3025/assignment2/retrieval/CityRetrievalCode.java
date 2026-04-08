@@ -22,6 +22,7 @@ import okhttp3.Response;
 /**
  * This is the retrieval code that's responsible for retrieving the city options.
  * This code is similar to the retrieval code that retrieves the WeatherInformation model for a city.
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Anastasios Perdikoulias
