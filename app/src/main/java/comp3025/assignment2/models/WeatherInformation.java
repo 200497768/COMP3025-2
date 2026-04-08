@@ -9,6 +9,10 @@ import android.util.Log;
  * When a city has been chosen, the code from MainActivity starts the retrieval code.
  * The retrieval code creates the model for that city, and changes the fields to match responseData.
  * The code from MainActivity provides the model to ShowWeatherFragment, and ShowWeatherFragment shows the individual fields.
+<<<<<<< HEAD
+=======
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa

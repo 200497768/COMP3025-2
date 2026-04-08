@@ -11,6 +11,10 @@ import comp3025.assignment2.R;
 /**
  * This class is needed for RecyclerView.
  * In order to write this code, we've started with the example code from the week 9 class (A. Perdikoulias, personal communication, March 13, 2026).
+<<<<<<< HEAD
+=======
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Anastasios Perdikoulias
@@ -75,12 +79,17 @@ public class CreatedViewHolder extends RecyclerView.ViewHolder {
 
     /**
      * This method retrieves the TextView item for country name.
+<<<<<<< HEAD
+=======
+     * The TextView item can be changed, including by changing text to match the city option model.
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
      */
     public TextView getCountryNameTextView() {
         TextView countryNameTextView = this.itemView.findViewById(R.id.countryNameTextView);
         return countryNameTextView;
     }
 
+<<<<<<< HEAD
     /**
      * This method retrieves the TextView item for the country flag emoji.
      * Returns null if the view doesn't exist in the layout.
@@ -89,4 +98,6 @@ public class CreatedViewHolder extends RecyclerView.ViewHolder {
         return this.itemView.findViewById(R.id.countryFlagTextView);
     }
 
+=======
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
 }

@@ -12,6 +12,10 @@ import comp3025.assignment2.views.CityOptionChosenAction;
 
 /**
  * This class is the ViewModel for MainActivity.
+<<<<<<< HEAD
+=======
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa
@@ -24,6 +28,12 @@ public class MainActivityViewModel extends ViewModel {
      */
     private MutableLiveData<WeatherInformation> mutableLiveData = new MutableLiveData<>();
 
+<<<<<<< HEAD
+=======
+    /**
+     * This method allows the code for MainActivity to retrieve the WeatherInformation model that MainActivity needs to show at this time.
+     */
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
     public MutableLiveData<WeatherInformation> getMutableLiveData() {
         return mutableLiveData;
     }
@@ -35,8 +45,24 @@ public class MainActivityViewModel extends ViewModel {
      */
     private MutableLiveData<CityOption> cityOptionMutableLiveData = new MutableLiveData<>();
 
+<<<<<<< HEAD
     private CityOptionChosenAction cityOptionChosenAction;
 
+=======
+    /**
+     * This field is the action that needs to happen when a city option has been chosen.
+     * ChooseCityFragment is responsible for allowing a city to be chosen, not MainActivity.
+     * This field still needs to be created by MainActivity, since the action will need to cause MainActivity to change the fragment area.
+     * The code for MainActivity provides this field to ChooseCityFragment when the fragment is created.
+     */
+    private CityOptionChosenAction cityOptionChosenAction;
+
+    /**
+     * This method returns the city option chosen action.
+     * The ViewModel creates the action, and maintains the action as a field.
+     * This method allows the code for MainActivity to retrieve this field in order to provide it to ChooseCityFragment.
+     */
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
     public CityOptionChosenAction getCityOptionChosenAction() {
         return cityOptionChosenAction;
     }
@@ -106,6 +132,7 @@ public class MainActivityViewModel extends ViewModel {
         //When the retrieval code has completed, the retrieved method will happen.
         retrievalCode.retrieve();
     }
+<<<<<<< HEAD
 
     /**
      * Retrieves weather for a saved city using name/region/country strings.
@@ -119,4 +146,6 @@ public class MainActivityViewModel extends ViewModel {
         // lat/lon defaults will cause the API to search by name string
         this.retrieveWeatherInformation(cityOption);
     }
+=======
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
 }

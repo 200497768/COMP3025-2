@@ -29,6 +29,10 @@ import comp3025.assignment2.views.choose.CreatedAdapter;
 
 /**
  * This fragment allows a city to be chosen.
+<<<<<<< HEAD
+=======
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa
@@ -43,6 +47,7 @@ public class ChooseCityFragment extends Fragment {
      */
     private Context applicationContext;
 
+<<<<<<< HEAD
     private CityOptionChosenAction cityOptionChosenAction;
 
     public ChooseCityFragment() {
@@ -51,6 +56,29 @@ public class ChooseCityFragment extends Fragment {
 
     public ChooseCityFragment(Context applicationContext, CityOptionChosenAction cityOptionChosenAction) {
         this.applicationContext = applicationContext;
+=======
+    /**
+     * This field the action that needs to happen when a city option has been chosen.
+     * When MainActivity creates ChooseCityFragment, an action will be provided to this fragment.
+     * This fragment will provide the action to CreatedAdapter.
+     * When a city option has been chosen, CreatedAdapter will cause the action to happen, and provide the model that corresponds with the option that was chosen.
+     */
+    private CityOptionChosenAction cityOptionChosenAction;
+
+    public ChooseCityFragment() {
+        //This is needed so that the fragment can be created again.
+        //When the fragment needs to be created again, the fields that we wrote won't be provided to the fragment.
+        //We can avoid this problem by maintaining any fields that we still need using the ViewModel.
+    }
+
+    public ChooseCityFragment(Context applicationContext, CityOptionChosenAction cityOptionChosenAction) {
+        //This field needs to be maintained until the onViewCreated method.
+        //During that method, this field will be provided to LinearLayoutManager.
+        this.applicationContext = applicationContext;
+
+        //The city option chosen action needs to be maintained until the onViewCreated method.
+        //During that method, this field will be provided to CreatedAdapter.
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
         this.cityOptionChosenAction = cityOptionChosenAction;
     }
 
@@ -93,6 +121,10 @@ public class ChooseCityFragment extends Fragment {
 
             /**
              * This method happens when the CityOptions model from the ViewModel have been changed.
+<<<<<<< HEAD
+=======
+             * In other words, this method happens when new city option models have been retrieved.
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
              * The code for this method changes the RecyclerView items to the City models.
              */
             @Override
@@ -170,18 +202,38 @@ public class ChooseCityFragment extends Fragment {
     }
 
     /**
+<<<<<<< HEAD
      * The code for this method happens when text for this TextView item has changed.
+=======
+     * The code for this method happens when the name of the city has changed.
+     * In other words, text for the cityEditText item has been changed.
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
      * This method provides the name of the city to the ViewModel, and retrieves the CityOption models.
      */
     public void cityNameWritten() {
         //Remove the message explaining that no city options could be retrieved.
+<<<<<<< HEAD
+=======
+        //We decided to change the view to GONE, as opposed to INVISIBLE, since we don't want it to use any space.
+        //The fragment will show the city options, instead of this view.
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
         this.binding.cityNotExistTextView.setVisibility(View.GONE);
 
         //Retrieve the name of the city that was written.
         EditText cityEditText =this.binding.cityEditText;
         String cityName = "" + cityEditText.getText();
 
+<<<<<<< HEAD
         //Use the ViewModel to retrieve the city options.
         this.viewModel.retrieve(cityName);
+=======
+        //Provide the name of the city to the ViewModel.
+        //The method from ViewModel will use the CityRetrievalCode to retrieve the city options.
+        this.viewModel.retrieve(cityName);
+
+        //When retrieval has finished, the ViewModel will change the city options model field.
+        //When the ViewModel changes the model field, this fragment will change the city options that the fragment is showing.
+        //During the onViewCreated method, this fragment provided the code that needs to happen when the city options have been changed.
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
     }
 }

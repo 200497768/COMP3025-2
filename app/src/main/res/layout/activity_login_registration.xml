@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 <ScrollView
+=======
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#396a93"
+<<<<<<< HEAD
     android:fillViewport="true">
 
     <LinearLayout
@@ -15,22 +22,44 @@
         android:orientation="vertical"
         android:padding="28dp"
         android:gravity="center_horizontal">
+=======
+    tools:context=".retrieval.LoginRegistrationActivity">
+
+    <LinearLayout
+        android:id="@+id/loginRegistrationArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="320dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
 
         <TextView
             android:id="@+id/loginRegistrationActivityTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="@string/login_registration_activity"
             android:textColor="@color/white"
             android:textSize="28sp"
             android:textStyle="bold"
             android:layout_marginTop="48dp"
             android:layout_marginBottom="8dp"/>
+=======
+            android:padding="20sp"
+            android:text="@string/login_registration_activity"
+            android:textColor="@color/white"
+            android:textSize="34sp" />
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
 
         <TextView
             android:id="@+id/loginRegistrationActivityInformationTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="@string/login_registration_activity_information"
             android:textColor="@color/white"
             android:textSize="14sp"
@@ -170,3 +199,46 @@
     </LinearLayout>
 </ScrollView>
 </layout>
+=======
+            android:padding="20sp"
+            android:text="@string/login_registration_activity_information"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/optionsArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="20sp">
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login" />
+
+            <Button
+                android:id="@+id/registrationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registration" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#E91E63"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginRegistrationArea" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9

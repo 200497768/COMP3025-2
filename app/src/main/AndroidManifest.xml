@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.COMP30252"
         android:usesCleartextTraffic="true">
+<<<<<<< HEAD
 
         <activity
             android:name=".views.DispositionActivity"
@@ -22,11 +23,20 @@
             android:name=".views.MainActivity"
             android:exported="false" />
 
+=======
+        <activity
+            android:name=".views.DispositionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.MainActivity"
+            android:exported="false" />
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
         <activity
             android:name=".views.LoginRegistrationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+<<<<<<< HEAD
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -34,3 +44,12 @@
     </application>
 
 </manifest>
+=======
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9

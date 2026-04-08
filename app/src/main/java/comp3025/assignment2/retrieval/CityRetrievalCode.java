@@ -22,6 +22,10 @@ import okhttp3.Response;
 /**
  * This is the retrieval code that's responsible for retrieving the city options.
  * This code is similar to the retrieval code that retrieves the WeatherInformation model for a city.
+<<<<<<< HEAD
+=======
+ * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Anastasios Perdikoulias
@@ -29,6 +33,19 @@ import okhttp3.Response;
  * @author Hao Tian
  */
 public class CityRetrievalCode {
+<<<<<<< HEAD
+=======
+
+    /**
+     * This field is the city option models that have been retrieved.
+     * When CityRetrievalCode has been created, no models exist.
+     * During the retrieve method, CityRetrievalCode retrieves the city option models, and adds the models to this field.
+     * When retrieval has completed, CityRetrievalCode causes the retrieved method to happen.
+     * This field can be accessed by extending this class, and providing code for the retrieved method.
+     * Accessing this field from the retrieved method will avoid problems that can happen if the field is accessed before CityRetrievalCode has finished retrieval.
+     * CityRetrievalCode ensures that the retrieved method only happens after the retrieval has completed, and not during or before retrieval has finished.
+     */
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
     public CityOptions cityOptions = new CityOptions();
 
     /**
@@ -41,6 +58,12 @@ public class CityRetrievalCode {
         this.neededCityName = neededCityName;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * This method retrieves the city option models.
+     */
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
     public void retrieve() {
         String urlString = "http://api.weatherapi.com/v1/search.json?key=b47d3ee63f574764af5163148261303&q=" + this.neededCityName;
 
@@ -121,6 +144,15 @@ public class CityRetrievalCode {
     });
 }
 
+<<<<<<< HEAD
+=======
+    /**
+     * This method happens when the city option models have been created, and added to the field.
+     * The retrieve method causes this method to happen.
+     * The class that's extending the CityRetrievalCode class can provide code for this method.
+     * The code for this method can access the city option models through the cityOptions field.
+     */
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
     public void retrieved(){
 
     }

@@ -15,8 +15,11 @@
     <string name="logoff">LOGOFF</string>
     <string name="disposition_activity">Disposition</string>
     <string name="disposition_activity_information">Choose an action.</string>
+<<<<<<< HEAD
     <string name="saved_cities">Saved Cities</string>
     <string name="nav_search">Search</string>
     <string name="nav_saved">Saved</string>
     <string name="nav_settings">Settings</string>
+=======
+>>>>>>> 2753dbfe85125259a04d9c600da0308abe4148f9
 </resources>
