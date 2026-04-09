@@ -11,6 +11,8 @@ import comp3025.assignment2.R;
 /**
  * This class is needed for RecyclerView.
  * In order to write this code, we've started with the example code from the week 9 class (A. Perdikoulias, personal communication, March 13, 2026).
+ * Assignment 3 addition:
+ * - getCountryFlagTextView() method added to retrieve the flag emoji TextView from city_layout.xml.
  * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
@@ -81,6 +83,15 @@ public class CreatedViewHolder extends RecyclerView.ViewHolder {
     public TextView getCountryNameTextView() {
         TextView countryNameTextView = this.itemView.findViewById(R.id.countryNameTextView);
         return countryNameTextView;
+    }
+
+    /**
+     * This method retrieves the TextView item for the country flag emoji.
+     * The country flag is shown below the country name in each city card.
+     * Returns null if the view doesn't exist in the layout.
+     */
+    public TextView getCountryFlagTextView() {
+        return this.itemView.findViewById(R.id.countryFlagTextView);
     }
 
 }
