@@ -12,6 +12,9 @@ import comp3025.assignment2.views.CityOptionChosenAction;
 
 /**
  * This class is the ViewModel for MainActivity.
+ * Assignment 3 addition:
+ * - retrieveWeatherInformationByName() method added so that SavedCitiesFragment can
+ *   load weather for a saved city using its name, region, and country strings.
  * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
@@ -120,5 +123,22 @@ public class MainActivityViewModel extends ViewModel {
         //Use the retrieval code to retrieve the model.
         //When the retrieval code has completed, the retrieved method will happen.
         retrievalCode.retrieve();
+    }
+
+    /**
+     * This method retrieves weather for a saved city using its name, region, and country strings.
+     * It is called by SavedCitiesFragment when the user taps a saved city card.
+     * A CityOption model is created from the saved city fields, and the existing
+     * retrieveWeatherInformation method is used to fetch and display the weather data.
+     */
+    public void retrieveWeatherInformationByName(String name, String region, String country) {
+        //Create a CityOption model using the saved city fields.
+        CityOption cityOption = new CityOption();
+        cityOption.setCity(name);
+        cityOption.setProvince(region != null ? region : "");
+        cityOption.setCountry(country);
+
+        //Use the existing method to retrieve the WeatherInformation model for this city.
+        this.retrieveWeatherInformation(cityOption);
     }
 }
