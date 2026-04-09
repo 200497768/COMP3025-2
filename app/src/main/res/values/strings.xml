@@ -15,4 +15,8 @@
     <string name="logoff">LOGOFF</string>
     <string name="disposition_activity">Disposition</string>
     <string name="disposition_activity_information">Choose an action.</string>
+    <string name="saved_cities">Saved Cities</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_saved">Saved</string>
+    <string name="nav_sign_out">Sign Out</string>
 </resources>
