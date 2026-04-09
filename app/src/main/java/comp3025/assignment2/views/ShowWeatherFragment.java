@@ -1,6 +1,8 @@
 package comp3025.assignment2.views;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,10 +18,16 @@ import androidx.lifecycle.ViewModelProvider;
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentShowWeatherBinding;
 import comp3025.assignment2.models.WeatherInformation;
+import comp3025.assignment2.viewmodels.AuthViewModel;
 import comp3025.assignment2.viewmodels.ShowWeatherFragmentViewModel;
 
 /**
  * This fragment shows weather information for the city that has been chosen.
+ *
+ * Assignment 3 additions:
+ * - bookmarkButton added: tapping it saves the current city to Firestore under the user's UID.
+ * - AuthViewModel observed: bookmark icon changes to amber star when city is already saved.
+ * - saveMessageTextView shows a brief confirmation after saving.
  * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
@@ -37,6 +45,12 @@ public class ShowWeatherFragment extends Fragment {
      * This field is the ViewModel for this fragment.
      */
     private ShowWeatherFragmentViewModel viewModel;
+
+    /**
+     * This field is the AuthViewModel, scoped to the activity.
+     * It is used to save and check the saved state of the current city in Firestore.
+     */
+    private AuthViewModel authViewModel;
 
     /**
      * This field is the WeatherInformation model that this fragment was created with.
@@ -83,9 +97,20 @@ public class ShowWeatherFragment extends Fragment {
         //Create the ViewModel for this fragment.
         this.viewModel = new ViewModelProvider(this).get(ShowWeatherFragmentViewModel.class);
 
+        //Create the AuthViewModel using the activity scope.
+        //This is the same instance as the one in MainActivity, so Firebase state is shared.
+        this.authViewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
+
         //2026-03-20 14:41:26.927 11360-11400 200594802 and 200497768 comp3025.assignment2                 I  The condition text field has been retrieved as Fog
         //2026-03-20 14:41:26.931 11360-11400 200594802 and 200497768 comp3025.assignment2                 I  The condition picture field has been retrieved as //cdn.weatherapi.com/weather/64x64/day/248.png
         //2026-03-20 14:41:26.935 11360-11400 200594802 and 200497768 comp3025.assignment2                 I  The feels like C field has been retrieved as 1.0
+
+        //Set up the bookmark button.
+        //Tapping the bookmark saves the current city to Firestore under users/{uid}/savedCities/{cityId}.
+        setupBookmark();
+
+        //Observe the AuthViewModel so the bookmark icon stays in sync with Firestore.
+        observeAuthViewModel();
 
         //Change what happens when the model changes.
         //This code must happen before providing the WeatherInformation model that this fragment was created with to the ViewModel.
@@ -119,6 +144,11 @@ public class ShowWeatherFragment extends Fragment {
                 //When this method happens, the model, including the picture, is supposed to have finished being retrieved.
                 showWeatherFragment.binding.imageView.setImageBitmap(changedWeatherInformation.getWeatherConditionPictureBitmap());
 
+                //Check whether this city is already saved in Firestore.
+                //This updates the bookmark icon to show the correct state (saved or not saved).
+                authViewModel.checkIfCitySaved(
+                        changedWeatherInformation.getCityName(),
+                        changedWeatherInformation.getCountryName());
             }
         });
 
@@ -127,5 +157,63 @@ public class ShowWeatherFragment extends Fragment {
         //This code must only happen after the ViewModel has been created.
         this.viewModel.weatherInformationChanged(this.createdWithWeatherInformation);
 
+    }
+
+    /**
+     * This method sets up the bookmark button click listener.
+     * Tapping the button saves the current city to Firestore.
+     * If the city is already saved, the timestamp is updated instead of creating a duplicate.
+     */
+    private void setupBookmark() {
+        binding.bookmarkButton.setOnClickListener(v -> {
+            //Retrieve the current WeatherInformation model from the ViewModel.
+            WeatherInformation w = viewModel.getWeatherInformationMutableLiveData().getValue();
+            if (w == null) return;
+
+            //Save the city to Firestore using the AuthViewModel.
+            //Province is used as the region field in the Firestore document.
+            authViewModel.saveCity(w.getCityName(), w.getProvince(), w.getCountryName());
+        });
+    }
+
+    /**
+     * This method observes the AuthViewModel for bookmark state and save message changes.
+     * The bookmark icon is updated to reflect whether the current city is saved.
+     * A brief confirmation message is shown after a successful save.
+     */
+    private void observeAuthViewModel() {
+        //Update the bookmark icon when the saved state changes.
+        //Amber filled star means saved; grey outline star means not saved.
+        authViewModel.getIsCitySaved().observe(getViewLifecycleOwner(), saved -> {
+            if (Boolean.TRUE.equals(saved)) {
+                binding.bookmarkButton.setText("\u2605"); // ★ filled star
+                binding.bookmarkButton.setTextColor(0xFFF59E0B); // amber
+            } else {
+                binding.bookmarkButton.setText("\u2606"); // ☆ outline star
+                binding.bookmarkButton.setTextColor(0xFFAAC8E0); // grey-blue
+            }
+        });
+
+        //Show a brief confirmation message after the city has been saved.
+        //The message disappears automatically after 2.5 seconds.
+        authViewModel.getSaveMessage().observe(getViewLifecycleOwner(), msg -> {
+            if (msg != null) {
+                binding.saveMessageTextView.setText(msg);
+                binding.saveMessageTextView.setVisibility(View.VISIBLE);
+                new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                    if (binding != null) binding.saveMessageTextView.setVisibility(View.GONE);
+                }, 2500);
+                //Consume the message so it doesn't show again on re-observe.
+                authViewModel.consumeSaveMessage();
+            }
+        });
+    }
+
+    @Override
+    public void onDestroyView() {
+        //Reset the saved state so the bookmark icon doesn't carry over to the next city.
+        authViewModel.resetCitySaved();
+        binding = null;
+        super.onDestroyView();
     }
 }

@@ -18,6 +18,8 @@ import comp3025.assignment2.views.CityOptionChosenAction;
 /**
  * This class is needed for RecyclerView.
  * In order to write this code, we've started with the example code from the week 9 class (A. Perdikoulias, personal communication, March 13, 2026).
+ * Assignment 3 addition:
+ * - Country flag emoji is now shown on each city card using getCountryFlag().
  * If this code includes in-text citations, the corresponding references can be accessed through MainActivity.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
@@ -100,6 +102,13 @@ public class CreatedAdapter extends RecyclerView.Adapter<CreatedViewHolder> {
         //Change the country name TextView item.
         TextView countryNameTextView = holder.getCountryNameTextView();
         countryNameTextView.setText(cityOption.getCountry());
+
+        //Change the country flag TextView item.
+        //The flag is an emoji that corresponds to the country name.
+        TextView countryFlagTextView = holder.getCountryFlagTextView();
+        if (countryFlagTextView != null) {
+            countryFlagTextView.setText(getCountryFlag(cityOption.getCountry()));
+        }
     }
 
     /**
@@ -110,5 +119,50 @@ public class CreatedAdapter extends RecyclerView.Adapter<CreatedViewHolder> {
     @Override
     public int getItemCount() {
         return this.cityOptions.size();
+    }
+
+    /**
+     * This method returns a flag emoji for the given country name.
+     * It checks the country name string against a list of known country names.
+     * If no match is found, a globe emoji is returned as a fallback.
+     */
+    private String getCountryFlag(String countryName) {
+        if (countryName == null) return "";
+        String lower = countryName.toLowerCase();
+        if (lower.contains("canada")) return "\uD83C\uDDE8\uD83C\uDDE6";
+        if (lower.contains("united states") || lower.contains("usa"))
+            return "\uD83C\uDDFA\uD83C\uDDF8";
+        if (lower.contains("united kingdom") || lower.contains("uk"))
+            return "\uD83C\uDDEC\uD83C\uDDE7";
+        if (lower.contains("australia")) return "\uD83C\uDDE6\uD83C\uDDFA";
+        if (lower.contains("germany")) return "\uD83C\uDDE9\uD83C\uDDEA";
+        if (lower.contains("france")) return "\uD83C\uDDEB\uD83C\uDDF7";
+        if (lower.contains("italy")) return "\uD83C\uDDEE\uD83C\uDDF9";
+        if (lower.contains("spain")) return "\uD83C\uDDEA\uD83C\uDDF8";
+        if (lower.contains("japan")) return "\uD83C\uDDEF\uD83C\uDDF5";
+        if (lower.contains("china")) return "\uD83C\uDDE8\uD83C\uDDF3";
+        if (lower.contains("india")) return "\uD83C\uDDEE\uD83C\uDDF3";
+        if (lower.contains("brazil")) return "\uD83C\uDDE7\uD83C\uDDF7";
+        if (lower.contains("mexico")) return "\uD83C\uDDF2\uD83C\uDDFD";
+        if (lower.contains("russia")) return "\uD83C\uDDF7\uD83C\uDDFA";
+        if (lower.contains("south korea") || lower.contains("korea"))
+            return "\uD83C\uDDF0\uD83C\uDDF7";
+        if (lower.contains("netherlands")) return "\uD83C\uDDF3\uD83C\uDDF1";
+        if (lower.contains("sweden")) return "\uD83C\uDDF8\uD83C\uDDEA";
+        if (lower.contains("norway")) return "\uD83C\uDDF3\uD83C\uDDF4";
+        if (lower.contains("denmark")) return "\uD83C\uDDE9\uD83C\uDDF0";
+        if (lower.contains("switzerland")) return "\uD83C\uDDE8\uD83C\uDDED";
+        if (lower.contains("portugal")) return "\uD83C\uDDF5\uD83C\uDDF9";
+        if (lower.contains("pakistan")) return "\uD83C\uDDF5\uD83C\uDDF0";
+        if (lower.contains("turkey")) return "\uD83C\uDDF9\uD83C\uDDF7";
+        if (lower.contains("new zealand")) return "\uD83C\uDDF3\uD83C\uDDFF";
+        if (lower.contains("ireland")) return "\uD83C\uDDEE\uD83C\uDDEA";
+        if (lower.contains("poland")) return "\uD83C\uDDF5\uD83C\uDDF1";
+        if (lower.contains("ukraine")) return "\uD83C\uDDFA\uD83C\uDDE6";
+        if (lower.contains("argentina")) return "\uD83C\uDDE6\uD83C\uDDF7";
+        if (lower.contains("south africa")) return "\uD83C\uDDFF\uD83C\uDDE6";
+        if (lower.contains("egypt")) return "\uD83C\uDDEA\uD83C\uDDEC";
+        if (lower.contains("nigeria")) return "\uD83C\uDDF3\uD83C\uDDEC";
+        return "\uD83C\uDF0D"; // globe emoji fallback
     }
 }

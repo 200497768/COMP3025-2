@@ -19,6 +19,7 @@ import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
 import comp3025.assignment2.models.CityOption;
 import comp3025.assignment2.models.WeatherInformation;
+import comp3025.assignment2.viewmodels.AuthViewModel;
 import comp3025.assignment2.viewmodels.MainActivityViewModel;
 
 
@@ -27,6 +28,11 @@ import comp3025.assignment2.viewmodels.MainActivityViewModel;
  * MainActivity is responsible for changing the fragment area to ChooseCityFragment or ShowWeatherFragment.
  * ChooseCityFragment is used to show a list, and allow a city to be chosen.
  * ShowWeatherFragment is used to show weather information for a particular city.
+ * Assignment 3 additions:
+ * - AuthViewModel added so that sign out works from the bottom navigation bar.
+ * - Bottom navigation bar with Search, Saved Cities, and Sign Out tabs.
+ * - changeFragmentAreaSavedCities() method added to show SavedCitiesFragment.
+ * - The LOGOFF button has been removed from the layout; sign out now lives in the bottom nav.
  * MainActivity also includes references for the rest of the code.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
@@ -48,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
      * The ViewModel allows us to maintain the fields, even if the activity needs to be created again.
      */
     private MainActivityViewModel viewModel;
+
+    /**
+     * This is the AuthViewModel for this activity.
+     * It is used to sign the user out when the Sign Out tab in the bottom navigation is tapped.
+     * It is also used by ShowWeatherFragment (via activity scope) to save and check cities in Firestore.
+     */
+    private AuthViewModel authViewModel;
 
     /**
      * The onCreate method adds views to show retrieved information.
@@ -75,6 +88,10 @@ public class MainActivity extends AppCompatActivity {
 
         //Create the ViewModel for this activity.
         this.viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+
+        //Create the AuthViewModel for this activity.
+        //Scoped to the activity so ShowWeatherFragment can also access it via ViewModelProvider.
+        this.authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
 
         //Add the code that will happen when the WeatherInformation model from the ViewModel changes.
         MainActivity mainActivity = this;
@@ -126,12 +143,40 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Change the action that will happen when choosing the LOGOFF option.
+        //The LOGOFF button is hidden in the layout (visibility gone, zero size).
+        //Sign out is now handled by the Sign Out tab in the bottom navigation bar instead.
         this.binding.logoffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Use the method to request LOGOFF.
                 mainActivity.logoffRequested();
             }
+        });
+
+        //Set up the bottom navigation bar.
+        //Search tab: shows ChooseCityFragment so the user can search for cities.
+        //Saved tab: shows SavedCitiesFragment with the user's bookmarked cities.
+        //Sign Out tab: signs the user out via Firebase Auth and returns to the login screen.
+        this.binding.bottomNavigation.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_search) {
+                //Switch back to the city search screen.
+                mainActivity.changeFragmentAreaChooseCityFragment();
+                return true;
+            } else if (id == R.id.nav_saved) {
+                //Switch to the saved cities screen.
+                mainActivity.changeFragmentAreaSavedCities();
+                return true;
+            } else if (id == R.id.nav_sign_out) {
+                //Sign the user out through Firebase Auth.
+                //Clear the back stack so pressing back doesn't return to MainActivity.
+                authViewModel.signOut();
+                Intent signOutIntent = new Intent(MainActivity.this, LoginRegistrationActivity.class);
+                signOutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(signOutIntent);
+                return true;
+            }
+            return false;
         });
 
         //Show ChooseCityFragment when starting.
@@ -180,18 +225,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * This method changes the fragment area to show SavedCitiesFragment.
+     * SavedCitiesFragment shows all cities the signed-in user has bookmarked.
+     * The list updates in real time using a Firestore snapshot listener.
+     */
+    public void changeFragmentAreaSavedCities() {
+        //Don't show the choose another city button on the saved cities screen.
+        this.binding.chooseAnotherCityButton.setVisibility(View.INVISIBLE);
+
+        //Change the fragment area to show SavedCitiesFragment.
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, new SavedCitiesFragment());
+        fragmentTransaction.commit();
+    }
+
+    /**
+     * Called by SavedCitiesFragment when the user taps a saved city card.
+     * Switches the bottom navigation selection to the Search tab so the
+     * weather screen appears in the correct context.
+     */
+    public void showWeatherTabFromSaved() {
+        this.binding.bottomNavigation.setSelectedItemId(R.id.nav_search);
+    }
+
+    /**
      * This method happens when LOGOFF has been requested.
+     * In Assignment 3, sign out is handled by the bottom navigation Sign Out tab instead.
+     * This method is kept for legacy compatibility with DispositionActivity.
      */
     public void logoffRequested() {
         //Create an explicit intent that refers to DispositionActivity.
         Intent intent = new Intent(MainActivity.this, DispositionActivity.class);
-
         startActivity(intent);
     }
 }
 
 //In order to fix "Permission denied (missing INTERNET permission?)", we added some code from a book.
-//We needed to add "<uses-permission android:name="android.permission.INTERNET" />" to the code (Elenkov, 2016, pp. 33–34).
+//We needed to add "<uses-permission android:name="android.permission.INTERNET" />" to the code (Elenkov, 2016, pp. 33-34).
 
 //In order to fix a problem with communication, we needed to add some code.
 //"    android:usesCleartextTraffic="true">" (Solar2D, 2020).
@@ -208,9 +279,8 @@ public class MainActivity extends AppCompatActivity {
 //All for Android, Android for All. (2015). How to create a layout with rounded corner borders in Android ? https://www.ssaurel.com/blog/how-to-create-a-layout-with-rounded-corner-borders-in-android/
 //CodePath. (n.d.). Basic Event Listeners. https://guides.codepath.org/android/Basic-Event-Listeners
 //DiMarzio, J. (2016). Beginning Android Programming with Android Studio (4th ed.). Wrox.
-//Elenkov, N. (2016). Android security internals: An in-depth guide to android’s security architecture (1st edition). No Starch Press.
+//Elenkov, N. (2016). Android security internals: An in-depth guide to android's security architecture (1st edition). No Starch Press.
 //Martin, E. (2026). Decode an OkHttp JSON Response. https://www.baeldung.com/okhttp-json-response
 //Petzl, S. (2024). How to Put a Border Around an Android TextView. https://www.repeato.app/how-to-put-a-border-around-an-android-textview/
 //Piwowarek, G. (2025). Getting a Value in JSONObject. https://www.baeldung.com/java-jsonobject-get-value
 //Solar2D. (2020). Network Security Configuration - Clear text traffic permitted. https://forums.solar2d.com/t/network-security-configuration-clear-text-traffic-permitted/350414
-
