@@ -195,7 +195,6 @@ public class MainActivity extends AppCompatActivity {
         //Start the main sound.
         MainSound mainSound = new MainSound();
         soundCode.startSound(mainSound);
-
     }
 
     /**
