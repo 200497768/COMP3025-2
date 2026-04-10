@@ -52,7 +52,7 @@ public class SoundCode {
      */
     private void ensureCanStart() {
         if (this.activity == null) {
-            //This method can't ensure whether the sound cna start.
+            //This method can't ensure whether the sound can start.
         } else {
             for (int number = 0; number < 1000; number = number + 1) {
                 AudioManager audioManager = (AudioManager) this.activity.getSystemService(Context.AUDIO_SERVICE);
