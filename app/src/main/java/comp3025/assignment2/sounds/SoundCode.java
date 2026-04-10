@@ -40,6 +40,9 @@ public class SoundCode {
      * We retrieved the code for this method from (Tutorials Point, n.d.).
      */
     public void startSound(Sound sound){
+        //Ensure that the sound can start, if possible.
+        this.ensureCanStart();
+
         int number=sound.getNumber();
         MediaPlayer mediaPlayer = MediaPlayer.create(this.context, number);
         mediaPlayer.start();
