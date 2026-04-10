@@ -5,6 +5,8 @@ import android.media.MediaPlayer;
 
 /**
  * This is the code that's responsible for causing a sound to happen.
+ * We want sounds to happen multiple times in this assignment.
+ * If we use SoundCode, we can avoid repeating that code, since it will be part of the startSound method.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa
