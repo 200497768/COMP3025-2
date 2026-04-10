@@ -58,7 +58,7 @@ public class SoundCode {
         if (this.activity == null) {
             //This method can't ensure whether the sound can start.
         } else {
-            for (int number = 0; number < 1000; number = number + 1) {
+            for (int number = 0; number < 10; number = number + 1) {
                 AudioManager audioManager = (AudioManager) this.activity.getSystemService(Context.AUDIO_SERVICE);
                 audioManager.adjustVolume(AudioManager.ADJUST_RAISE, AudioManager.FLAG_PLAY_SOUND);
             }
