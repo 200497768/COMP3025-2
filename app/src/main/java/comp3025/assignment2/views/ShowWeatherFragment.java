@@ -18,6 +18,8 @@ import androidx.lifecycle.ViewModelProvider;
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.FragmentShowWeatherBinding;
 import comp3025.assignment2.models.WeatherInformation;
+import comp3025.assignment2.sounds.SoundCode;
+import comp3025.assignment2.sounds.WeatherSound;
 import comp3025.assignment2.viewmodels.AuthViewModel;
 import comp3025.assignment2.viewmodels.ShowWeatherFragmentViewModel;
 
@@ -157,6 +159,12 @@ public class ShowWeatherFragment extends Fragment {
         //This code must only happen after the ViewModel has been created.
         this.viewModel.weatherInformationChanged(this.createdWithWeatherInformation);
 
+        //Create the sound code.
+        SoundCode soundCode = new SoundCode(this, this);
+
+        //Start the weather sound.
+        WeatherSound weatherSound = new WeatherSound();
+        soundCode.startSound(weatherSound);
     }
 
     /**
