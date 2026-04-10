@@ -13,8 +13,8 @@ import comp3025.assignment2.R;
  * @author Dawa Angchuk Sherpa
  * @author Hao Tian
  */
-public class LoginRegistrationSound extends Sound{
-    public LoginRegistrationSound() {
+public class LoginSound extends Sound {
+    public LoginSound() {
         super(R.raw.login);
     }
 }
