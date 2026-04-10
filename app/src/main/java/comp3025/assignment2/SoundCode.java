@@ -1,0 +1,25 @@
+package comp3025.assignment2;
+
+import android.media.MediaPlayer;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+/**
+ * This is the sound code.
+ * @author Harshit Gambhir
+ * @author Yatri Devangbhai Padhiyar
+ * @author Dawa Angchuk Sherpa
+ * @author Hao Tian
+ */
+public class SoundCode {
+    private AppCompatActivity whatThisWas;
+
+    /**
+     * This method starts a sound.
+     */
+    public void startSound(Sound sound){
+        int number=sound.getNumber();
+        MediaPlayer mediaPlayer = MediaPlayer.create(this.whatThisWas,number);
+        mediaPlayer.start();
+    }
+}
