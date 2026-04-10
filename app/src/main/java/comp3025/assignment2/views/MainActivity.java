@@ -22,6 +22,7 @@ import comp3025.assignment2.models.WeatherInformation;
 import comp3025.assignment2.sounds.ExampleSound;
 import comp3025.assignment2.sounds.MainSound;
 import comp3025.assignment2.sounds.SoundCode;
+import comp3025.assignment2.sounds.WeatherSound;
 import comp3025.assignment2.viewmodels.AuthViewModel;
 import comp3025.assignment2.viewmodels.MainActivityViewModel;
 
@@ -214,6 +215,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, showWeatherFragment);
         fragmentTransaction.commit();
+
+        //Create the sound code, and start the weather sound.
+        //This code must be written from MainActivity, instead of ShowWeatherFragment.
+        //The fields that are needed for the sound code aren't available from ShowWeatherFragment.
+        SoundCode soundCode = new SoundCode(this, this);
+        WeatherSound weatherSound = new WeatherSound();
+        soundCode.startSound(weatherSound);
     }
 
     /**
