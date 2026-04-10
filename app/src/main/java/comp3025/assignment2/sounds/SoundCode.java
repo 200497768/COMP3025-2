@@ -46,6 +46,22 @@ public class SoundCode {
         //Retrieve the number from the sound, and start it.
         int number=sound.getNumber();
         MediaPlayer mediaPlayer = MediaPlayer.create(this.context, number);
+
+        //The release method must be used when the sound has finished.
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+            /**
+             * This method will happen when the sound has finished.
+             * The code for this method is responsible for ensuring that the release method is used.
+             */
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                //Use the release method.
+                mp.release();
+            }
+        });
+
+        //Start the sound.
         mediaPlayer.start();
     }
 
