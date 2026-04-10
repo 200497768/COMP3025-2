@@ -275,8 +275,14 @@ public class MainActivity extends AppCompatActivity {
 
 //We used code from (All for Android, Android for All, 2015) and (Petzl, 2024) to change how the CityOption items appear.
 
+//We regret the source for ic_sign_out.xml used in our assignment was not recorded.
+//The exact code in our assignment is publicly available code that commonly appears.
+//We are no longer able to determine the source that we retrieved the exact code from.
+//We believe that the exact code in our assignment was likely produced from a combination of ([ic_logout.xml code], n.d.) and (Algoda, 2025).
+
 //References
 //All for Android, Android for All. (2015). How to create a layout with rounded corner borders in Android ? https://www.ssaurel.com/blog/how-to-create-a-layout-with-rounded-corner-borders-in-android/
+//Algoda, N. (2025). AEO-MAD-Lab. https://github.com/nadunmA/AEO-MAD-Lab/blob/5fc6381e4f94f8c43b5df539862cf4e73fb5310a/app/src/main/res/drawable/ic_logout.xml
 //CodePath. (n.d.). Basic Event Listeners. https://guides.codepath.org/android/Basic-Event-Listeners
 //DiMarzio, J. (2016). Beginning Android Programming with Android Studio (4th ed.). Wrox.
 //Elenkov, N. (2016). Android security internals: An in-depth guide to android's security architecture (1st edition). No Starch Press.
@@ -284,3 +290,4 @@ public class MainActivity extends AppCompatActivity {
 //Petzl, S. (2024). How to Put a Border Around an Android TextView. https://www.repeato.app/how-to-put-a-border-around-an-android-textview/
 //Piwowarek, G. (2025). Getting a Value in JSONObject. https://www.baeldung.com/java-jsonobject-get-value
 //Solar2D. (2020). Network Security Configuration - Clear text traffic permitted. https://forums.solar2d.com/t/network-security-configuration-clear-text-traffic-permitted/350414
+//[ic_logout.xml code]. (n.d.). Git repositories on android. https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/drawable/ic_logout.xml
