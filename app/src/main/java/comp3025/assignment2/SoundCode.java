@@ -5,7 +5,7 @@ import android.media.MediaPlayer;
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
- * This is the sound code.
+ * This is the code that's responsible for causing a sound to happen.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa
