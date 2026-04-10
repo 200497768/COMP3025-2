@@ -25,6 +25,9 @@ public class SoundCode {
 
     /**
      * This method starts a sound.
+     * We learned that sounds are possible through (Smyth, 2021, p. 603).
+     * The example code from the book was complicated, so we didn't use it.
+     * We retrieved the code for this method from (Tutorials Point, n.d.).
      */
     public void startSound(Sound sound){
         int number=sound.getNumber();

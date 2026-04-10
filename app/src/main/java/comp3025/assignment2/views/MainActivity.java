@@ -298,5 +298,7 @@ public class MainActivity extends AppCompatActivity {
 //Martin, E. (2026). Decode an OkHttp JSON Response. https://www.baeldung.com/okhttp-json-response
 //Petzl, S. (2024). How to Put a Border Around an Android TextView. https://www.repeato.app/how-to-put-a-border-around-an-android-textview/
 //Piwowarek, G. (2025). Getting a Value in JSONObject. https://www.baeldung.com/java-jsonobject-get-value
+//Smyth, N. (2021). Android Studio 4.2 development essentials: developing Android applications using Android Studio 4.2, Java, and Android Jetpack (Java edition.). Packt Publishing. https://georgian.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma991004439803207306&context=L&vid=01OCLS_GEORG:GEORG
 //Solar2D. (2020). Network Security Configuration - Clear text traffic permitted. https://forums.solar2d.com/t/network-security-configuration-clear-text-traffic-permitted/350414
+//Tutorials Point. (n.d.). Android - MediaPlayer. https://www.tutorialspoint.com/android/android_mediaplayer.htm
 //[ic_logout.xml code]. (n.d.). Git repositories on android. https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/drawable/ic_logout.xml
