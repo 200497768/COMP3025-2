@@ -1,8 +1,7 @@
 package comp3025.assignment2.sounds;
 
+import android.content.Context;
 import android.media.MediaPlayer;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * This is the code that's responsible for causing a sound to happen.
@@ -12,14 +11,18 @@ import androidx.appcompat.app.AppCompatActivity;
  * @author Hao Tian
  */
 public class SoundCode {
-    private AppCompatActivity whatThisWas;
+
+    /**
+     * This field is needed for MediaPlayer.
+     */
+    private Context context;
 
     /**
      * This method starts a sound.
      */
     public void startSound(Sound sound){
         int number=sound.getNumber();
-        MediaPlayer mediaPlayer = MediaPlayer.create(this.whatThisWas,number);
+        MediaPlayer mediaPlayer = MediaPlayer.create(this.context, number);
         mediaPlayer.start();
     }
 }
