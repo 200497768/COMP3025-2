@@ -20,6 +20,7 @@ import comp3025.assignment2.databinding.ActivityMainBinding;
 import comp3025.assignment2.models.CityOption;
 import comp3025.assignment2.models.WeatherInformation;
 import comp3025.assignment2.sounds.ExampleSound;
+import comp3025.assignment2.sounds.MainSound;
 import comp3025.assignment2.sounds.SoundCode;
 import comp3025.assignment2.viewmodels.AuthViewModel;
 import comp3025.assignment2.viewmodels.MainActivityViewModel;
@@ -191,6 +192,9 @@ public class MainActivity extends AppCompatActivity {
         ExampleSound exampleSound = new ExampleSound();
         soundCode.startSound(exampleSound);
 
+        //Start the main sound.
+        MainSound mainSound = new MainSound();
+        soundCode.startSound(mainSound);
 
     }
 
