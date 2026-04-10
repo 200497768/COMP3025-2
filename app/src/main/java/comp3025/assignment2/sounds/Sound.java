@@ -2,8 +2,7 @@ package comp3025.assignment2.sounds;
 
 /**
  * This class is a sound that the assignment is capable of.
- * Every sound in this assignment has been recorded by students in our group.
- *
+ * In this assignment, a sound means words that have been recorded by students in our group for this assignment.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa
