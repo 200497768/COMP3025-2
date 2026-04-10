@@ -1,4 +1,4 @@
-package comp3025.assignment2;
+package comp3025.assignment2.sounds;
 
 import android.media.MediaPlayer;
 

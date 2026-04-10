@@ -1,4 +1,4 @@
-package comp3025.assignment2;
+package comp3025.assignment2.sounds;
 
 /**
  * This class is a sound that the assignment is capable of.
