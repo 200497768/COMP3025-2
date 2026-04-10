@@ -1,8 +1,6 @@
 package comp3025.assignment2.views;
 
-import android.content.Context;
 import android.content.Intent;
-import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.View;
 
@@ -187,16 +185,13 @@ public class MainActivity extends AppCompatActivity {
         this.changeFragmentAreaChooseCityFragment();
 
         //Create the sound code.
-        SoundCode soundCode = new SoundCode(this);
+        SoundCode soundCode = new SoundCode(this, this);
 
         //Start the example sound.
         ExampleSound exampleSound = new ExampleSound();
         soundCode.startSound(exampleSound);
 
-        for (int number = 0; number < 1000; number = number + 1) {
-            AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-            audioManager.adjustVolume(AudioManager.ADJUST_RAISE, AudioManager.FLAG_PLAY_SOUND);
-        }
+
     }
 
     /**

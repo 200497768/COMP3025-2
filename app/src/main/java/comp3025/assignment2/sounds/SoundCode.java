@@ -1,7 +1,10 @@
 package comp3025.assignment2.sounds;
 
 import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * This is the code that's responsible for causing a sound to happen.
@@ -15,12 +18,19 @@ import android.media.MediaPlayer;
 public class SoundCode {
 
     /**
-     * This field is needed for MediaPlayer.
+     * This field is needed by the sound code in order to retrieve MediaPlayer.
      */
     private Context context;
 
-    public SoundCode(Context context) {
+    /**
+     * This field isn't needed, but if it's provided, the sound code will ensure that the sound can start.
+     * This field will be used to retrieve AudioManager.
+     */
+    private AppCompatActivity activity;
+
+    public SoundCode(Context context, AppCompatActivity activity) {
         this.context = context;
+        this.activity = activity;
     }
 
     /**
@@ -33,5 +43,21 @@ public class SoundCode {
         int number=sound.getNumber();
         MediaPlayer mediaPlayer = MediaPlayer.create(this.context, number);
         mediaPlayer.start();
+    }
+
+    /**
+     * This method ensures that the sound can start, if possible.
+     * This is only possible if the activity field was provided to the sound code.
+     * If the field isn't available, this method won't change whether the sound can start.
+     */
+    private void ensureCanStart() {
+        if (this.activity == null) {
+            //This method can't ensure whether the sound cna start.
+        } else {
+            for (int number = 0; number < 1000; number = number + 1) {
+                AudioManager audioManager = (AudioManager) this.activity.getSystemService(Context.AUDIO_SERVICE);
+                audioManager.adjustVolume(AudioManager.ADJUST_RAISE, AudioManager.FLAG_PLAY_SOUND);
+            }
+        }
     }
 }
