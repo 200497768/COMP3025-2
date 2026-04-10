@@ -43,6 +43,7 @@ public class SoundCode {
         //Ensure that the sound can start, if possible.
         this.ensureCanStart();
 
+        //Retrieve the number from the sound, and start it.
         int number=sound.getNumber();
         MediaPlayer mediaPlayer = MediaPlayer.create(this.context, number);
         mediaPlayer.start();
