@@ -17,6 +17,10 @@ public class SoundCode {
      */
     private Context context;
 
+    public SoundCode(Context context) {
+        this.context = context;
+    }
+
     /**
      * This method starts a sound.
      */
