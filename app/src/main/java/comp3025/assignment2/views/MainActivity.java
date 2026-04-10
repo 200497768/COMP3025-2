@@ -19,6 +19,8 @@ import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
 import comp3025.assignment2.models.CityOption;
 import comp3025.assignment2.models.WeatherInformation;
+import comp3025.assignment2.sounds.ExampleSound;
+import comp3025.assignment2.sounds.SoundCode;
 import comp3025.assignment2.viewmodels.AuthViewModel;
 import comp3025.assignment2.viewmodels.MainActivityViewModel;
 
@@ -181,6 +183,13 @@ public class MainActivity extends AppCompatActivity {
 
         //Show ChooseCityFragment when starting.
         this.changeFragmentAreaChooseCityFragment();
+
+        //Create the sound code.
+        SoundCode soundCode = new SoundCode(this);
+
+        //Start the example sound.
+        ExampleSound exampleSound = new ExampleSound();
+        soundCode.startSound(exampleSound);
     }
 
     /**
