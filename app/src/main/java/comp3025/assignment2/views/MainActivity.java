@@ -19,7 +19,6 @@ import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
 import comp3025.assignment2.models.CityOption;
 import comp3025.assignment2.models.WeatherInformation;
-import comp3025.assignment2.sounds.ExampleSound;
 import comp3025.assignment2.sounds.MainSound;
 import comp3025.assignment2.sounds.SoundCode;
 import comp3025.assignment2.sounds.WeatherSound;
@@ -185,17 +184,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Show ChooseCityFragment when starting.
         this.changeFragmentAreaChooseCityFragment();
-
-        //Create the sound code.
-        SoundCode soundCode = new SoundCode(this, this);
-
-        //Start the example sound.
-        ExampleSound exampleSound = new ExampleSound();
-        soundCode.startSound(exampleSound);
-
-        //Start the main sound.
-        MainSound mainSound = new MainSound();
-        soundCode.startSound(mainSound);
     }
 
     /**
@@ -244,6 +232,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, chooseCityFragment);
         fragmentTransaction.commit();
+
+        //Create the sound code, and start the main sound.
+        //This code must be written from MainActivity, instead of ChooseCityFragment.
+        //The fields that are needed for the sound code aren't available from ChooseCityFragment.
+        SoundCode soundCode = new SoundCode(this, this);
+        MainSound mainSound = new MainSound();
+        soundCode.startSound(mainSound);
     }
 
     /**
