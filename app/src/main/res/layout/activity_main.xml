@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg">
 
-        <!-- HEADER CARD (GLASS + CENTERED) -->
+        <!-- HEADER CARD  -->
         <LinearLayout
             android:id="@+id/headerCard"
             android:layout_width="0dp"
