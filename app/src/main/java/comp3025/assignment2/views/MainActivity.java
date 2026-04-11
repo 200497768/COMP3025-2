@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void changeFragmentAreaChooseCityFragment() {
         //Don't show the action to choose another city.
-        this.binding.chooseAnotherCityButton.setVisibility(View.INVISIBLE);
+        this.binding.chooseAnotherCityButton.setVisibility(View.VISIBLE);
 
         //Create ChooseCityFragment, and provide the model.
 
@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void changeFragmentAreaSavedCities() {
         //Don't show the choose another city button on the saved cities screen.
-        this.binding.chooseAnotherCityButton.setVisibility(View.INVISIBLE);
+        this.binding.chooseAnotherCityButton.setVisibility(View.VISIBLE);
 
         //Change the fragment area to show SavedCitiesFragment.
         FragmentManager fragmentManager = getSupportFragmentManager();

@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- GLASS CARD ITEM -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#325d81"
-        android:padding="14dp"
-        android:layout_marginBottom="8dp"
+        android:padding="16dp"
+        android:layout_marginBottom="12dp"
         android:gravity="center_vertical"
+        android:background="@drawable/glass_card"
+        android:elevation="4dp"
         android:clickable="true"
         android:focusable="true">
 
+        <!-- TEXT SECTION -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -22,40 +25,54 @@
                 android:id="@+id/savedCityNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="City name"
-                android:textColor="@color/white"
+                android:text="Toronto"
+                android:textColor="@android:color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="2dp" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/savedRegionCountryTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Region, Country"
-                android:textColor="#aac8e0"
-                android:textSize="13sp" />
+                android:text="Ontario, Canada"
+                android:textColor="#CCFFFFFF"
+                android:textSize="13sp"
+                android:layout_marginTop="2dp"/>
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/savedTimestampTextView"
+        <!-- RIGHT SIDE -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="#aac8e0"
-            android:textSize="11sp"
-            android:layout_marginEnd="10dp" />
+            android:orientation="vertical"
+            android:gravity="end">
 
-        <TextView
-            android:id="@+id/savedDeleteButton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="✕"
-            android:textSize="13sp"
-            android:textColor="#FF8080"
-            android:gravity="center"
-            android:background="#33EF4444"
-            android:clickable="true"
-            android:focusable="true" />
+            <!-- TIMESTAMP -->
+            <TextView
+                android:id="@+id/savedTimestampTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2h ago"
+                android:textColor="#88FFFFFF"
+                android:textSize="11sp"
+                android:layout_marginBottom="6dp"/>
+
+            <!-- DELETE BUTTON -->
+            <TextView
+                android:id="@+id/savedDeleteButton"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:text="✕"
+                android:textSize="14sp"
+                android:textColor="#FF6B6B"
+                android:gravity="center"
+                android:background="@drawable/card_rounded"
+                android:clickable="true"
+                android:focusable="true"/>
+
+        </LinearLayout>
+
     </LinearLayout>
+
 </layout>
