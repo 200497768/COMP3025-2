@@ -19,6 +19,10 @@ import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityMainBinding;
 import comp3025.assignment2.models.CityOption;
 import comp3025.assignment2.models.WeatherInformation;
+import comp3025.assignment2.sounds.ListSound;
+import comp3025.assignment2.sounds.MainSound;
+import comp3025.assignment2.sounds.SoundCode;
+import comp3025.assignment2.sounds.WeatherSound;
 import comp3025.assignment2.viewmodels.AuthViewModel;
 import comp3025.assignment2.viewmodels.MainActivityViewModel;
 
@@ -200,6 +204,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, showWeatherFragment);
         fragmentTransaction.commit();
+
+        //Create the sound code, and start the weather sound.
+        //This code must be written from MainActivity, instead of ShowWeatherFragment.
+        //The fields that are needed for the sound code aren't available from ShowWeatherFragment.
+        SoundCode soundCode = new SoundCode(this, this);
+        WeatherSound weatherSound = new WeatherSound();
+        soundCode.startSound(weatherSound);
     }
 
     /**
@@ -222,6 +233,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, chooseCityFragment);
         fragmentTransaction.commit();
+
+        //Create the sound code, and start the main sound.
+        //This code must be written from MainActivity, instead of ChooseCityFragment.
+        //The fields that are needed for the sound code aren't available from ChooseCityFragment.
+        SoundCode soundCode = new SoundCode(this, this);
+        MainSound mainSound = new MainSound();
+        soundCode.startSound(mainSound);
     }
 
     /**
@@ -238,6 +256,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, new SavedCitiesFragment());
         fragmentTransaction.commit();
+
+        //Create the sound code, and start the list sound.
+        //This code must be written from MainActivity, instead of ChooseCityFragment.
+        //The fields that are needed for the sound code aren't available from ChooseCityFragment.
+        SoundCode soundCode = new SoundCode(this, this);
+        ListSound listSound = new ListSound();
+        soundCode.startSound(listSound);
     }
 
     /**
@@ -289,5 +314,7 @@ public class MainActivity extends AppCompatActivity {
 //Martin, E. (2026). Decode an OkHttp JSON Response. https://www.baeldung.com/okhttp-json-response
 //Petzl, S. (2024). How to Put a Border Around an Android TextView. https://www.repeato.app/how-to-put-a-border-around-an-android-textview/
 //Piwowarek, G. (2025). Getting a Value in JSONObject. https://www.baeldung.com/java-jsonobject-get-value
+//Smyth, N. (2021). Android Studio 4.2 development essentials: developing Android applications using Android Studio 4.2, Java, and Android Jetpack (Java edition.). Packt Publishing. https://georgian.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma991004439803207306&context=L&vid=01OCLS_GEORG:GEORG
 //Solar2D. (2020). Network Security Configuration - Clear text traffic permitted. https://forums.solar2d.com/t/network-security-configuration-clear-text-traffic-permitted/350414
+//Tutorials Point. (n.d.). Android - MediaPlayer. https://www.tutorialspoint.com/android/android_mediaplayer.htm
 //[ic_logout.xml code]. (n.d.). Git repositories on android. https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/drawable/ic_logout.xml

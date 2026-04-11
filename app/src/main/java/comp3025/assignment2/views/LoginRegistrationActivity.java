@@ -16,6 +16,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import comp3025.assignment2.R;
 import comp3025.assignment2.databinding.ActivityLoginRegistrationBinding;
+import comp3025.assignment2.sounds.LoginSound;
+import comp3025.assignment2.sounds.SoundCode;
 import comp3025.assignment2.viewmodels.AuthViewModel;
 
 /**
@@ -95,6 +97,13 @@ public class LoginRegistrationActivity extends AppCompatActivity {
 
         //Observe the AuthViewModel for loading state, errors, and success.
         observeViewModel();
+
+        //Create the sound code.
+        SoundCode soundCode = new SoundCode(this, this);
+
+        //Start the login sound.
+        LoginSound loginSound = new LoginSound();
+        soundCode.startSound(loginSound);
     }
 
     /**

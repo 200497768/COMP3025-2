@@ -156,7 +156,6 @@ public class ShowWeatherFragment extends Fragment {
         //Provide the WeatherInformation model that this fragment was created with to the ViewModel.
         //This code must only happen after the ViewModel has been created.
         this.viewModel.weatherInformationChanged(this.createdWithWeatherInformation);
-
     }
 
     /**
