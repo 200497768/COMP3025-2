@@ -1,54 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
-   
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#447eaf"
-    android:orientation="vertical"
-    android:padding="20sp"
-    tools:context=".ChooseCityFragment">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/choose_city_fragment"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/cityEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/write_city_name"
-        android:inputType="text"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/retrieveCityOptionModelsButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/retrieve_city_options"
-        android:textSize="20sp" />
+        <!-- HEADER CARD -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/glass_card"
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:elevation="6dp"
+            android:layout_marginBottom="12dp">
 
-    <TextView
-        android:id="@+id/cityNotExistTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/city_name_not_exist"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search City"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Find weather by city name"
+                android:textSize="14sp"
+                android:textColor="#CCFFFFFF"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
 
+        <!-- SEARCH CARD -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/glass_card"
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:elevation="6dp">
 
-</LinearLayout>
+            <EditText
+                android:id="@+id/cityEditText"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter city name"
+                android:textColor="@android:color/white"
+                android:textColorHint="#CCFFFFFF"
+                android:background="@drawable/edittext_glass"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"/>
+            <Button
+                android:id="@+id/retrieveCityOptionModelsButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Search"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#1976D2"/>
+        </LinearLayout>
+
+        <!-- ERROR MESSAGE -->
+        <TextView
+            android:id="@+id/cityNotExistTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/city_name_not_exist"
+            android:textColor="#FF6B6B"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"/>
+
+        <!-- RESULTS CARD -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/glass_card"
+            android:padding="12dp"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Results"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- RECYCLER VIEW -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </layout>
