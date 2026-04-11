@@ -1,82 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#396a93"
-    tools:context=".MainActivity">
-        <!-- App title -->
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="20sp"
-        android:text="@string/weather"
-        android:textColor="@color/white"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-        <!-- Action buttons: Show example city and Choose another city -->
-    <LinearLayout
-        android:id="@+id/actionsArea"
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20sp"
-        android:background="#396a93"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/textView2"
-        app:layout_constraintStart_toStartOf="parent">
-        <Button
-            android:id="@+id/chooseCityButton"
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg">
+
+        <!-- HEADER CARD (GLASS + CENTERED) -->
+        <LinearLayout
+            android:id="@+id/headerCard"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/show_example_city"
-            android:textSize="14sp" />
-        <Button
-            android:id="@+id/chooseAnotherCityButton"
-            android:layout_width="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/glass_card"
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:elevation="6dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weather"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your personal weather dashboard"
+                android:textSize="14sp"
+                android:textColor="#CCFFFFFF"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- ACTION BUTTONS CARD -->
+        <LinearLayout
+            android:id="@+id/actionsArea"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Choose another city"
-            android:textSize="14sp" />
-        <!-- LOGOFF button removed — sign out is now in the bottom navigation bar.
-             Kept as a hidden zero-size view so Java code referencing it does not crash. -->
-        <Button
-            android:id="@+id/logoffButton"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/glass_card"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:elevation="6dp"
+            app:layout_constraintTop_toBottomOf="@id/headerCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- HORIZONTAL TOGGLE -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- EXAMPLE BUTTON -->
+                <Button
+                    android:id="@+id/chooseCityButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Example"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#1976D2" />
+
+                <!-- SEARCH BUTTON -->
+                <Button
+                    android:id="@+id/chooseAnotherCityButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Search"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#42A5F5"
+                    android:alpha="0.8" />
+            </LinearLayout>
+
+            <!--  DO NOT REMOVE (prevents crash) -->
+            <Button
+                android:id="@+id/logoffButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <!-- CONTENT AREA -->
+        <FrameLayout
+            android:id="@+id/fragment_container"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:visibility="gone" />
-    </LinearLayout>
-        <!-- Fragment container fills the space between buttons and the bottom navigation bar -->
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#396a93"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/actionsArea" />
-        <!-- Bottom navigation bar: Search / Saved / Sign Out -->
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/actionsArea"
+            app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- BOTTOM NAV (GLASS EFFECT) -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="#2a5070"
-            app:itemIconTint="@color/white"
-            app:itemTextColor="@color/white"
+            android:background="@drawable/glass_card"
+            android:elevation="8dp"
+            app:itemIconTint="@android:color/white"
+            app:itemTextColor="@android:color/white"
             app:menu="@menu/bottom_nav_menu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-        <!-- Hidden legacy TextView kept for layout reference compatibility -->
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Hidden legacy -->
         <TextView
             android:id="@+id/textView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
