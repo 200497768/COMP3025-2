@@ -300,10 +300,10 @@ public class MainActivity extends AppCompatActivity {
 
 //We used code from (All for Android, Android for All, 2015) and (Petzl, 2024) to change how the CityOption items appear.
 
-//We regret the source for ic_sign_out.xml used in our assignment was not recorded.
-//The exact code in our assignment is publicly available code that commonly appears.
-//We are no longer able to determine the source that we retrieved the exact code from.
-//We believe that the exact code in our assignment was likely produced from a combination of ([ic_logout.xml code], n.d.) and (Algoda, 2025).
+//We regret that we didn't write the source for the ic_sign_out.xml code used in our assignment.
+//During an analysis, we determined that this picture is commonly used, outside of the college, in multiple publicly available repositories.
+//We are no longer able to determine the exact source that we retrieved the ic_sign_out.xml picture code from.
+//We believe that the code in our assignment was likely produced from a combination of ([ic_logout.xml code], n.d.) and (Algoda, 2025).
 
 //References
 //All for Android, Android for All. (2015). How to create a layout with rounded corner borders in Android ? https://www.ssaurel.com/blog/how-to-create-a-layout-with-rounded-corner-borders-in-android/
