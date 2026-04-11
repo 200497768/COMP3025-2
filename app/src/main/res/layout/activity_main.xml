@@ -86,7 +86,7 @@
                     android:alpha="0.8" />
             </LinearLayout>
 
-            <!--  DO NOT REMOVE (prevents crash) -->
+            <!--  For not crashing -->
             <Button
                 android:id="@+id/logoffButton"
                 android:layout_width="0dp"
