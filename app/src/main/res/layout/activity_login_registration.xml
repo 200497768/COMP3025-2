@@ -40,7 +40,7 @@
                     android:id="@+id/loginRegistrationActivityInformationTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sign in to continue"
+                    android:text="loginRegistrationActivityInformationTextView"
                     android:textSize="14sp"
                     android:textColor="#CCFFFFFF"
                     android:layout_marginBottom="20dp"/>
@@ -177,7 +177,7 @@
                     android:id="@+id/actionButton"
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
-                    android:text="Login"
+                    android:text="actionButton"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     android:textStyle="bold"
