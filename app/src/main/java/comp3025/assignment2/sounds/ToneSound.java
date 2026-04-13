@@ -11,7 +11,7 @@ import comp3025.assignment2.R;
  * @author Hao Tian
  */
 public class ToneSound extends Sound {
-    public ToneSound(int number) {
+    public ToneSound() {
         super(R.raw.tone1);
     }
 }
