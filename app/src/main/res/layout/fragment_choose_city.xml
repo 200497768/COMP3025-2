@@ -57,7 +57,7 @@
                 android:id="@+id/retrieveCityOptionModelsButton"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="Search"
+                android:text="@string/retrieve_city_options"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:backgroundTint="#1976D2"/>
