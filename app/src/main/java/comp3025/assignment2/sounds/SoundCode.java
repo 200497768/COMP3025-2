@@ -40,7 +40,7 @@ public class SoundCode {
     }
 
     /**
-     * This method stops an existing sound, if an existing sound exists.
+     * This method stops an existing sound, if it exists.
      */
     public void stopExistingSound() {
         try {
@@ -49,10 +49,10 @@ public class SoundCode {
                 //No existing sound exists.
             } else {
                 //Stop the existing sound.
-                this.startedMediaPlayer.stop();
+                SoundCode.startedMediaPlayer.stop();
 
                 //Use the release method.
-                this.startedMediaPlayer.release();
+                SoundCode.startedMediaPlayer.release();
             }
         } catch (Exception e) {
             Log.i("200497768", "Exception during the method that stops an existing sound.");
@@ -67,6 +67,9 @@ public class SoundCode {
      */
     public void startSound(Sound sound){
         try {
+            //Before a sound can be started, ensure that an existing sound no longer exists.
+            this.stopExistingSound();
+
             //Ensure that the sound can start, if possible.
             this.ensureCanStart();
 
@@ -91,7 +94,8 @@ public class SoundCode {
             //Start the sound.
             mediaPlayer.start();
 
-            this.startedMediaPlayer = mediaPlayer;
+            //Change the field so that the sound code will be able to stop this sound.
+            SoundCode.startedMediaPlayer = mediaPlayer;
         } catch (Exception e) {
             Log.i("200497768", "Exception during the method that starts a sound.");
         }
