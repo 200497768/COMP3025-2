@@ -42,7 +42,7 @@ public class SoundCode {
     /**
      * This method stops an existing sound, if it exists.
      */
-    public void stopExistingSound() {
+    public static void stopExistingSound() {
         try {
             //Check whether an existing sound exists.
             if (startedMediaPlayer == null) {
@@ -68,7 +68,7 @@ public class SoundCode {
     public void startSound(Sound sound){
         try {
             //Before a sound can be started, ensure that an existing sound no longer exists.
-            this.stopExistingSound();
+            SoundCode.stopExistingSound();
 
             //Ensure that the sound can start, if possible.
             this.ensureCanStart();
