@@ -48,7 +48,7 @@ public class SoundCode {
     public static void stopExistingSound() {
         try {
             //Check whether an existing sound exists.
-            if (startedMediaPlayer == null) {
+            if (SoundCode.startedMediaPlayer == null) {
                 //No existing sound exists.
             } else {
                 //Stop the existing sound.
