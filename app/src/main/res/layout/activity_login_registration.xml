@@ -69,7 +69,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Sign Up"
+                        android:text="@string/registration_fragment"
                         android:textAllCaps="false"
                         android:textColor="@android:color/white"
                         android:alpha="0.5"/>
