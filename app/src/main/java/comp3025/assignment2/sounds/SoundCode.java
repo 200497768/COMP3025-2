@@ -43,6 +43,7 @@ public class SoundCode {
 
     /**
      * This method stops an existing sound, if it exists.
+     * This method determines whether an existing sound exists by checking the field.
      */
     public static void stopExistingSound() {
         try {
