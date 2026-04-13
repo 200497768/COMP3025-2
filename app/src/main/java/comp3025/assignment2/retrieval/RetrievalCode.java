@@ -258,10 +258,10 @@ public class RetrievalCode {
 
             //Retrieve the feels like C field.
             double feelsLikeC = current.getDouble("feelslike_c");
-            Log.i("200594802 and 200497768", "The feels like C field has been retrieved as " + weatherInformation.getFeelsLikeC());
 
             //Change the field for the model.
             weatherInformation.setFeelsLikeC(feelsLikeC);
+            Log.i("200594802 and 200497768", "The feels like C field has been retrieved as " + weatherInformation.getFeelsLikeC());
         } catch (JSONException e) {
             Log.i("200594802 and 200497768", "JSONException when retrieving the feels like C field.");
         }
