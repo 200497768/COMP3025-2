@@ -98,6 +98,12 @@ public class LoginRegistrationActivity extends AppCompatActivity {
         //Observe the AuthViewModel for loading state, errors, and success.
         observeViewModel();
 
+        //Change the fragment area to show LoginFragment.
+        //During this method, the isSignInMode field will be changed.
+        //This method must be used during the onCreate method.
+        //If this method isn't used, text for some views won't appear correctly.
+        this.switchMode(true);
+
         //Create the sound code.
         SoundCode soundCode = new SoundCode(this, this);
 
@@ -146,6 +152,8 @@ public class LoginRegistrationActivity extends AppCompatActivity {
      * The action button text is updated to match the current mode.
      */
     private void switchMode(boolean signIn) {
+        //Change the field.
+        //The field needs to be changed because the setupActionButton will need to refer to it.
         isSignInMode = signIn;
 
         //Hide any error message when switching modes.
@@ -155,9 +163,9 @@ public class LoginRegistrationActivity extends AppCompatActivity {
             //Sign In tab is now active.
             binding.loginButton.setAlpha(1.0f);
             binding.registrationButton.setAlpha(0.5f);
-            binding.actionButton.setText("Sign In");
+            binding.actionButton.setText("Login");
             binding.confirmPasswordLayout.setVisibility(View.GONE);
-            binding.loginRegistrationActivityInformationTextView.setText("Sign in to your account");
+            binding.loginRegistrationActivityInformationTextView.setText("Login to your account");
         } else {
             //Create Account tab is now active.
             binding.registrationButton.setAlpha(1.0f);
