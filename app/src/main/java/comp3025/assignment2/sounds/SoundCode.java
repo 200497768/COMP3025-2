@@ -7,6 +7,8 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import comp3025.assignment2.views.CompletedAction;
+
 /**
  * This is the code that's responsible for causing a sound to happen.
  * We want sounds to happen multiple times in this assignment.
@@ -66,12 +68,62 @@ public class SoundCode {
      * We retrieved the code for this method from (Tutorials Point, n.d.).
      */
     public void startSound(Sound sound){
+        //Start the tone sound.
+        //When the tone sound has finished, start the sound that was provided to this method.
+        SoundCode soundCode = this;
+        this.startToneSound(new CompletedAction() {
+            @Override
+            public void completed() {
+                try {
+                    //Before a sound can be started, ensure that an existing sound no longer exists.
+                    SoundCode.stopExistingSound();
+
+                    //Ensure that the sound can start, if possible.
+                    soundCode.ensureCanStart();
+
+                    //Retrieve the number from the sound, and start it.
+                    int number = sound.getNumber();
+                    MediaPlayer mediaPlayer = MediaPlayer.create(soundCode.context, number);
+
+                    //The release method must be used when the sound has finished.
+                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+                        /**
+                         * This method will happen when the sound has finished.
+                         * The code for this method is responsible for ensuring that the release method is used.
+                         */
+                        @Override
+                        public void onCompletion(MediaPlayer mp) {
+                            //Use the release method.
+                            mp.release();
+                        }
+                    });
+
+                    //Start the sound.
+                    mediaPlayer.start();
+
+                    //Change the field so that the sound code will be able to stop this sound.
+                    SoundCode.startedMediaPlayer = mediaPlayer;
+                } catch (Exception e) {
+                    Log.i("200497768", "Exception during the method that starts a sound.");
+                }
+            }
+        });
+    }
+
+    /**
+     * This method starts a tone sound.
+     */
+    private void startToneSound(CompletedAction completedAction) {
         try {
             //Before a sound can be started, ensure that an existing sound no longer exists.
             SoundCode.stopExistingSound();
 
             //Ensure that the sound can start, if possible.
             this.ensureCanStart();
+
+            //Create the tone sound.
+            ToneSound sound = new ToneSound();
 
             //Retrieve the number from the sound, and start it.
             int number = sound.getNumber();
@@ -88,6 +140,11 @@ public class SoundCode {
                 public void onCompletion(MediaPlayer mp) {
                     //Use the release method.
                     mp.release();
+
+                    //Use the completed method.
+                    //Another action might be waiting for this sound to finish.
+                    //The completed method will cause that action to happen.
+                    completedAction.completed();
                 }
             });
 
@@ -99,6 +156,7 @@ public class SoundCode {
         } catch (Exception e) {
             Log.i("200497768", "Exception during the method that starts a sound.");
         }
+
     }
 
     /**
