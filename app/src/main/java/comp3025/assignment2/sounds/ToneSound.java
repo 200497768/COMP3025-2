@@ -4,7 +4,6 @@ import comp3025.assignment2.R;
 
 /**
  * The tone sound happens during the assignment.
- *
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa
@@ -12,6 +11,6 @@ import comp3025.assignment2.R;
  */
 public class ToneSound extends Sound {
     public ToneSound() {
-        super(R.raw.tone1);
+        super(R.raw.tone3);
     }
 }
