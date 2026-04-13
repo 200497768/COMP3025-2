@@ -3,6 +3,7 @@ package comp3025.assignment2.sounds;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +17,11 @@ import androidx.appcompat.app.AppCompatActivity;
  * @author Hao Tian
  */
 public class SoundCode {
+
+    /**
+     * This field is MediaPlayer that was created when starting an existing sound.
+     */
+    public static MediaPlayer startedMediaPlayer;
 
     /**
      * This field is needed by the sound code in order to retrieve MediaPlayer.
@@ -34,35 +40,61 @@ public class SoundCode {
     }
 
     /**
+     * This method stops an existing sound, if an existing sound exists.
+     */
+    public void stopExistingSound() {
+        try {
+            //Check whether an existing sound exists.
+            if (startedMediaPlayer == null) {
+                //No existing sound exists.
+            } else {
+                //Stop the existing sound.
+                this.startedMediaPlayer.stop();
+
+                //Use the release method.
+                this.startedMediaPlayer.release();
+            }
+        } catch (Exception e) {
+            Log.i("200497768", "Exception during the method that stops an existing sound.");
+        }
+    }
+
+    /**
      * This method starts a sound.
      * We learned that sounds are possible through (Smyth, 2021, p. 603).
      * The example code from the book was complicated, so we didn't use it.
      * We retrieved the code for this method from (Tutorials Point, n.d.).
      */
     public void startSound(Sound sound){
-        //Ensure that the sound can start, if possible.
-        this.ensureCanStart();
+        try {
+            //Ensure that the sound can start, if possible.
+            this.ensureCanStart();
 
-        //Retrieve the number from the sound, and start it.
-        int number=sound.getNumber();
-        MediaPlayer mediaPlayer = MediaPlayer.create(this.context, number);
+            //Retrieve the number from the sound, and start it.
+            int number = sound.getNumber();
+            MediaPlayer mediaPlayer = MediaPlayer.create(this.context, number);
 
-        //The release method must be used when the sound has finished.
-        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            //The release method must be used when the sound has finished.
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
-            /**
-             * This method will happen when the sound has finished.
-             * The code for this method is responsible for ensuring that the release method is used.
-             */
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                //Use the release method.
-                mp.release();
-            }
-        });
+                /**
+                 * This method will happen when the sound has finished.
+                 * The code for this method is responsible for ensuring that the release method is used.
+                 */
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    //Use the release method.
+                    mp.release();
+                }
+            });
 
-        //Start the sound.
-        mediaPlayer.start();
+            //Start the sound.
+            mediaPlayer.start();
+
+            this.startedMediaPlayer = mediaPlayer;
+        } catch (Exception e) {
+            Log.i("200497768", "Exception during the method that starts a sound.");
+        }
     }
 
     /**
@@ -71,6 +103,7 @@ public class SoundCode {
      * If the field isn't available, this method won't change whether the sound can start.
      */
     private void ensureCanStart() {
+        try {
         if (this.activity == null) {
             //This method can't ensure whether the sound can start.
         } else {
@@ -78,6 +111,9 @@ public class SoundCode {
                 AudioManager audioManager = (AudioManager) this.activity.getSystemService(Context.AUDIO_SERVICE);
                 audioManager.adjustVolume(AudioManager.ADJUST_RAISE, AudioManager.FLAG_PLAY_SOUND);
             }
+        }
+        } catch (Exception e) {
+            Log.i("200497768", "Exception during the method that ensures that a sound can start.");
         }
     }
 }
