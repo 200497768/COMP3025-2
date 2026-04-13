@@ -4,7 +4,11 @@ import comp3025.assignment2.R;
 
 /**
  * The main sound happens when showing MainActivity.
- *
+ * This is the main screen of the weather retrieval system.
+ * Write the name of a city to retrieve weather information for that city.
+ * Select the desired city option that appears to retrieve weather information for that city.
+ * If the desired city option doesn’t appear after writing the name of the city, select Retrieve.
+ * Select LOGOFF if you have finished using the system.
  * @author Harshit Gambhir
  * @author Yatri Devangbhai Padhiyar
  * @author Dawa Angchuk Sherpa
