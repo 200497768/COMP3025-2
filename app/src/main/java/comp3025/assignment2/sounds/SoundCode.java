@@ -46,20 +46,27 @@ public class SoundCode {
      * This method determines whether an existing sound exists by checking the field.
      */
     public static void stopExistingSound() {
-        try {
+
             //Check whether an existing sound exists.
             if (SoundCode.startedMediaPlayer == null) {
                 //No existing sound exists.
             } else {
                 //Stop the existing sound.
+                try {
                 SoundCode.startedMediaPlayer.stop();
+                } catch (Exception e) {
+                    Log.i("200497768", "Exception during the method that stops an existing sound.");
+                }
 
                 //Use the release method.
+                //The release method must be used, even if the code wasn't able to stop the sound.
+                try {
                 SoundCode.startedMediaPlayer.release();
+                } catch (Exception e) {
+                    Log.i("200497768", "Exception during the method that stops an existing sound.");
+                }
             }
-        } catch (Exception e) {
-            Log.i("200497768", "Exception during the method that stops an existing sound.");
-        }
+
     }
 
     /**
